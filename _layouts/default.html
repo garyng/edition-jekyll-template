@@ -61,9 +61,9 @@
 				</ul>
 
 				<ul>
-					<li class="nav-item top-level {% if page.url == '/changelog/' %}current{% endif %}">
-						{% assign changelog = site.html_pages | where: 'url', '/changelog/' | first %}
-						<a href="{{ site.baseurl }}/changelog/">{{ changelog.title }}</a>
+					<li class="nav-item top-level {% if page.url == '/quick-guide/' %}current{% endif %}">
+						{% assign quick-guide = site.html_pages | where: 'url', '/quick-guide/' | first %}
+						<a href="{{ site.baseurl }}/quick-guide/">{{ quick-guide.title }}</a>
 					</li>
 				</ul>
 			</nav>
