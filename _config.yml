@@ -73,3 +73,8 @@ defaults:
 types:
   - minor
   - major
+
+#------------
+# Reveal.js
+
+reveal_path: /scripts/reveal.js/
