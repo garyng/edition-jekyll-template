@@ -78,7 +78,7 @@
   msbib-productioncompany = {Computerworld},
 }
 
-@Online{2000,
+@Online{Economist2000,
   author        = {The Economist},
   title         = {Deadly embrace},
   year          = {2000},
@@ -89,7 +89,7 @@
   msbib-day     = {30},
 }
 
-@Online{2006,
+@Online{Microsoft2006,
   author        = {Microsoft},
   title         = {(Archived) Anders Hejlsberg: Technical Fellow},
   year          = {2006},
@@ -98,6 +98,54 @@
   month         = oct,
   __markedentry = {[GaryNg:6]},
   msbib-day     = {3},
+}
+
+@Online{Hope2017,
+  author = {Computer Hope},
+  title  = {Imperative programming},
+  year   = {2017},
+  date   = {2017-12-07},
+  url    = {https://www.computerhope.com/jargon/i/imp-programming.htm},
+}
+
+@Online{Lilly2016,
+  author = {Scott Lilly},
+  title  = {[C# Anti-Pattern] Procedural code in Object-Oriented code},
+  year   = {2016},
+  date   = {2016-07-04},
+  url    = {https://scottlilly.com/c-anti-pattern-procedural-code-in-object-oriented-code/},
+}
+
+@Online{Docs2017,
+  author = {Microsoft Docs},
+  title  = {Properties (C# Programming Guide)},
+  year   = {2017},
+  date   = {2017-03-09},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties},
+}
+
+@Online{Docs2015,
+  author = {Microsoft Docs},
+  title  = {Partial Classes and Methods (C# Programming Guide)},
+  year   = {2015},
+  date   = {2015-07-19},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods},
+}
+
+@Online{Docs2015a,
+  author = {Microsoft Docs},
+  title  = {Anonymous Types (C# Programming Guide)},
+  year   = {2015},
+  date   = {2015-07-19},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/anonymous-types},
+}
+
+@Online{Introduction to LINQ Queries (C#),
+  author = {Microsoft Docs},
+  title  = {Introduction to LINQ Queries (C#)},
+  year   = {2015},
+  date   = {2015-07-19},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}

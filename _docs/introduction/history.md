@@ -1,5 +1,5 @@
 ---
-title: History of C#
+title: Brief history
 category: Introduction
 order: 1
 ---
@@ -28,4 +28,4 @@ Besides from being inspired by musical notation {% cite Kovacs2007 --prefix hist
 
 ## References
 
-{% bibliography --cited --prefix history %}
+{% bibliography --cited_in_order --prefix history %}
