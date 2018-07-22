@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/garyng/tpl2141.svg?branch=master)](https://travis-ci.org/garyng/tpl2141)
 
-This site is made for `TPL2141 Programming Language Concept` using the `Edition` template by CloudCannon.
+This site is made for `TPL2141 Programming Language Concept` using the `Edition` template by [CloudCannon](https://github.com/CloudCannon/edition-jekyll-template).
 
 Deployment of this `Jekyll` site to `GitHub Pages` is handled by `Travis CI`.
 
