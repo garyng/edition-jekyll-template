@@ -14,11 +14,17 @@ Throughout the almost 18 years of development, C# has gone through many major ve
 
 ## Why C# is invented?
 
-The most plausible motivation for Microsoft creating a new language that is so similar to Java back then probably rooted in the _“Sun Microsystems v. Microsoft Corporation”_ lawsuit {% cite Shankland2002 --prefix history %}. As the settlement of the case, Microsoft was forced to discontinue its proprietary **Microsoft Java Virtual Machine (MSJVM)** – an attempt of the giant to drive more customers to use Windows and Microsoft products (under the internally-used _“Embrace, extend, and extinguish”_ slogan {% cite Economist2000 --prefix history %}). Eventually, C# was born, “which was not intended to needle Sun” but “with that as a side effect” to Sun {% cite Wong2000 --prefix history %}.
+The most plausible motivation for Microsoft creating a new language that is so similar to Java back then probably rooted in the _“Sun Microsystems v. Microsoft Corporation”_ lawsuit {% cite Shankland2002 --prefix history %}. 
+
+As the settlement of the case, Microsoft was forced to discontinue its proprietary **Microsoft Java Virtual Machine (MSJVM)** – an attempt of the giant to drive more customers to use Windows and Microsoft products (under the internally-used _“Embrace, extend, and extinguish”_ slogan {% cite Economist2000 --prefix history %}). 
+
+Eventually, C# was born, “which was not intended to needle Sun” but “with that as a side effect” to Sun {% cite Wong2000 --prefix history %}.
 
 ## Side note
 
-The “sharp” in C# should be the sharp symbol “♯” – however the hash symbol “#” is chosen as the close approximate because the sharp symbol is not present on most keyboard layouts {% cite MSDN2006 --prefix history %}. Besides from being inspired by musical notation {% cite Kovacs2007 --prefix history %}, the name of C# can also be viewed as a ligature of four plus symbols arranged in a two-by-two grid, implying its close relation to both C and C++ as a form of “increment” to the former two {% cite Hamilton2008 --prefix history %}.
+The “sharp” in C# should be the sharp symbol “♯” – however the hash symbol “#” is chosen as the close approximate because the sharp symbol is not present on most keyboard layouts {% cite MSDN2006 --prefix history %}.
+
+Besides from being inspired by musical notation {% cite Kovacs2007 --prefix history %}, the name of C# can also be viewed as a ligature of four plus symbols arranged in a two-by-two grid, implying its close relation to both C and C++ as a form of “increment” to the former two {% cite Hamilton2008 --prefix history %}.
 
 ## References
 
