@@ -1,3 +1,6 @@
 {
-    "pasteImage.basePath": "${currentFileDir}/${currentFileNameWithoutExt}"
+
+    "pasteImage.path": "${projectRoot}/images/posts/${currentFileNameWithoutExt}",
+    "pasteImage.basePath": "${projectRoot}",
+    "pasteImage.prefix": "{{site.url}}/"
 }
