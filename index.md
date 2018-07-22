@@ -2,7 +2,11 @@
 title: Welcome
 ---
 
-This site is made for `TPL2141 Programing Language Concepts`.
+[![Build Status](https://travis-ci.org/garyng/tpl2141.svg?branch=master)](https://travis-ci.org/garyng/tpl2141)
+
+This site is made for `TPL2141 Programming Language Concept` using the `Edition` template by CloudCannon.
+
+Deployment of this `Jekyll` site to `GitHub Pages` is handled by `Travis CI`.
 
 ## Team member
 

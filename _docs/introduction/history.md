@@ -20,7 +20,6 @@ The most plausible motivation for Microsoft creating a new language that is so s
 
 The “sharp” in C# should be the sharp symbol “♯” – however the hash symbol “#” is chosen as the close approximate because the sharp symbol is not present on most keyboard layouts {% cite MSDN2006 --prefix history %}. Besides from being inspired by musical notation {% cite Kovacs2007 --prefix history %}, the name of C# can also be viewed as a ligature of four plus symbols arranged in a two-by-two grid, implying its close relation to both C and C++ as a form of “increment” to the former two {% cite Hamilton2008 --prefix history %}.
 
-
 ## References
 
 {% bibliography --cited --prefix history %}
