@@ -1,6 +1,7 @@
 # TPL2141
 
 [![Build Status](https://travis-ci.org/garyng/tpl2141.svg?branch=master)](https://travis-ci.org/garyng/tpl2141)
+![GitHub last commit](https://img.shields.io/github/last-commit/garyng/tpl2141.svg)
 
 This site is made for `TPL2141 Programming Language Concept` using the `Edition` template by [CloudCannon](https://github.com/CloudCannon/edition-jekyll-template).
 
