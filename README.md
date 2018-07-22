@@ -16,3 +16,12 @@ Deployment of this `Jekyll` site to `GitHub Pages` is handled by `Travis CI`.
 | 1161102195 | Carol Ng Jie Rou |
 | 1161100897 | Ng Xiang Yin     |
 | 1161101364 | Chua Jie Nee     |
+
+## Cloning
+
+Remember to checkout the submodule by running:
+
+```
+git submodule init
+git submodule update
+```
