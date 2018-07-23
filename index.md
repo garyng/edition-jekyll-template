@@ -9,7 +9,9 @@ This site is made for `TPL2141 Programming Language Concept` using the `Edition`
 
 Deployment of this `Jekyll` site to `GitHub Pages` is handled by `Travis CI`.
 
-## Team member
+## Group member
+
+Group name: `hello`
 
 | Student ID | Name             |
 | ---------- | ---------------- |
