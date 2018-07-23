@@ -2,7 +2,7 @@
 title: Quick Guide
 ---
 
-{% assign groups = site.docs | group_by: 'category' %}
+{% assign groups = site.docs | where_exp: "item", "item.layout != 'slide'" | group_by: 'category' %}
 {% for group in groups %}
 
 	{% assign items = group.items | sort: 'order' %}
