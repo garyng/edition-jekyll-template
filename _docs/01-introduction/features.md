@@ -1,5 +1,6 @@
 ---
 title: Unique features
+subtitle: What are unique features of the language that distinguish itself from other languages?
 category: Introduction
 order: 3
 ---

@@ -1,5 +1,6 @@
 ---
 title: Brief history
+subtitle: History of the language – why is it invented?
 category: Introduction
 order: 1
 ---
