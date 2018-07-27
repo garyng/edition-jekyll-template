@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Quick Guide | C# - TPL2141</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Quick Guide" />
+<meta name="author" content="GaryNg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="TPL2141: Programming Language Concept project - C#" />
+<meta property="og:description" content="TPL2141: Programming Language Concept project - C#" />
+<link rel="canonical" href="https://tpl2141.garyng.xyz/quick-guide/" />
+<meta property="og:url" content="https://tpl2141.garyng.xyz/quick-guide/" />
+<meta property="og:site_name" content="C# - TPL2141" />
+<script type="application/ld+json">
+{"description":"TPL2141: Programming Language Concept project - C#","author":{"@type":"Person","name":"GaryNg"},"@type":"WebPage","url":"https://tpl2141.garyng.xyz/quick-guide/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Quick Guide","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/images/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/emblem.svg" width="40" height="40" alt="C# - TPL2141 logo"></a>
+				C# - TPL2141
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/">Welcome</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/01-introduction/history/">Introduction</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/01-introduction/history/">Brief history</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/styles/">Supported programming styles</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/features/">Unique features</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/02-application-domain/Initial-intended-usage/">Application Domain</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/02-application-domain/Initial-intended-usage/">Initial intended usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/current-usage/">Current usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/popularity/">Popularity</a></li>
+								
+							</ul>
+						</li>
+					
+				</ul>
+
+				<ul>
+					<li class="nav-item top-level current">
+						
+						<a href="/quick-guide/">Quick Guide</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>C# - TPL2141</h2>
+				<h3>Quick Guide</h3>
+				
+			</div>
+			<article class="content">
+				
+
+
+	
+	
+	<div class="page-header quick-guide-page">
+		<h2>Introduction</h2>
+		<h3>Brief history</h3>
+	</div>
+	<article class="content">
+		<p>C#, pronounced as “see-sharp” <a href="#history-Kovacs2007">(Kovacs, 2007)</a>, is a multi-paradigm programing language that was developed by Microsoft around year 2000 under, and is still under, the lead of the prominent Danish software engineer – Anders Hejlsberg <a href="#history-Microsoft2006">(Microsoft, 2006)</a>.</p>
+
+<p><img src="https://tpl2141.garyng.xyz/images/posts/history/Anders_Hejlsberg.jpg" alt="Anders Hejlsberg" /></p>
+
+<p>The design of the language is heavily influenced by <code class="highlighter-rouge">C++</code> and <code class="highlighter-rouge">Java</code> <a href="#history-Naugler2007">(Naugler, 2007)</a> during its infancy but had embarked on an increasingly divergent journey since then.</p>
+
+<p>Throughout the almost 18 years of development, C# has gone through many major versions <a href="#history-Microsoft2017">(Microsoft, 2017)</a> – currently sitting at version 7.3, with version 8.0 at the bleeding edge of prerelease.</p>
+
+<h2 id="why-c-is-invented">Why C# is invented?</h2>
+
+<p>The most plausible motivation for Microsoft creating a new language that is so similar to Java back then probably rooted in the <em>“Sun Microsystems v. Microsoft Corporation”</em> lawsuit <a href="#history-Shankland2002">(Shankland, 2002)</a>.</p>
+
+<p>As the settlement of the case, Microsoft was forced to discontinue its proprietary <strong>Microsoft Java Virtual Machine (MSJVM)</strong> – an attempt of the giant to drive more customers to use Windows and Microsoft products (under the internally-used <em>“Embrace, extend, and extinguish”</em> slogan <a href="#history-Economist2000">(Economist, 2000)</a>).</p>
+
+<p>Eventually, C# was born, “which was not intended to needle Sun” but “with that as a side effect” to Sun <a href="#history-Wong2000">(Wong, 2000)</a>.</p>
+
+<h2 id="side-note">Side note</h2>
+
+<p>The “sharp” in C# should be the sharp symbol “♯” – however the hash symbol “#” is chosen as the close approximate because the sharp symbol is not present on most keyboard layouts <a href="#history-MSDN2006">(MSDN, 2006)</a>.</p>
+
+<p>Besides from being inspired by musical notation <a href="#history-Kovacs2007">(Kovacs, 2007)</a>, the name of C# can also be viewed as a ligature of four plus symbols arranged in a two-by-two grid, implying its close relation to both C and C++ as a form of “increment” to the former two <a href="#history-Hamilton2008">(Hamilton, 2008)</a>.</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="history-Kovacs2007">Kovacs, J. (2007, September 7). C#/.NET History Lesson - James Kovacs’ Weblog. Retrieved from http://jameskovacs.com/2007/09/07/cnet-history-lesson/</span></li>
+<li><span id="history-Microsoft2006">Microsoft. (2006, October 3). (Archived) Anders Hejlsberg: Technical Fellow. Retrieved from https://web.archive.org/web/20090427201423/http://www.microsoft.com/presspass/exec/techfellow/Hejlsberg/default.mspx</span></li>
+<li><span id="history-Naugler2007">Naugler, D. R. (2007). C# 2.0 FOR C++ AND JAVA PROGRAMMER - CONFERENCE WORKSHOP. <i>Journal of Computing Sciences in Colleges</i>, <i>22</i>(5).</span></li>
+<li><span id="history-Microsoft2017">Microsoft. (2017, September 20). The history of C#. Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history</span></li>
+<li><span id="history-Shankland2002">Shankland, S. (2002, March 15). Sun, Microsoft settle Java suit. Retrieved from https://www.cnet.com/news/sun-microsoft-settle-java-suit/</span></li>
+<li><span id="history-Economist2000">Economist, T. (2000, March 30). Deadly embrace. Retrieved from https://www.economist.com/business/2000/03/30/deadly-embrace</span></li>
+<li><span id="history-Wong2000">Wong, W. (2000, June 26). (Archived) Microsoft aims at Sun’s Java with standards push. Retrieved from http://web.archive.org/web/20070713045941/http://news.com.com/2100-1001-242400.html</span></li>
+<li><span id="history-MSDN2006">MSDN. (2006). (Archived) Frequently Asked Questions About Visual C# .NET 2002. Retrieved from https://web.archive.org/web/20060214002638/http://msdn.microsoft.com/vcsharp/previous/2002/FAQ/default.aspx</span></li>
+<li><span id="history-Hamilton2008">Hamilton, N. (2008, October 3). The A-Z of Programming Languages: C#. Retrieved from https://www.computerworld.com.au/article/261958/a-z_programming_languages_c_/?pp=2</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Introduction</h2>
+		<h3>Supported programming styles</h3>
+	</div>
+	<article class="content">
+		<p>C# supports more than one programming style:</p>
+
+<ol>
+  <li>Imperative programming
+    <ol>
+      <li><a href="#procedural-programming">Procedural programming</a></li>
+      <li><a href="#object-oriented-programming">Object-oriented programming</a></li>
+    </ol>
+  </li>
+  <li><a href="#functional-programming">Functional programming</a></li>
+</ol>
+
+<p>etc..</p>
+
+<p>Such language is better known as a “<strong>multi-paradigm</strong>” programming language.</p>
+
+<h2 id="procedural-programming">Procedural programming</h2>
+
+<p>Procedural language describes the sequence of statement step by step to reach the goal <a href="#styles-Hope2017">(Hope, 2017)</a>. It tells the computer how to accomplish a task by breaking down a problem into multiple, smaller sub tasks. Here is an example function for calculating the total amount of payment adapted from <a href="#styles-Lilly2016">(Lilly, 2016)</a>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">CalculateTotalAmount</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Get all the orders</span>
+    <span class="n">InventoryItem</span> <span class="n">book</span> <span class="p">=</span>
+        <span class="k">new</span> <span class="nf">InventoryItem</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">"Learn C# in 30 Minutes"</span><span class="p">,</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Normal</span><span class="p">,</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">19.95</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">2.5</span><span class="p">);</span>
+    <span class="n">InventoryItem</span> <span class="n">ebook</span> <span class="p">=</span>
+        <span class="k">new</span> <span class="nf">InventoryItem</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="s">"Learn F# in 31 Minutes"</span><span class="p">,</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Normal</span><span class="p">,</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">9.95</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+    <span class="n">InventoryItem</span> <span class="n">energyDrink</span> <span class="p">=</span>
+        <span class="k">new</span> <span class="nf">InventoryItem</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="s">"Monster Energy Drink"</span><span class="p">,</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Food</span><span class="p">,</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">1.95</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.75</span><span class="p">);</span>
+
+    <span class="c1">// Get customer</span>
+    <span class="n">Customer</span> <span class="n">joe</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Customer</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">"Joe Smith"</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+
+    <span class="c1">// Create an order</span>
+    <span class="n">Order</span> <span class="n">order</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Order</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="n">joe</span><span class="p">);</span>
+
+    <span class="n">order</span><span class="p">.</span><span class="n">LineItems</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">LineItem</span><span class="p">(</span><span class="n">book</span><span class="p">,</span> <span class="m">2</span><span class="p">));</span>
+    <span class="n">order</span><span class="p">.</span><span class="n">LineItems</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">LineItem</span><span class="p">(</span><span class="n">ebook</span><span class="p">,</span> <span class="m">1</span><span class="p">));</span>
+    <span class="n">order</span><span class="p">.</span><span class="n">LineItems</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">LineItem</span><span class="p">(</span><span class="n">energyDrink</span><span class="p">,</span> <span class="m">10</span><span class="p">));</span>
+
+    <span class="c1">// Rates</span>
+    <span class="k">const</span> <span class="kt">decimal</span> <span class="n">normalTaxRate</span> <span class="p">=</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.08</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">decimal</span> <span class="n">medicineTaxRate</span> <span class="p">=</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.00</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">decimal</span> <span class="n">foodTaxRate</span> <span class="p">=</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.04</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">decimal</span> <span class="n">luxuryTaxRate</span> <span class="p">=</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.14</span><span class="p">;</span>
+
+    <span class="kt">decimal</span> <span class="n">subTotal</span> <span class="p">=</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.0</span><span class="p">;</span>
+    <span class="kt">decimal</span> <span class="n">tax</span> <span class="p">=</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.0</span><span class="p">;</span>
+    <span class="kt">decimal</span> <span class="n">shippingFee</span> <span class="p">=</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.0</span><span class="p">;</span>
+
+    <span class="c1">// Calculate sub total based on category</span>
+    <span class="k">foreach</span><span class="p">(</span><span class="n">LineItem</span> <span class="n">lineItem</span> <span class="k">in</span> <span class="n">order</span><span class="p">.</span><span class="n">LineItems</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">decimal</span> <span class="n">lineItemSubTotal</span> <span class="p">=</span> <span class="n">lineItem</span><span class="p">.</span><span class="n">Item</span><span class="p">.</span><span class="n">Price</span> <span class="p">*</span> <span class="n">lineItem</span><span class="p">.</span><span class="n">Quantity</span><span class="p">;</span>
+
+        <span class="n">subTotal</span> <span class="p">+=</span> <span class="n">lineItemSubTotal</span><span class="p">;</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">lineItem</span><span class="p">.</span><span class="n">Item</span><span class="p">.</span><span class="n">TaxCategory</span> <span class="p">==</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Medicine</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">tax</span> <span class="p">+=</span> <span class="n">lineItemSubTotal</span> <span class="p">*</span> <span class="n">medicineTaxRate</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">lineItem</span><span class="p">.</span><span class="n">Item</span><span class="p">.</span><span class="n">TaxCategory</span> <span class="p">==</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Food</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">tax</span> <span class="p">+=</span> <span class="n">lineItemSubTotal</span> <span class="p">*</span> <span class="n">foodTaxRate</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">lineItem</span><span class="p">.</span><span class="n">Item</span><span class="p">.</span><span class="n">TaxCategory</span> <span class="p">==</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Luxury</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">tax</span> <span class="p">+=</span> <span class="n">lineItemSubTotal</span> <span class="p">*</span> <span class="n">luxuryTaxRate</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="c1">// Normal</span>
+        <span class="p">{</span>
+            <span class="n">tax</span> <span class="p">+=</span> <span class="n">lineItemSubTotal</span> <span class="p">*</span> <span class="n">normalTaxRate</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span><span class="p">(!</span><span class="n">order</span><span class="p">.</span><span class="n">Customer</span><span class="p">.</span><span class="n">IsPremiumMember</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// Non-Premium customers pay 50 cents per pound for shipping.</span>
+            <span class="n">shippingFee</span> <span class="p">+=</span> <span class="n">lineItem</span><span class="p">.</span><span class="n">Item</span><span class="p">.</span><span class="n">Weight</span> <span class="p">*</span> <span class="n">lineItem</span><span class="p">.</span><span class="n">Quantity</span> <span class="p">*</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.50</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Calculate total</span>
+    <span class="kt">decimal</span> <span class="n">total</span> <span class="p">=</span> <span class="n">subTotal</span> <span class="p">+</span> <span class="n">tax</span> <span class="p">+</span> <span class="n">shippingFee</span><span class="p">;</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">subTotal</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">tax</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">shippingFee</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">total</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="object-oriented-programming">Object-oriented programming</h2>
+
+<p>C# also supports object-oriented programming, where a problem domain is model using <strong>“objects”</strong> which may contain data and behaviors.</p>
+
+<p>The same example, but the business logic is moved to the <code class="highlighter-rouge">Order</code> class.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">CalculateTotalAmount</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">InventoryItem</span> <span class="n">book</span> <span class="p">=</span>
+        <span class="k">new</span> <span class="nf">InventoryItem</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">"Learn C# in 30 Minutes"</span><span class="p">,</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Normal</span><span class="p">,</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">19.95</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">2.5</span><span class="p">);</span>
+    <span class="n">InventoryItem</span> <span class="n">ebook</span> <span class="p">=</span>
+        <span class="k">new</span> <span class="nf">InventoryItem</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="s">"Learn F# in 31 Minutes"</span><span class="p">,</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Normal</span><span class="p">,</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">9.95</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+    <span class="n">InventoryItem</span> <span class="n">energyDrink</span> <span class="p">=</span>
+        <span class="k">new</span> <span class="nf">InventoryItem</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="s">"Monster Energy Drink"</span><span class="p">,</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Food</span><span class="p">,</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">1.95</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.75</span><span class="p">);</span>
+
+    <span class="n">Customer</span> <span class="n">joe</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Customer</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">"Joe Smith"</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+
+    <span class="c1">// Create an order</span>
+    <span class="n">Order</span> <span class="n">order</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Order</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="n">joe</span><span class="p">);</span>
+
+    <span class="n">order</span><span class="p">.</span><span class="n">LineItems</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">LineItem</span><span class="p">(</span><span class="n">book</span><span class="p">,</span> <span class="m">2</span><span class="p">));</span>
+    <span class="n">order</span><span class="p">.</span><span class="n">LineItems</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">LineItem</span><span class="p">(</span><span class="n">ebook</span><span class="p">,</span> <span class="m">1</span><span class="p">));</span>
+    <span class="n">order</span><span class="p">.</span><span class="n">LineItems</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">LineItem</span><span class="p">(</span><span class="n">energyDrink</span><span class="p">,</span> <span class="m">10</span><span class="p">));</span>
+
+    <span class="c1">// Check values. </span>
+    <span class="c1">// Notice that nothing needs to be calculated in this code.</span>
+    <span class="c1">// All values are calculated in the business classes.</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">SubTotal</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">Tax</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">ShippingFee</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">Total</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="functional-programming">Functional programming</h2>
+
+<p>Functional language is a programming language built over and around logical functions or procedures within its programming structure. For example, a LINQ query:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">database</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">item</span> <span class="p">=&gt;</span> <span class="n">item</span><span class="p">.</span><span class="n">Customer</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="s">"Joe"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">item</span> <span class="p">=&gt;</span> <span class="n">item</span><span class="p">.</span><span class="nf">CalculatePrice</span><span class="p">())</span>
+        <span class="p">.</span><span class="nf">Aggregate</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="p">(</span><span class="n">accumulate</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">accumulate</span> <span class="p">+</span> <span class="n">price</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="styles-Hope2017">Hope, C. (2017, December 7). Imperative programming. Retrieved from https://www.computerhope.com/jargon/i/imp-programming.htm</span></li>
+<li><span id="styles-Lilly2016">Lilly, S. (2016, July 4). [C# Anti-Pattern] Procedural code in Object-Oriented code. Retrieved from https://scottlilly.com/c-anti-pattern-procedural-code-in-object-oriented-code/</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Introduction</h2>
+		<h3>Unique features</h3>
+	</div>
+	<article class="content">
+		<p>There are some unique features of C# that make itself stand out from the sheer amount of programming languages in the wild.</p>
+
+<p>Support for</p>
+
+<ol>
+  <li><a href="#property-syntax">Property syntax</a></li>
+  <li><a href="#partial-classes-and-methods">Partial classes and methods</a></li>
+  <li><a href="#extension-methods">Extension methods</a></li>
+  <li><a href="#anonymous-types">Anonymous types</a></li>
+  <li><a href="#language-integrated-query-linq">Language Integrated Query (LINQ)</a></li>
+</ol>
+
+<p>are some of the prominent ones.</p>
+
+<h2 id="property-syntax">Property syntax</h2>
+
+<p>Property syntax allow classes to provide a flexible mechanism for getting, setting, or computing the value of a private field <a href="#features-Docs2017">(Docs, 2017)</a>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">SaleItem</span>
+<span class="p">{</span>
+   <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+   <span class="k">public</span> <span class="kt">decimal</span> <span class="n">Price</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="partial-classes-and-methods">Partial classes and methods</h2>
+
+<p>Partial classes and methods allow a class’s members to be defined in multiple files <a href="#features-Docs2015">(Docs, 2015)</a> which provide the following benefits:</p>
+
+<ol>
+  <li>multiple programmers to work on the same class at the same time</li>
+  <li>provide a mechanism to extend a compiler generated code</li>
+</ol>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// File1</span>
+<span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">Employee</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">DoWork</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="c1">// partial method</span>
+    <span class="k">partial</span> <span class="k">void</span> <span class="nf">onNameChanged</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// File2</span>
+<span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">Employee</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">GoToLunch</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="k">partial</span> <span class="k">void</span> <span class="nf">onNameChanged</span><span class="p">()</span>  
+    <span class="p">{</span>  
+        <span class="c1">// method body  </span>
+    <span class="p">}</span>  
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="extension-methods">Extension methods</h2>
+
+<p>Extension method is a statically-defined method that also allows programmers to extend the functionality of a class that cannot be modified, such as the built-in types.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">StringExtension</span>
+<span class="p">{</span>
+    <span class="c1">// extend the built in string type</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="nf">WordCount</span><span class="p">(</span><span class="k">this</span> <span class="kt">string</span> <span class="n">str</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">str</span><span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="k">new</span> <span class="kt">char</span><span class="p">[]</span> <span class="p">{</span><span class="sc">' '</span><span class="p">,</span> <span class="sc">'.'</span><span class="p">,</span><span class="sc">'?'</span><span class="p">},</span> <span class="n">StringSplitOptions</span><span class="p">.</span><span class="n">RemoveEmptyEntries</span><span class="p">).</span><span class="n">Length</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="anonymous-types">Anonymous types</h2>
+
+<p>Anonymous type provide a simpler way to encapsulate a set of read only property into a single object and it is not necessary to define a type first. The type name is generated by compiler <a href="#features-Docs2015a">(Docs, 2015)</a>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="k">new</span> <span class="p">{</span> <span class="n">Amount</span> <span class="p">=</span> <span class="m">108</span><span class="p">,</span> <span class="n">Message</span> <span class="p">=</span> <span class="s">"Hello"</span> <span class="p">};</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">Amount</span> <span class="p">+</span> <span class="n">v</span><span class="p">.</span><span class="n">Message</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="language-integrated-query-linq">Language Integrated Query (LINQ)</h2>
+
+<p>Language Integrated Query (LINQ) provide a unified language for querying data from various data source including XML documents, SQL databases, ADO.NET datasets, .NET collections or any other format provided that a LINQ provider is available <a href="#features-Docs2015b">(Docs, 2015)</a></p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Query syntax</span>
+<span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">from</span> <span class="n">student</span> <span class="k">in</span> <span class="n">students</span>
+                <span class="k">where</span> <span class="n">student</span><span class="p">.</span><span class="n">Scores</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">&gt;</span> <span class="m">90</span>
+                <span class="k">select</span> <span class="n">student</span><span class="p">;</span>
+
+<span class="c1">// Fluent syntax</span>
+<span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">students</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">student</span> <span class="p">=&gt;</span> <span class="n">student</span><span class="p">.</span><span class="n">Scores</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">&gt;</span> <span class="m">90</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="features-Docs2017">Docs, M. (2017, March 9). Properties (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties</span></li>
+<li><span id="features-Docs2015">Docs, M. (2015, July 19). Partial Classes and Methods (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods</span></li>
+<li><span id="features-Docs2015a">Docs, M. (2015, July 19). Anonymous Types (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/anonymous-types</span></li>
+<li><span id="features-Docs2015b">Docs, M. (2015, July 19). Introduction to LINQ Queries (C#). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries</span></li></ol>
+
+	</article>
+	<hr>
+	
+
+
+	
+	
+	<div class="page-header quick-guide-page">
+		<h2>Application Domain</h2>
+		<h3>Initial intended usage</h3>
+	</div>
+	<article class="content">
+		<p>As stated in the first edition of C# Language Specification (EMCA-334):</p>
+
+<blockquote>
+  <ul>
+    <li>
+      <p>C# is intended to be a simple, modern, <strong>general-purpose</strong>, object-oriented programming language.</p>
+    </li>
+    <li>
+      <p>C# is intended to be suitable for writing applications for both <strong>hosted</strong> and <strong>embedded systems</strong>, ranging from the very large that use sophisticated operating systems, down to the very small having dedicated functions.</p>
+    </li>
+  </ul>
+
+  <p><a href="#initial-usages-International2001">(International, 2001, p. iii)</a></p>
+</blockquote>
+
+<p>Thus it is apparent that C# is designed to be used in literally any application domain (if performance consideration is not taken into account).</p>
+
+<p>Albeit its versatility, C# has mainly been used for developing commercial applications including:</p>
+
+<ol>
+  <li>business applications</li>
+  <li>web applications</li>
+</ol>
+
+<p>In fact, almost the entire .NET framework is written in C# <a href="#initial-usages-jasonall2008">(jasonall, 2008)</a></p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="initial-usages-International2001">International, E. (2001). <i>C# Language Specification</i> (1st ed.). Retrieved from https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-334%201st%20edition%20December%202001.pdf</span></li>
+<li><span id="initial-usages-jasonall2008">jasonall. (2008, May 25). A Brief History Of C# Style. Retrieved from https://blogs.msdn.microsoft.com/sourceanalysis/2008/05/25/a-brief-history-of-c-style/</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Application Domain</h2>
+		<h3>Current usage</h3>
+	</div>
+	<article class="content">
+		<p>Currently, C# has a widespread use in</p>
+
+<ol>
+  <li>desktop applications, using various technologies like
+    <ul>
+      <li><a href="#winforms">WinForms (Windows Forms)</a></li>
+      <li><a href="#wpf">WPF (Windows Presentation Foundation)</a></li>
+    </ul>
+  </li>
+  <li><a href="#aspnet">web sites, web applications and web services, primarily using ASP.NET</a></li>
+</ol>
+
+<h2 id="winforms">WinForms</h2>
+
+<p><strong>WinForms</strong>, or <em>Windows Forms</em>, is graphical class library included as a part of Microsoft .NET Framework. Its popularity can be seen though the sheer amount of commercially-available <strong>custom user interface controls</strong>:</p>
+
+<ol>
+  <li><a href="https://www.devexpress.com/products/net/controls/winforms/">DevExpress WinForms</a>
+<img src="https://tpl2141.garyng.xyz/images/posts/current-usage/devexpress-winforms.png" alt="" /></li>
+  <li><a href="https://www.infragistics.com/products/windows-forms">Windows Forms UI Controls by Infragistics</a>
+<img src="https://tpl2141.garyng.xyz/images/posts/current-usage/infragistics-winforms.png" alt="" /></li>
+  <li><a href="https://www.syncfusion.com/products/windows-forms">Syncfusion Essential Studio for Windows Forms</a>
+<img src="https://tpl2141.garyng.xyz/images/posts/current-usage/syncfusion-winforms.png" alt="" /></li>
+  <li><a href="https://xceed.com/winforms/">Xceed for WinForms</a></li>
+  <li><a href="https://www.telerik.com/products/winforms.aspx">Telerik UI for WinForms</a></li>
+  <li>… and lots more</li>
+</ol>
+
+<p><em><strong>However</strong></em>, WinForms is now in <strong>maintenance mode</strong> as no new features will be added <a href="#current-usage-Allen2014">(Allen, 2014)</a>. Developers are also advised to move forward to its successor – the XAML based UI frameworks, like WPF and UWP.</p>
+
+<p>One thing to note is that even if WinForms is nearly <em>“dead”</em>, there are still a lot of legacy WinForms applications in production till this date <a href="#current-usage-Corey2018">(Corey, 2018; Heath, 2014)</a>.</p>
+
+<h2 id="wpf">WPF</h2>
+
+<p>Almost all of the newer .NET desktop applications are written using WPF, some of the notable examples are:</p>
+
+<ol>
+  <li>Microsoft Visual Studio</li>
+  <li>Expression Blend, for designing XAML-based interfaces</li>
+</ol>
+
+<p>and a lot more, compiled from <a href="#current-usage-StackOverflow2011">(StackOverflow, 2011)</a>:</p>
+<ol>
+  <li>Autodesk AutoCAD</li>
+  <li>Nero</li>
+  <li>Lenovo ThinkVantage</li>
+  <li>HP Total Care Advisor</li>
+  <li>Intel Rapid Storage Technology</li>
+  <li>AMD Fusion Media Explorer</li>
+  <li>Nokia Music</li>
+  <li>HP TouchSmart</li>
+  <li>…</li>
+</ol>
+
+<h2 id="aspnet">ASP.NET</h2>
+
+<p>ASP.NET is an open-source <a href="#current-usage-Microsoft2017a">(Microsoft, 2017)</a> framework for building modern web apps and services with .NET. According to BuiltWith <a href="#current-usage-BuiltWith2018">(BuiltWith, 2018)</a>, there are more than 40 million websites using ASP.NET.</p>
+
+<p><img src="https://tpl2141.garyng.xyz/images/posts/current-usage/builtwith-website-using-aspnet.png" alt="" /></p>
+
+<p>Some of the prominent examples are:</p>
+
+<ol>
+  <li><a href="https://stackoverflow.com/">StackOverflow</a> <a href="#current-usage-Craver2013">(Craver, 2013)</a></li>
+  <li><a href="https://www.bing.com/">Bing</a>, and other Microsoft websites</li>
+  <li><a href="https://www.namecheap.com/">namecheap</a></li>
+  <li><a href="https://www.w3schools.com/">W3Schools</a></li>
+  <li><a href="http://www.dell.com/">Dell</a></li>
+</ol>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="current-usage-Allen2014">Allen, J. (2014, April 3). A WPF Q&amp;A. Retrieved from https://www.infoq.com/news/2014/04/WPF-QA</span></li>
+<li><span id="current-usage-Corey2018">Corey, T. (2018, April 13). IS WINFORMS DEAD? Retrieved from https://iamtimcorey.com/ask-tim-is-winforms-dead/</span></li>
+<li><span id="current-usage-Heath2014">Heath, M. (2014, June 5). Is Windows Forms Dead Yet? Retrieved from http://mark-dot-net.blogspot.com/2014/06/is-windows-forms-dead-yet.html</span></li>
+<li><span id="current-usage-StackOverflow2011">StackOverflow. (2011, June 5). What real world WPF applications are out there? Retrieved from https://stackoverflow.com/a/4456279</span></li>
+<li><span id="current-usage-Microsoft2017a">Microsoft. (2017, July 25). SP.NET MVC, Web API, and Web Pages (Razor) are Open Source Projects. Retrieved from https://www.asp.net/open-source</span></li>
+<li><span id="current-usage-BuiltWith2018">BuiltWith. (2018). Websites using ASP.NET. Retrieved from https://trends.builtwith.com/websitelist/ASP.NET</span></li>
+<li><span id="current-usage-Craver2013">Craver, N. (2013, November 22). What it takes to run Stack Overflow. Retrieved from https://nickcraver.com/blog/2013/11/22/what-it-takes-to-run-stack-overflow/</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Application Domain</h2>
+		<h3>Popularity</h3>
+	</div>
+	<article class="content">
+		<p>Yes, C# language currently is a popular language.</p>
+
+<p>The way to measure the popularity of a programming language is by examining the job demand because it reflects what the industries are searching for. Below shows the most in-demand languages of the end of the year 2017 <a href="#popularity-Putano2017">(Putano, 2017)</a>.</p>
+
+<p><img src="https://tpl2141.garyng.xyz/images/posts/popularity/most-in-demand-languages.png" alt="" /></p>
+
+<p>As we can see that C# is the 3<sup>rd</sup> most popular languages from the job websites, signifying its weight in Line of Business applications.</p>
+
+<p>According to Glassdoor, the average C# developer salary, as of April 2018 in the United States, was $79,954. The range extended from $61,000 to a high of $104,000 per annum <a href="#popularity-Glassdoor2018">(Glassdoor, 2018)</a>.</p>
+
+<p><img src="https://tpl2141.garyng.xyz/images/posts/popularity/glassdoor-csharp-average-base-pay.png" alt="" /></p>
+
+<p>Beside from the career prospects and the salary expectations, we can also analyze the number of users of using each language programming languages from GitHub. Here, GitHub is the most suitable choice of data sources because as of June 2018, GitHub reported to have over <em>30 million</em> users <a href="#popularity-GitHub2018">(GitHub, 2018)</a> and <em>57 million</em> repositories <a href="#popularity-Firestine2017">(Firestine, 2017)</a>, making it one of the largest host of source code in the world <a href="#popularity-Gousios2018">(Gousios, Vasilescu, Serebrenik, &amp; Zaidman, 2018)</a>.</p>
+
+<p>Below shows the overall rankings for each language <a href="#popularity-Frederickson2018">(Frederickson, 2018)</a>, we can see that C# is the 7<sup>th</sup> most used programming language.</p>
+
+<p><img src="https://tpl2141.garyng.xyz/images/posts/popularity/github-monthly-active-user.png" alt="" /></p>
+
+<h2 id="why-so-many-people-are-using-c">Why so many people are using C#?</h2>
+
+<ol>
+  <li>the mature ecosystem surrounding C#, including
+    <ol>
+      <li>the greatest IDE of all: <a href="https://visualstudio.com">Microsoft Visual Studio</a>, which also offers
+        <ul>
+          <li>a <strong>free</strong> version - <a href="https://visualstudio.microsoft.com/vs/community/">Microsoft Visual Studio Community</a></li>
+          <li>a <strong>Mac</strong> version - <a href="https://visualstudio.microsoft.com/vs/mac/">Microsoft Visual Studio for Mac</a></li>
+          <li>and even a <strong>lightweight</strong>, <strong>cross-platform</strong> version - <a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+        </ul>
+      </li>
+      <li><strong>.NET Framework</strong>, and the vast libraries offered by the framework</li>
+      <li><strong>.NET Core</strong>, the <strong>open source</strong> and <strong>cross platform version</strong> of .NET Framework</li>
+    </ol>
+  </li>
+  <li>C# has a small learning curve <a href="#popularity-Mashable2018">(Mashable, 2018)</a></li>
+  <li>C# is very versatile for developing a multitude of different applications, including
+    <ul>
+      <li>Desktop apps
+        <ul>
+          <li>WinForms</li>
+          <li>WPF</li>
+          <li>UWP</li>
+        </ul>
+      </li>
+      <li>Web servers and clients
+        <ul>
+          <li>ASP.NET</li>
+          <li>ASP.NET Core</li>
+        </ul>
+      </li>
+      <li>Mobile apps
+        <ul>
+          <li>Xamarin</li>
+        </ul>
+      </li>
+      <li>Games
+        <ul>
+          <li>Unity</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>the language itself still evolving continuously, which gained even more traction with the open source of .NET
+    <ul>
+      <li><strong>Roslyn</strong>, the C# (and Visual Basic) compiler is open source on <a href="https://github.com/dotnet/roslyn">GitHub</a></li>
+      <li><strong>C# language specification</strong> is also open source at <a href="https://github.com/dotnet/csharplang">GitHub</a>, where everyone can suggest ideas and make improvements to the language</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="where-c-is-used">Where C# is used?</h2>
+
+<p>C# is used in mainly business domain including desktop and web application as stated before (<a href="/02-application-domain/current-usage/">Current Usage of C#</a>). Recently, C# is also getting more and more attention in the following areas:</p>
+<ol>
+  <li>Game development
+    <ul>
+      <li><a href="https://unity3d.com/">Unity</a></li>
+    </ul>
+  </li>
+  <li>Mobile development
+    <ul>
+      <li><a href="https://visualstudio.microsoft.com/xamarin/">Xamarin</a></li>
+    </ul>
+  </li>
+  <li>Cross-platform development
+    <ul>
+      <li><a href="https://www.microsoft.com/net/learn/get-started-with-dotnet-tutorial">.NET Core</a></li>
+      <li>Xamarin</li>
+      <li><a href="https://www.mono-project.com/">Mono</a></li>
+    </ul>
+  </li>
+  <li>Artificial Intelligence
+    <ul>
+      <li><a href="https://azure.microsoft.com/en-us/overview/ai-platform/">Azure AI Platform</a></li>
+      <li><a href="https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet">ML.NET</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="popularity-Putano2017">Putano, B. (2017, December 18). Most Popular and Influential Programming Languages of 2018. Retrieved from https://stackify.com/popular-programming-languages-2018/</span></li>
+<li><span id="popularity-Glassdoor2018">Glassdoor. (2018, July 15). C#.net Developer Salaries (Glassdoor). Retrieved from https://www.glassdoor.com/Salaries/c-net-developer-salary-SRCH_KO0,15.htm</span></li>
+<li><span id="popularity-GitHub2018">GitHub. (2018, July 27). User Search. Retrieved from https://github.com/search?q=type:user&amp;type=Users</span></li>
+<li><span id="popularity-Firestine2017">Firestine, B. (2017, April 10). Celebrating nine years of GitHub with an anniversary sale. Retrieved from https://blog.github.com/2017-04-10-celebrating-nine-years-of-github-with-an-anniversary-sale/</span></li>
+<li><span id="popularity-Gousios2018">Gousios, G., Vasilescu, B., Serebrenik, A., &amp; Zaidman, A. (2018). Lean GHTorrent: GitHub Data on Demand. Retrieved from https://bvasiles.github.io/papers/lean-ghtorrent.pdf</span></li>
+<li><span id="popularity-Frederickson2018">Frederickson, B. (2018, January 25). Ranking Programming Languages by GitHub Users. Retrieved from https://www.benfrederickson.com/ranking-programming-languages-by-github-users/</span></li>
+<li><span id="popularity-Mashable2018">Mashable. (2018, March 17). It pays to learn to code with C# and here’s why. Retrieved from https://mashable.com/2018/03/17/coding-course-class-bootcamp/</span></li></ol>
+
+	</article>
+	<hr>
+	
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

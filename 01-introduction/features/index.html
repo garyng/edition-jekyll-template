@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Unique features | C# - TPL2141</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Unique features" />
+<meta name="author" content="GaryNg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="There are some unique features of C# that make itself stand out from the sheer amount of programming languages in the wild." />
+<meta property="og:description" content="There are some unique features of C# that make itself stand out from the sheer amount of programming languages in the wild." />
+<link rel="canonical" href="https://tpl2141.garyng.xyz/01-introduction/features/" />
+<meta property="og:url" content="https://tpl2141.garyng.xyz/01-introduction/features/" />
+<meta property="og:site_name" content="C# - TPL2141" />
+<script type="application/ld+json">
+{"description":"There are some unique features of C# that make itself stand out from the sheer amount of programming languages in the wild.","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/01-introduction/features/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Unique features","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/images/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/emblem.svg" width="40" height="40" alt="C# - TPL2141 logo"></a>
+				C# - TPL2141
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/">Welcome</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item top-level current">
+							
+							<a href="/01-introduction/history/">Introduction</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/01-introduction/history/">Brief history</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/styles/">Supported programming styles</a></li>
+								
+									<li class="nav-item current"><a href="/01-introduction/features/">Unique features</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/02-application-domain/Initial-intended-usage/">Application Domain</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/02-application-domain/Initial-intended-usage/">Initial intended usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/current-usage/">Current usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/popularity/">Popularity</a></li>
+								
+							</ul>
+						</li>
+					
+				</ul>
+
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/quick-guide/">Quick Guide</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>Introduction</h2>
+				<h3>Unique features</h3>
+				<h4><i>What are unique features of the language that distinguish itself from other languages?</i></h4>
+			</div>
+			<article class="content">
+				<p>There are some unique features of C# that make itself stand out from the sheer amount of programming languages in the wild.</p>
+
+<p>Support for</p>
+
+<ol>
+  <li><a href="#property-syntax">Property syntax</a></li>
+  <li><a href="#partial-classes-and-methods">Partial classes and methods</a></li>
+  <li><a href="#extension-methods">Extension methods</a></li>
+  <li><a href="#anonymous-types">Anonymous types</a></li>
+  <li><a href="#language-integrated-query-linq">Language Integrated Query (LINQ)</a></li>
+</ol>
+
+<p>are some of the prominent ones.</p>
+
+<h2 id="property-syntax">Property syntax</h2>
+
+<p>Property syntax allow classes to provide a flexible mechanism for getting, setting, or computing the value of a private field <a href="#features-Docs2017">(Docs, 2017)</a>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">SaleItem</span>
+<span class="p">{</span>
+   <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+   <span class="k">public</span> <span class="kt">decimal</span> <span class="n">Price</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="partial-classes-and-methods">Partial classes and methods</h2>
+
+<p>Partial classes and methods allow a class’s members to be defined in multiple files <a href="#features-Docs2015">(Docs, 2015)</a> which provide the following benefits:</p>
+
+<ol>
+  <li>multiple programmers to work on the same class at the same time</li>
+  <li>provide a mechanism to extend a compiler generated code</li>
+</ol>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// File1</span>
+<span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">Employee</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">DoWork</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="c1">// partial method</span>
+    <span class="k">partial</span> <span class="k">void</span> <span class="nf">onNameChanged</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// File2</span>
+<span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">Employee</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">GoToLunch</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="k">partial</span> <span class="k">void</span> <span class="nf">onNameChanged</span><span class="p">()</span>  
+    <span class="p">{</span>  
+        <span class="c1">// method body  </span>
+    <span class="p">}</span>  
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="extension-methods">Extension methods</h2>
+
+<p>Extension method is a statically-defined method that also allows programmers to extend the functionality of a class that cannot be modified, such as the built-in types.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">StringExtension</span>
+<span class="p">{</span>
+    <span class="c1">// extend the built in string type</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="nf">WordCount</span><span class="p">(</span><span class="k">this</span> <span class="kt">string</span> <span class="n">str</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">str</span><span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="k">new</span> <span class="kt">char</span><span class="p">[]</span> <span class="p">{</span><span class="sc">' '</span><span class="p">,</span> <span class="sc">'.'</span><span class="p">,</span><span class="sc">'?'</span><span class="p">},</span> <span class="n">StringSplitOptions</span><span class="p">.</span><span class="n">RemoveEmptyEntries</span><span class="p">).</span><span class="n">Length</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="anonymous-types">Anonymous types</h2>
+
+<p>Anonymous type provide a simpler way to encapsulate a set of read only property into a single object and it is not necessary to define a type first. The type name is generated by compiler <a href="#features-Docs2015a">(Docs, 2015)</a>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="k">new</span> <span class="p">{</span> <span class="n">Amount</span> <span class="p">=</span> <span class="m">108</span><span class="p">,</span> <span class="n">Message</span> <span class="p">=</span> <span class="s">"Hello"</span> <span class="p">};</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">Amount</span> <span class="p">+</span> <span class="n">v</span><span class="p">.</span><span class="n">Message</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="language-integrated-query-linq">Language Integrated Query (LINQ)</h2>
+
+<p>Language Integrated Query (LINQ) provide a unified language for querying data from various data source including XML documents, SQL databases, ADO.NET datasets, .NET collections or any other format provided that a LINQ provider is available <a href="#features-Docs2015b">(Docs, 2015)</a></p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Query syntax</span>
+<span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">from</span> <span class="n">student</span> <span class="k">in</span> <span class="n">students</span>
+                <span class="k">where</span> <span class="n">student</span><span class="p">.</span><span class="n">Scores</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">&gt;</span> <span class="m">90</span>
+                <span class="k">select</span> <span class="n">student</span><span class="p">;</span>
+
+<span class="c1">// Fluent syntax</span>
+<span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">students</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">student</span> <span class="p">=&gt;</span> <span class="n">student</span><span class="p">.</span><span class="n">Scores</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">&gt;</span> <span class="m">90</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="features-Docs2017">Docs, M. (2017, March 9). Properties (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties</span></li>
+<li><span id="features-Docs2015">Docs, M. (2015, July 19). Partial Classes and Methods (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods</span></li>
+<li><span id="features-Docs2015a">Docs, M. (2015, July 19). Anonymous Types (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/anonymous-types</span></li>
+<li><span id="features-Docs2015b">Docs, M. (2015, July 19). Introduction to LINQ Queries (C#). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries</span></li></ol>
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

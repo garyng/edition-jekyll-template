@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Supported programming styles | C# - TPL2141</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Supported programming styles" />
+<meta name="author" content="GaryNg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="C# supports more than one programming style:" />
+<meta property="og:description" content="C# supports more than one programming style:" />
+<link rel="canonical" href="https://tpl2141.garyng.xyz/01-introduction/styles/" />
+<meta property="og:url" content="https://tpl2141.garyng.xyz/01-introduction/styles/" />
+<meta property="og:site_name" content="C# - TPL2141" />
+<script type="application/ld+json">
+{"description":"C# supports more than one programming style:","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/01-introduction/styles/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Supported programming styles","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/images/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/emblem.svg" width="40" height="40" alt="C# - TPL2141 logo"></a>
+				C# - TPL2141
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/">Welcome</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item top-level current">
+							
+							<a href="/01-introduction/history/">Introduction</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/01-introduction/history/">Brief history</a></li>
+								
+									<li class="nav-item current"><a href="/01-introduction/styles/">Supported programming styles</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/features/">Unique features</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/02-application-domain/Initial-intended-usage/">Application Domain</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/02-application-domain/Initial-intended-usage/">Initial intended usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/current-usage/">Current usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/popularity/">Popularity</a></li>
+								
+							</ul>
+						</li>
+					
+				</ul>
+
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/quick-guide/">Quick Guide</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>Introduction</h2>
+				<h3>Supported programming styles</h3>
+				
+			</div>
+			<article class="content">
+				<p>C# supports more than one programming style:</p>
+
+<ol>
+  <li>Imperative programming
+    <ol>
+      <li><a href="#procedural-programming">Procedural programming</a></li>
+      <li><a href="#object-oriented-programming">Object-oriented programming</a></li>
+    </ol>
+  </li>
+  <li><a href="#functional-programming">Functional programming</a></li>
+</ol>
+
+<p>etc..</p>
+
+<p>Such language is better known as a “<strong>multi-paradigm</strong>” programming language.</p>
+
+<h2 id="procedural-programming">Procedural programming</h2>
+
+<p>Procedural language describes the sequence of statement step by step to reach the goal <a href="#styles-Hope2017">(Hope, 2017)</a>. It tells the computer how to accomplish a task by breaking down a problem into multiple, smaller sub tasks. Here is an example function for calculating the total amount of payment adapted from <a href="#styles-Lilly2016">(Lilly, 2016)</a>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">CalculateTotalAmount</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Get all the orders</span>
+    <span class="n">InventoryItem</span> <span class="n">book</span> <span class="p">=</span>
+        <span class="k">new</span> <span class="nf">InventoryItem</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">"Learn C# in 30 Minutes"</span><span class="p">,</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Normal</span><span class="p">,</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">19.95</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">2.5</span><span class="p">);</span>
+    <span class="n">InventoryItem</span> <span class="n">ebook</span> <span class="p">=</span>
+        <span class="k">new</span> <span class="nf">InventoryItem</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="s">"Learn F# in 31 Minutes"</span><span class="p">,</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Normal</span><span class="p">,</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">9.95</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+    <span class="n">InventoryItem</span> <span class="n">energyDrink</span> <span class="p">=</span>
+        <span class="k">new</span> <span class="nf">InventoryItem</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="s">"Monster Energy Drink"</span><span class="p">,</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Food</span><span class="p">,</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">1.95</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.75</span><span class="p">);</span>
+
+    <span class="c1">// Get customer</span>
+    <span class="n">Customer</span> <span class="n">joe</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Customer</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">"Joe Smith"</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+
+    <span class="c1">// Create an order</span>
+    <span class="n">Order</span> <span class="n">order</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Order</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="n">joe</span><span class="p">);</span>
+
+    <span class="n">order</span><span class="p">.</span><span class="n">LineItems</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">LineItem</span><span class="p">(</span><span class="n">book</span><span class="p">,</span> <span class="m">2</span><span class="p">));</span>
+    <span class="n">order</span><span class="p">.</span><span class="n">LineItems</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">LineItem</span><span class="p">(</span><span class="n">ebook</span><span class="p">,</span> <span class="m">1</span><span class="p">));</span>
+    <span class="n">order</span><span class="p">.</span><span class="n">LineItems</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">LineItem</span><span class="p">(</span><span class="n">energyDrink</span><span class="p">,</span> <span class="m">10</span><span class="p">));</span>
+
+    <span class="c1">// Rates</span>
+    <span class="k">const</span> <span class="kt">decimal</span> <span class="n">normalTaxRate</span> <span class="p">=</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.08</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">decimal</span> <span class="n">medicineTaxRate</span> <span class="p">=</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.00</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">decimal</span> <span class="n">foodTaxRate</span> <span class="p">=</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.04</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">decimal</span> <span class="n">luxuryTaxRate</span> <span class="p">=</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.14</span><span class="p">;</span>
+
+    <span class="kt">decimal</span> <span class="n">subTotal</span> <span class="p">=</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.0</span><span class="p">;</span>
+    <span class="kt">decimal</span> <span class="n">tax</span> <span class="p">=</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.0</span><span class="p">;</span>
+    <span class="kt">decimal</span> <span class="n">shippingFee</span> <span class="p">=</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.0</span><span class="p">;</span>
+
+    <span class="c1">// Calculate sub total based on category</span>
+    <span class="k">foreach</span><span class="p">(</span><span class="n">LineItem</span> <span class="n">lineItem</span> <span class="k">in</span> <span class="n">order</span><span class="p">.</span><span class="n">LineItems</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">decimal</span> <span class="n">lineItemSubTotal</span> <span class="p">=</span> <span class="n">lineItem</span><span class="p">.</span><span class="n">Item</span><span class="p">.</span><span class="n">Price</span> <span class="p">*</span> <span class="n">lineItem</span><span class="p">.</span><span class="n">Quantity</span><span class="p">;</span>
+
+        <span class="n">subTotal</span> <span class="p">+=</span> <span class="n">lineItemSubTotal</span><span class="p">;</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">lineItem</span><span class="p">.</span><span class="n">Item</span><span class="p">.</span><span class="n">TaxCategory</span> <span class="p">==</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Medicine</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">tax</span> <span class="p">+=</span> <span class="n">lineItemSubTotal</span> <span class="p">*</span> <span class="n">medicineTaxRate</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">lineItem</span><span class="p">.</span><span class="n">Item</span><span class="p">.</span><span class="n">TaxCategory</span> <span class="p">==</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Food</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">tax</span> <span class="p">+=</span> <span class="n">lineItemSubTotal</span> <span class="p">*</span> <span class="n">foodTaxRate</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">lineItem</span><span class="p">.</span><span class="n">Item</span><span class="p">.</span><span class="n">TaxCategory</span> <span class="p">==</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Luxury</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">tax</span> <span class="p">+=</span> <span class="n">lineItemSubTotal</span> <span class="p">*</span> <span class="n">luxuryTaxRate</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="c1">// Normal</span>
+        <span class="p">{</span>
+            <span class="n">tax</span> <span class="p">+=</span> <span class="n">lineItemSubTotal</span> <span class="p">*</span> <span class="n">normalTaxRate</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span><span class="p">(!</span><span class="n">order</span><span class="p">.</span><span class="n">Customer</span><span class="p">.</span><span class="n">IsPremiumMember</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// Non-Premium customers pay 50 cents per pound for shipping.</span>
+            <span class="n">shippingFee</span> <span class="p">+=</span> <span class="n">lineItem</span><span class="p">.</span><span class="n">Item</span><span class="p">.</span><span class="n">Weight</span> <span class="p">*</span> <span class="n">lineItem</span><span class="p">.</span><span class="n">Quantity</span> <span class="p">*</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.50</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Calculate total</span>
+    <span class="kt">decimal</span> <span class="n">total</span> <span class="p">=</span> <span class="n">subTotal</span> <span class="p">+</span> <span class="n">tax</span> <span class="p">+</span> <span class="n">shippingFee</span><span class="p">;</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">subTotal</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">tax</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">shippingFee</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">total</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="object-oriented-programming">Object-oriented programming</h2>
+
+<p>C# also supports object-oriented programming, where a problem domain is model using <strong>“objects”</strong> which may contain data and behaviors.</p>
+
+<p>The same example, but the business logic is moved to the <code class="highlighter-rouge">Order</code> class.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">CalculateTotalAmount</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">InventoryItem</span> <span class="n">book</span> <span class="p">=</span>
+        <span class="k">new</span> <span class="nf">InventoryItem</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">"Learn C# in 30 Minutes"</span><span class="p">,</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Normal</span><span class="p">,</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">19.95</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">2.5</span><span class="p">);</span>
+    <span class="n">InventoryItem</span> <span class="n">ebook</span> <span class="p">=</span>
+        <span class="k">new</span> <span class="nf">InventoryItem</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="s">"Learn F# in 31 Minutes"</span><span class="p">,</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Normal</span><span class="p">,</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">9.95</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+    <span class="n">InventoryItem</span> <span class="n">energyDrink</span> <span class="p">=</span>
+        <span class="k">new</span> <span class="nf">InventoryItem</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="s">"Monster Energy Drink"</span><span class="p">,</span> <span class="n">InventoryItem</span><span class="p">.</span><span class="n">SalesTaxCategory</span><span class="p">.</span><span class="n">Food</span><span class="p">,</span> <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">1.95</span><span class="p">,</span>
+            <span class="p">(</span><span class="kt">decimal</span><span class="p">)</span><span class="m">0.75</span><span class="p">);</span>
+
+    <span class="n">Customer</span> <span class="n">joe</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Customer</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">"Joe Smith"</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+
+    <span class="c1">// Create an order</span>
+    <span class="n">Order</span> <span class="n">order</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Order</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="n">joe</span><span class="p">);</span>
+
+    <span class="n">order</span><span class="p">.</span><span class="n">LineItems</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">LineItem</span><span class="p">(</span><span class="n">book</span><span class="p">,</span> <span class="m">2</span><span class="p">));</span>
+    <span class="n">order</span><span class="p">.</span><span class="n">LineItems</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">LineItem</span><span class="p">(</span><span class="n">ebook</span><span class="p">,</span> <span class="m">1</span><span class="p">));</span>
+    <span class="n">order</span><span class="p">.</span><span class="n">LineItems</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">LineItem</span><span class="p">(</span><span class="n">energyDrink</span><span class="p">,</span> <span class="m">10</span><span class="p">));</span>
+
+    <span class="c1">// Check values. </span>
+    <span class="c1">// Notice that nothing needs to be calculated in this code.</span>
+    <span class="c1">// All values are calculated in the business classes.</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">SubTotal</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">Tax</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">ShippingFee</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">Total</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="functional-programming">Functional programming</h2>
+
+<p>Functional language is a programming language built over and around logical functions or procedures within its programming structure. For example, a LINQ query:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">database</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">item</span> <span class="p">=&gt;</span> <span class="n">item</span><span class="p">.</span><span class="n">Customer</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="s">"Joe"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">item</span> <span class="p">=&gt;</span> <span class="n">item</span><span class="p">.</span><span class="nf">CalculatePrice</span><span class="p">())</span>
+        <span class="p">.</span><span class="nf">Aggregate</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="p">(</span><span class="n">accumulate</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">accumulate</span> <span class="p">+</span> <span class="n">price</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="styles-Hope2017">Hope, C. (2017, December 7). Imperative programming. Retrieved from https://www.computerhope.com/jargon/i/imp-programming.htm</span></li>
+<li><span id="styles-Lilly2016">Lilly, S. (2016, July 4). [C# Anti-Pattern] Procedural code in Object-Oriented code. Retrieved from https://scottlilly.com/c-anti-pattern-procedural-code-in-object-oriented-code/</span></li></ol>
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

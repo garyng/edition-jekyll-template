@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Search | C# - TPL2141</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Search" />
+<meta name="author" content="GaryNg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="TPL2141: Programming Language Concept project - C#" />
+<meta property="og:description" content="TPL2141: Programming Language Concept project - C#" />
+<link rel="canonical" href="https://tpl2141.garyng.xyz/search/" />
+<meta property="og:url" content="https://tpl2141.garyng.xyz/search/" />
+<meta property="og:site_name" content="C# - TPL2141" />
+<script type="application/ld+json">
+{"description":"TPL2141: Programming Language Concept project - C#","author":{"@type":"Person","name":"GaryNg"},"@type":"WebPage","url":"https://tpl2141.garyng.xyz/search/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Search","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/images/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/emblem.svg" width="40" height="40" alt="C# - TPL2141 logo"></a>
+				C# - TPL2141
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/">Welcome</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/01-introduction/history/">Introduction</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/01-introduction/history/">Brief history</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/styles/">Supported programming styles</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/features/">Unique features</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/02-application-domain/Initial-intended-usage/">Application Domain</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/02-application-domain/Initial-intended-usage/">Initial intended usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/current-usage/">Current usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/popularity/">Popularity</a></li>
+								
+							</ul>
+						</li>
+					
+				</ul>
+
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/quick-guide/">Quick Guide</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>C# - TPL2141</h2>
+				<h3>Search</h3>
+				
+			</div>
+			<article class="content">
+				<p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
+<ul id="search-results"></ul>
+
+<script>
+	window.data = {
+		
+			
+				
+					
+					
+
+					"01-introduction-features": {
+						"id": "01-introduction-features",
+						"title": "Unique features",
+						"category": "",
+						"url": " /01-introduction/features/",
+						"content": "There are some unique features of C# that make itself stand out from the sheer amount of programming languages in the wild. Support for Property syntax Partial classes and methods Extension methods Anonymous types Language Integrated Query (LINQ) are some of the prominent ones. Property syntax Property syntax allow classes to provide a flexible mechanism for getting, setting, or computing the value of a private field (Docs, 2017). public class SaleItem { public string Name { get; set; } public decimal Price { get; set; } } Partial classes and methods Partial classes and methods allow a class’s members to be defined in multiple files (Docs, 2015) which provide the following benefits: multiple programmers to work on the same class at the same time provide a mechanism to extend a compiler generated code File1 public partial class Employee { public void DoWork() { } partial method partial void onNameChanged(); } File2 public partial class Employee { public void GoToLunch() { } partial void onNameChanged() { method body } } Extension methods Extension method is a statically-defined method that also allows programmers to extend the functionality of a class that cannot be modified, such as the built-in types. public static class StringExtension { extend the built in string type public static int WordCount(this string str) { return str.Split(new char[] {' ', '.','?'}, StringSplitOptions.RemoveEmptyEntries).Length; } } Anonymous types Anonymous type provide a simpler way to encapsulate a set of read only property into a single object and it is not necessary to define a type first. The type name is generated by compiler (Docs, 2015). var v = new { Amount = 108, Message = \"Hello\" }; Console.WriteLine(v.Amount + v.Message); Language Integrated Query (LINQ) Language Integrated Query (LINQ) provide a unified language for querying data from various data source including XML documents, SQL databases, ADO.NET datasets, .NET collections or any other format provided that a LINQ provider is available (Docs, 2015) Query syntax var result = from student in students where student.Scores[0] &gt; 90 select student; Fluent syntax var result = students.Where(student =&gt; student.Scores[0] &gt; 90); References Docs, M. (2017, March 9). Properties (C# Programming Guide). Retrieved from https: docs.microsoft.com en-us dotnet csharp programming-guide classes-and-structs properties Docs, M. (2015, July 19). Partial Classes and Methods (C# Programming Guide). Retrieved from https: docs.microsoft.com en-us dotnet csharp programming-guide classes-and-structs partial-classes-and-methods Docs, M. (2015, July 19). Anonymous Types (C# Programming Guide). Retrieved from https: docs.microsoft.com en-us dotnet csharp programming-guide classes-and-structs anonymous-types Docs, M. (2015, July 19). Introduction to LINQ Queries (C#). Retrieved from https: docs.microsoft.com en-us dotnet csharp programming-guide concepts linq introduction-to-linq-queries"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"01-introduction-history": {
+						"id": "01-introduction-history",
+						"title": "Brief history",
+						"category": "",
+						"url": " /01-introduction/history/",
+						"content": "C#, pronounced as “see-sharp” (Kovacs, 2007), is a multi-paradigm programing language that was developed by Microsoft around year 2000 under, and is still under, the lead of the prominent Danish software engineer – Anders Hejlsberg (Microsoft, 2006). The design of the language is heavily influenced by C++ and Java (Naugler, 2007) during its infancy but had embarked on an increasingly divergent journey since then. Throughout the almost 18 years of development, C# has gone through many major versions (Microsoft, 2017) – currently sitting at version 7.3, with version 8.0 at the bleeding edge of prerelease. Why C# is invented? The most plausible motivation for Microsoft creating a new language that is so similar to Java back then probably rooted in the “Sun Microsystems v. Microsoft Corporation” lawsuit (Shankland, 2002). As the settlement of the case, Microsoft was forced to discontinue its proprietary Microsoft Java Virtual Machine (MSJVM) – an attempt of the giant to drive more customers to use Windows and Microsoft products (under the internally-used “Embrace, extend, and extinguish” slogan (Economist, 2000)). Eventually, C# was born, “which was not intended to needle Sun” but “with that as a side effect” to Sun (Wong, 2000). Side note The “sharp” in C# should be the sharp symbol “♯” – however the hash symbol “#” is chosen as the close approximate because the sharp symbol is not present on most keyboard layouts (MSDN, 2006). Besides from being inspired by musical notation (Kovacs, 2007), the name of C# can also be viewed as a ligature of four plus symbols arranged in a two-by-two grid, implying its close relation to both C and C++ as a form of “increment” to the former two (Hamilton, 2008). References Kovacs, J. (2007, September 7). C# .NET History Lesson - James Kovacs’ Weblog. Retrieved from http: jameskovacs.com 2007 09 07 cnet-history-lesson Microsoft. (2006, October 3). (Archived) Anders Hejlsberg: Technical Fellow. Retrieved from https: web.archive.org web 20090427201423 http: www.microsoft.com presspass exec techfellow Hejlsberg default.mspx Naugler, D. R. (2007). C# 2.0 FOR C++ AND JAVA PROGRAMMER - CONFERENCE WORKSHOP. Journal of Computing Sciences in Colleges, 22(5). Microsoft. (2017, September 20). The history of C#. Retrieved from https: docs.microsoft.com en-us dotnet csharp whats-new csharp-version-history Shankland, S. (2002, March 15). Sun, Microsoft settle Java suit. Retrieved from https: www.cnet.com news sun-microsoft-settle-java-suit Economist, T. (2000, March 30). Deadly embrace. Retrieved from https: www.economist.com business 2000 03 30 deadly-embrace Wong, W. (2000, June 26). (Archived) Microsoft aims at Sun’s Java with standards push. Retrieved from http: web.archive.org web 20070713045941 http: news.com.com 2100-1001-242400.html MSDN. (2006). (Archived) Frequently Asked Questions About Visual C# .NET 2002. Retrieved from https: web.archive.org web 20060214002638 http: msdn.microsoft.com vcsharp previous 2002 FAQ default.aspx Hamilton, N. (2008, October 3). The A-Z of Programming Languages: C#. Retrieved from https: www.computerworld.com.au article 261958 a-z_programming_languages_c_ ?pp=2"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"01-introduction-slide": {
+						"id": "01-introduction-slide",
+						"title": "Slide",
+						"category": "",
+						"url": " /01-introduction/slide/",
+						"content": "C# “see-sharp” multi-paradigm language developed by Microsoft around year 2000 under the lead of Anders Hejlsberg Andres Hejlsberg C# is very similar to C++ and Java 7.3 latest version of C# released on 7 May 2018 Why C# is invented? The most plausible explanation: the lawsuit between Sun Microsystems and Microsoft forced to discontinue Microsoft Java Virtual Machine (MSJVM) an attempt to drive more customer to use Windows and Microsoft products “embrace, extend, and extinguish” eventually, C# was born as a “response” to Java C# supports more than one programming style hence the name multi-paradigm Procedural programming Object-oriented programming Functional programming … etc Procedural programming step by step public void CalculateTotalAmount() { Get all the orders InventoryItem book = new InventoryItem(1, \"Learn C# in 30 Minutes\", InventoryItem.SalesTaxCategory.Normal, (decimal)19.95, (decimal)2.5); InventoryItem ebook = new InventoryItem(2, \"Learn F# in 31 Minutes\", InventoryItem.SalesTaxCategory.Normal, (decimal)9.95, 0); InventoryItem energyDrink = new InventoryItem(3, \"Monster Energy Drink\", InventoryItem.SalesTaxCategory.Food, (decimal)1.95, (decimal)0.75); Get customer Customer joe = new Customer(1, \"Joe Smith\", false); Create an order Order order = new Order(1, joe); order.LineItems.Add(new LineItem(book, 2)); order.LineItems.Add(new LineItem(ebook, 1)); order.LineItems.Add(new LineItem(energyDrink, 10)); Rates const decimal normalTaxRate = (decimal)0.08; const decimal medicineTaxRate = (decimal)0.00; const decimal foodTaxRate = (decimal)0.04; const decimal luxuryTaxRate = (decimal)0.14; decimal subTotal = (decimal)0.0; decimal tax = (decimal)0.0; decimal shippingFee = (decimal)0.0; Calculate sub total based on category foreach(LineItem lineItem in order.LineItems) { decimal lineItemSubTotal = lineItem.Item.Price * lineItem.Quantity; subTotal += lineItemSubTotal; if(lineItem.Item.TaxCategory == InventoryItem.SalesTaxCategory.Medicine) { tax += lineItemSubTotal * medicineTaxRate; } else if(lineItem.Item.TaxCategory == InventoryItem.SalesTaxCategory.Food) { tax += lineItemSubTotal * foodTaxRate; } else if(lineItem.Item.TaxCategory == InventoryItem.SalesTaxCategory.Luxury) { tax += lineItemSubTotal * luxuryTaxRate; } else Normal { tax += lineItemSubTotal * normalTaxRate; } if(!order.Customer.IsPremiumMember) { Non-Premium customers pay 50 cents per pound for shipping. shippingFee += lineItem.Item.Weight * lineItem.Quantity * (decimal)0.50; } } Calculate total decimal total = subTotal + tax + shippingFee; System.Console.WriteLine(subTotal); System.Console.WriteLine(tax); System.Console.WriteLine(shippingFee); System.Console.WriteLine(total); } get orders get customer create an order initialize rates calculate subtotal based on category calculate total display Object-oriented programming “objects” public void CalculateTotalAmount() { InventoryItem book = new InventoryItem(1, \"Learn C# in 30 Minutes\", InventoryItem.SalesTaxCategory.Normal, (decimal)19.95, (decimal)2.5); InventoryItem ebook = new InventoryItem(2, \"Learn F# in 31 Minutes\", InventoryItem.SalesTaxCategory.Normal, (decimal)9.95, 0); InventoryItem energyDrink = new InventoryItem(3, \"Monster Energy Drink\", InventoryItem.SalesTaxCategory.Food, (decimal)1.95, (decimal)0.75); Customer joe = new Customer(1, \"Joe Smith\", false); Create an order Order order = new Order(1, joe); order.LineItems.Add(new LineItem(book, 2)); order.LineItems.Add(new LineItem(ebook, 1)); order.LineItems.Add(new LineItem(energyDrink, 10)); Check values. Notice that nothing needs to be calculated in this code. All values are calculated in the business classes. System.Console.WriteLine(order.SubTotal); System.Console.WriteLine(order.Tax); System.Console.WriteLine(order.ShippingFee); System.Console.WriteLine(order.Total); } Same example, but calculation logic is hidden inside objects Functional programming “mathematical functions” A simple LINQ query database.Where(item =&gt; item.Customer.Name == \"Joe\") .Select(item =&gt; item.CalculatePrice()) .Aggregate(0, (accumulate, price) =&gt; accumulate + price); Unique features of C# Property syntax Partial classes and methods Extension methods Anonymous types Language Integrated Query (LINQ) etc… Property syntax easily customize the mechanisms for getting, setting, or computing value of a field. public class SaleItem { public string Name { get; set; } public decimal Price { get; set; } } Partial classes and methods where a class’s member is split into multiple files File1 public partial class Employee { public void DoWork() { } partial method partial void onNameChanged(); } File2 public partial class Employee { public void GoToLunch() { } partial void onNameChanged() { method body } } Extension methods allow programmers to extend a class that cannot be modified, especially those built-in types public static class StringExtension { extend the built in string type public static int WordCount(this string str) { return str.Split(new char[] {' ', '.','?'}, StringSplitOptions.RemoveEmptyEntries).Length; } } Anonymous types quickly define an object without defining the type first var v = new { Amount = 108, Message = \"Hello\" }; Console.WriteLine(v.Amount + v.Message); Language Integrated Query (LINQ) provide a unified language for querying data from various sources Query syntax var result = from student in students where student.Scores[0] &gt; 90 select student; Fluent syntax var result = students.Where(student =&gt; student.Scores[0] &gt; 90); The end. Thanks!"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"01-introduction-styles": {
+						"id": "01-introduction-styles",
+						"title": "Supported programming styles",
+						"category": "",
+						"url": " /01-introduction/styles/",
+						"content": "C# supports more than one programming style: Imperative programming Procedural programming Object-oriented programming Functional programming etc.. Such language is better known as a “multi-paradigm” programming language. Procedural programming Procedural language describes the sequence of statement step by step to reach the goal (Hope, 2017). It tells the computer how to accomplish a task by breaking down a problem into multiple, smaller sub tasks. Here is an example function for calculating the total amount of payment adapted from (Lilly, 2016). public void CalculateTotalAmount() { Get all the orders InventoryItem book = new InventoryItem(1, \"Learn C# in 30 Minutes\", InventoryItem.SalesTaxCategory.Normal, (decimal)19.95, (decimal)2.5); InventoryItem ebook = new InventoryItem(2, \"Learn F# in 31 Minutes\", InventoryItem.SalesTaxCategory.Normal, (decimal)9.95, 0); InventoryItem energyDrink = new InventoryItem(3, \"Monster Energy Drink\", InventoryItem.SalesTaxCategory.Food, (decimal)1.95, (decimal)0.75); Get customer Customer joe = new Customer(1, \"Joe Smith\", false); Create an order Order order = new Order(1, joe); order.LineItems.Add(new LineItem(book, 2)); order.LineItems.Add(new LineItem(ebook, 1)); order.LineItems.Add(new LineItem(energyDrink, 10)); Rates const decimal normalTaxRate = (decimal)0.08; const decimal medicineTaxRate = (decimal)0.00; const decimal foodTaxRate = (decimal)0.04; const decimal luxuryTaxRate = (decimal)0.14; decimal subTotal = (decimal)0.0; decimal tax = (decimal)0.0; decimal shippingFee = (decimal)0.0; Calculate sub total based on category foreach(LineItem lineItem in order.LineItems) { decimal lineItemSubTotal = lineItem.Item.Price * lineItem.Quantity; subTotal += lineItemSubTotal; if(lineItem.Item.TaxCategory == InventoryItem.SalesTaxCategory.Medicine) { tax += lineItemSubTotal * medicineTaxRate; } else if(lineItem.Item.TaxCategory == InventoryItem.SalesTaxCategory.Food) { tax += lineItemSubTotal * foodTaxRate; } else if(lineItem.Item.TaxCategory == InventoryItem.SalesTaxCategory.Luxury) { tax += lineItemSubTotal * luxuryTaxRate; } else Normal { tax += lineItemSubTotal * normalTaxRate; } if(!order.Customer.IsPremiumMember) { Non-Premium customers pay 50 cents per pound for shipping. shippingFee += lineItem.Item.Weight * lineItem.Quantity * (decimal)0.50; } } Calculate total decimal total = subTotal + tax + shippingFee; System.Console.WriteLine(subTotal); System.Console.WriteLine(tax); System.Console.WriteLine(shippingFee); System.Console.WriteLine(total); } Object-oriented programming C# also supports object-oriented programming, where a problem domain is model using “objects” which may contain data and behaviors. The same example, but the business logic is moved to the Order class. public void CalculateTotalAmount() { InventoryItem book = new InventoryItem(1, \"Learn C# in 30 Minutes\", InventoryItem.SalesTaxCategory.Normal, (decimal)19.95, (decimal)2.5); InventoryItem ebook = new InventoryItem(2, \"Learn F# in 31 Minutes\", InventoryItem.SalesTaxCategory.Normal, (decimal)9.95, 0); InventoryItem energyDrink = new InventoryItem(3, \"Monster Energy Drink\", InventoryItem.SalesTaxCategory.Food, (decimal)1.95, (decimal)0.75); Customer joe = new Customer(1, \"Joe Smith\", false); Create an order Order order = new Order(1, joe); order.LineItems.Add(new LineItem(book, 2)); order.LineItems.Add(new LineItem(ebook, 1)); order.LineItems.Add(new LineItem(energyDrink, 10)); Check values. Notice that nothing needs to be calculated in this code. All values are calculated in the business classes. System.Console.WriteLine(order.SubTotal); System.Console.WriteLine(order.Tax); System.Console.WriteLine(order.ShippingFee); System.Console.WriteLine(order.Total); } Functional programming Functional language is a programming language built over and around logical functions or procedures within its programming structure. For example, a LINQ query: database.Where(item =&gt; item.Customer.Name == \"Joe\") .Select(item =&gt; item.CalculatePrice()) .Aggregate(0, (accumulate, price) =&gt; accumulate + price); References Hope, C. (2017, December 7). Imperative programming. Retrieved from https: www.computerhope.com jargon i imp-programming.htm Lilly, S. (2016, July 4). [C# Anti-Pattern] Procedural code in Object-Oriented code. Retrieved from https: scottlilly.com c-anti-pattern-procedural-code-in-object-oriented-code"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"02-application-domain-initial-intended-usage": {
+						"id": "02-application-domain-initial-intended-usage",
+						"title": "Initial intended usage",
+						"category": "",
+						"url": " /02-application-domain/Initial-intended-usage/",
+						"content": "As stated in the first edition of C# Language Specification (EMCA-334): C# is intended to be a simple, modern, general-purpose, object-oriented programming language. C# is intended to be suitable for writing applications for both hosted and embedded systems, ranging from the very large that use sophisticated operating systems, down to the very small having dedicated functions. (International, 2001, p. iii) Thus it is apparent that C# is designed to be used in literally any application domain (if performance consideration is not taken into account). Albeit its versatility, C# has mainly been used for developing commercial applications including: business applications web applications In fact, almost the entire .NET framework is written in C# (jasonall, 2008) References International, E. (2001). C# Language Specification (1st ed.). Retrieved from https: www.ecma-international.org publications files ECMA-ST-ARCH ECMA-334%201st%20edition%20December%202001.pdf jasonall. (2008, May 25). A Brief History Of C# Style. Retrieved from https: blogs.msdn.microsoft.com sourceanalysis 2008 05 25 a-brief-history-of-c-style"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"02-application-domain-current-usage": {
+						"id": "02-application-domain-current-usage",
+						"title": "Current usage",
+						"category": "",
+						"url": " /02-application-domain/current-usage/",
+						"content": "Currently, C# has a widespread use in desktop applications, using various technologies like WinForms (Windows Forms) WPF (Windows Presentation Foundation) web sites, web applications and web services, primarily using ASP.NET WinForms WinForms, or Windows Forms, is graphical class library included as a part of Microsoft .NET Framework. Its popularity can be seen though the sheer amount of commercially-available custom user interface controls: DevExpress WinForms Windows Forms UI Controls by Infragistics Syncfusion Essential Studio for Windows Forms Xceed for WinForms Telerik UI for WinForms … and lots more However, WinForms is now in maintenance mode as no new features will be added (Allen, 2014). Developers are also advised to move forward to its successor – the XAML based UI frameworks, like WPF and UWP. One thing to note is that even if WinForms is nearly “dead”, there are still a lot of legacy WinForms applications in production till this date (Corey, 2018; Heath, 2014). WPF Almost all of the newer .NET desktop applications are written using WPF, some of the notable examples are: Microsoft Visual Studio Expression Blend, for designing XAML-based interfaces and a lot more, compiled from (StackOverflow, 2011): Autodesk AutoCAD Nero Lenovo ThinkVantage HP Total Care Advisor Intel Rapid Storage Technology AMD Fusion Media Explorer Nokia Music HP TouchSmart … ASP.NET ASP.NET is an open-source (Microsoft, 2017) framework for building modern web apps and services with .NET. According to BuiltWith (BuiltWith, 2018), there are more than 40 million websites using ASP.NET. Some of the prominent examples are: StackOverflow (Craver, 2013) Bing, and other Microsoft websites namecheap W3Schools Dell References Allen, J. (2014, April 3). A WPF Q&amp;A. Retrieved from https: www.infoq.com news 2014 04 WPF-QA Corey, T. (2018, April 13). IS WINFORMS DEAD? Retrieved from https: iamtimcorey.com ask-tim-is-winforms-dead Heath, M. (2014, June 5). Is Windows Forms Dead Yet? Retrieved from http: mark-dot-net.blogspot.com 2014 06 is-windows-forms-dead-yet.html StackOverflow. (2011, June 5). What real world WPF applications are out there? Retrieved from https: stackoverflow.com a 4456279 Microsoft. (2017, July 25). SP.NET MVC, Web API, and Web Pages (Razor) are Open Source Projects. Retrieved from https: www.asp.net open-source BuiltWith. (2018). Websites using ASP.NET. Retrieved from https: trends.builtwith.com websitelist ASP.NET Craver, N. (2013, November 22). What it takes to run Stack Overflow. Retrieved from https: nickcraver.com blog 2013 11 22 what-it-takes-to-run-stack-overflow"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"02-application-domain-popularity": {
+						"id": "02-application-domain-popularity",
+						"title": "Popularity",
+						"category": "",
+						"url": " /02-application-domain/popularity/",
+						"content": "Yes, C# language currently is a popular language. The way to measure the popularity of a programming language is by examining the job demand because it reflects what the industries are searching for. Below shows the most in-demand languages of the end of the year 2017 (Putano, 2017). As we can see that C# is the 3rd most popular languages from the job websites, signifying its weight in Line of Business applications. According to Glassdoor, the average C# developer salary, as of April 2018 in the United States, was $79,954. The range extended from $61,000 to a high of $104,000 per annum (Glassdoor, 2018). Beside from the career prospects and the salary expectations, we can also analyze the number of users of using each language programming languages from GitHub. Here, GitHub is the most suitable choice of data sources because as of June 2018, GitHub reported to have over 30 million users (GitHub, 2018) and 57 million repositories (Firestine, 2017), making it one of the largest host of source code in the world (Gousios, Vasilescu, Serebrenik, &amp; Zaidman, 2018). Below shows the overall rankings for each language (Frederickson, 2018), we can see that C# is the 7th most used programming language. Why so many people are using C#? the mature ecosystem surrounding C#, including the greatest IDE of all: Microsoft Visual Studio, which also offers a free version - Microsoft Visual Studio Community a Mac version - Microsoft Visual Studio for Mac and even a lightweight, cross-platform version - Visual Studio Code .NET Framework, and the vast libraries offered by the framework .NET Core, the open source and cross platform version of .NET Framework C# has a small learning curve (Mashable, 2018) C# is very versatile for developing a multitude of different applications, including Desktop apps WinForms WPF UWP Web servers and clients ASP.NET ASP.NET Core Mobile apps Xamarin Games Unity the language itself still evolving continuously, which gained even more traction with the open source of .NET Roslyn, the C# (and Visual Basic) compiler is open source on GitHub C# language specification is also open source at GitHub, where everyone can suggest ideas and make improvements to the language Where C# is used? C# is used in mainly business domain including desktop and web application as stated before (Current Usage of C#). Recently, C# is also getting more and more attention in the following areas: Game development Unity Mobile development Xamarin Cross-platform development .NET Core Xamarin Mono Artificial Intelligence Azure AI Platform ML.NET References Putano, B. (2017, December 18). Most Popular and Influential Programming Languages of 2018. Retrieved from https: stackify.com popular-programming-languages-2018 Glassdoor. (2018, July 15). C#.net Developer Salaries (Glassdoor). Retrieved from https: www.glassdoor.com Salaries c-net-developer-salary-SRCH_KO0,15.htm GitHub. (2018, July 27). User Search. Retrieved from https: github.com search?q=type:user&amp;type=Users Firestine, B. (2017, April 10). Celebrating nine years of GitHub with an anniversary sale. Retrieved from https: blog.github.com 2017-04-10-celebrating-nine-years-of-github-with-an-anniversary-sale Gousios, G., Vasilescu, B., Serebrenik, A., &amp; Zaidman, A. (2018). Lean GHTorrent: GitHub Data on Demand. Retrieved from https: bvasiles.github.io papers lean-ghtorrent.pdf Frederickson, B. (2018, January 25). Ranking Programming Languages by GitHub Users. Retrieved from https: www.benfrederickson.com ranking-programming-languages-by-github-users Mashable. (2018, March 17). It pays to learn to code with C# and here’s why. Retrieved from https: mashable.com 2018 03 17 coding-course-class-bootcamp"
+					}
+
+					
+				
+			
+		
+	};
+</script>
+<script src="/scripts/lunr.min.js"></script>
+<script src="/scripts/search.js"></script>
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

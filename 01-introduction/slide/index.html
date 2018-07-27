@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Slide | C# - TPL2141</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Slide" />
+<meta name="author" content="GaryNg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="C#" />
+<meta property="og:description" content="C#" />
+<link rel="canonical" href="https://tpl2141.garyng.xyz/01-introduction/slide/" />
+<meta property="og:url" content="https://tpl2141.garyng.xyz/01-introduction/slide/" />
+<meta property="og:site_name" content="C# - TPL2141" />
+<script type="application/ld+json">
+{"description":"C#","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/01-introduction/slide/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Slide","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
+
+		<title>Slide </title>
+
+		<link rel="stylesheet" href="/scripts/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="/scripts/reveal.js/css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="/scripts/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '/scripts/reveal.js/css/print/pdf.css' : '/scripts/reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="/scripts/reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				
+				<section data-markdown
+						data-separator="^\n---\n$"
+						data-separator-vertical="^\n--\n$"
+						data-separator-notes="^Note:">
+					<script type="text/template">
+						# C&#35; 
+
+_"see-sharp"_
+
+<!-- .element: class="fragment" --> **multi-paradigm** language
+
+<!-- .element: class="fragment" --> developed by Microsoft around year 2000
+
+<!-- .element: class="fragment" --> under the lead of _Anders Hejlsberg_
+
+---
+
+![Anders Hejlsberg](/images/posts/history/Anders_Hejlsberg.jpg)
+
+_Andres Hejlsberg_
+
+---
+
+`C#` is very similar to `C++` and `Java`
+
+---
+
+## 7.3
+
+latest version of C#
+
+released on _7 May 2018_
+
+---
+
+# Why C# is invented?
+
+<!-- .element: class="fragment" --> The most plausible explanation:
+
+<!-- .element: class="fragment" --> the lawsuit between
+
+<!-- .element: class="fragment" --> **Sun Microsystems** and **Microsoft**
+
+---
+
+forced to discontinue
+
+## Microsoft Java Virtual Machine (MSJVM)
+
+<!-- .element: class="fragment" --> an attempt to drive more customer to use Windows and Microsoft products
+
+<!-- .element: class="fragment" --> _"embrace, extend, and extinguish"_
+
+---
+
+eventually,
+
+## C&#35; was born
+
+as a "response" to `Java`
+
+---
+
+C# supports
+
+## more than one programming style
+
+<!-- .element: class="fragment" --> hence the name **multi-paradigm**
+
+---
+
+1. Procedural programming
+1. Object-oriented programming <!-- .element: class="fragment" -->
+1. Functional programming <!-- .element: class="fragment" -->
+1. ... etc <!-- .element: class="fragment" -->
+
+---
+
+## Procedural programming
+
+_step by step_
+
+---
+
+```cs
+public void CalculateTotalAmount()
+{
+    // Get all the orders
+    InventoryItem book =
+        new InventoryItem(1, "Learn C# in 30 Minutes", InventoryItem.SalesTaxCategory.Normal, (decimal)19.95,
+            (decimal)2.5);
+    InventoryItem ebook =
+        new InventoryItem(2, "Learn F# in 31 Minutes", InventoryItem.SalesTaxCategory.Normal, (decimal)9.95, 0);
+    InventoryItem energyDrink =
+        new InventoryItem(3, "Monster Energy Drink", InventoryItem.SalesTaxCategory.Food, (decimal)1.95,
+            (decimal)0.75);
+
+    // Get customer
+    Customer joe = new Customer(1, "Joe Smith", false);
+
+    // Create an order
+    Order order = new Order(1, joe);
+
+    order.LineItems.Add(new LineItem(book, 2));
+    order.LineItems.Add(new LineItem(ebook, 1));
+    order.LineItems.Add(new LineItem(energyDrink, 10));
+
+    // Rates
+    const decimal normalTaxRate = (decimal)0.08;
+    const decimal medicineTaxRate = (decimal)0.00;
+    const decimal foodTaxRate = (decimal)0.04;
+    const decimal luxuryTaxRate = (decimal)0.14;
+
+    decimal subTotal = (decimal)0.0;
+    decimal tax = (decimal)0.0;
+    decimal shippingFee = (decimal)0.0;
+
+    // Calculate sub total based on category
+    foreach(LineItem lineItem in order.LineItems)
+    {
+        decimal lineItemSubTotal = lineItem.Item.Price * lineItem.Quantity;
+
+        subTotal += lineItemSubTotal;
+
+        if(lineItem.Item.TaxCategory == InventoryItem.SalesTaxCategory.Medicine)
+        {
+            tax += lineItemSubTotal * medicineTaxRate;
+        }
+        else if(lineItem.Item.TaxCategory == InventoryItem.SalesTaxCategory.Food)
+        {
+            tax += lineItemSubTotal * foodTaxRate;
+        }
+        else if(lineItem.Item.TaxCategory == InventoryItem.SalesTaxCategory.Luxury)
+        {
+            tax += lineItemSubTotal * luxuryTaxRate;
+        }
+        else // Normal
+        {
+            tax += lineItemSubTotal * normalTaxRate;
+        }
+
+        if(!order.Customer.IsPremiumMember)
+        {
+            // Non-Premium customers pay 50 cents per pound for shipping.
+            shippingFee += lineItem.Item.Weight * lineItem.Quantity * (decimal)0.50;
+        }
+    }
+
+    // Calculate total
+    decimal total = subTotal + tax + shippingFee;
+
+    System.Console.WriteLine(subTotal);
+    System.Console.WriteLine(tax);
+    System.Console.WriteLine(shippingFee);
+    System.Console.WriteLine(total);
+}
+```
+
+---
+
+1. get orders
+1. get customer
+1. create an order
+1. initialize rates
+1. calculate subtotal based on category
+1. calculate total
+1. display
+
+---
+
+## Object-oriented programming
+
+_"objects"_
+
+---
+
+```cs
+public void CalculateTotalAmount()
+{
+    InventoryItem book =
+        new InventoryItem(1, "Learn C# in 30 Minutes", InventoryItem.SalesTaxCategory.Normal, (decimal)19.95,
+            (decimal)2.5);
+    InventoryItem ebook =
+        new InventoryItem(2, "Learn F# in 31 Minutes", InventoryItem.SalesTaxCategory.Normal, (decimal)9.95, 0);
+    InventoryItem energyDrink =
+        new InventoryItem(3, "Monster Energy Drink", InventoryItem.SalesTaxCategory.Food, (decimal)1.95,
+            (decimal)0.75);
+
+    Customer joe = new Customer(1, "Joe Smith", false);
+
+    // Create an order
+    Order order = new Order(1, joe);
+
+    order.LineItems.Add(new LineItem(book, 2));
+    order.LineItems.Add(new LineItem(ebook, 1));
+    order.LineItems.Add(new LineItem(energyDrink, 10));
+
+    // Check values. 
+    // Notice that nothing needs to be calculated in this code.
+    // All values are calculated in the business classes.
+    System.Console.WriteLine(order.SubTotal);
+    System.Console.WriteLine(order.Tax);
+    System.Console.WriteLine(order.ShippingFee);
+    System.Console.WriteLine(order.Total);
+}
+```
+
+---
+
+Same example, but calculation logic is **hidden** inside objects
+
+---
+
+## Functional programming
+
+_"mathematical functions"_
+
+---
+
+A simple `LINQ` query
+
+```cs
+database.Where(item => item.Customer.Name == "Joe")
+        .Select(item => item.CalculatePrice())
+        .Aggregate(0, (accumulate, price) => accumulate + price);
+```
+
+---
+
+# Unique features of C&#35;
+
+---
+
+1. Property syntax
+1. Partial classes and methods <!-- .element: class="fragment" -->
+1. Extension methods <!-- .element: class="fragment" -->
+1. Anonymous types <!-- .element: class="fragment" -->
+1. Language Integrated Query (LINQ) <!-- .element: class="fragment" -->
+1. etc... <!-- .element: class="fragment" -->
+
+---
+
+## Property syntax
+
+easily customize the mechanisms for getting, setting, or computing value of a _field_.
+
+---
+
+```cs
+public class SaleItem
+{
+   public string Name { get; set; }
+   public decimal Price { get; set; }
+}
+```
+
+---
+
+## Partial classes and methods
+
+where a class's member is split into multiple files
+
+---
+
+```cs
+// File1
+public partial class Employee
+{
+    public void DoWork()
+    {
+    }
+
+    // partial method
+    partial void onNameChanged();
+}
+
+// File2
+public partial class Employee
+{
+    public void GoToLunch()
+    {
+    }
+
+    partial void onNameChanged()  
+    {  
+        // method body  
+    }  
+}
+```
+
+---
+
+## Extension methods
+
+allow programmers to extend a class that **cannot be modified**, especially those built-in types
+
+---
+
+```cs
+public static class StringExtension
+{
+    // extend the built in string type
+    public static int WordCount(this string str)
+    {
+        return str.Split(new char[] {' ', '.','?'}, StringSplitOptions.RemoveEmptyEntries).Length;
+    }
+}
+```
+
+---
+
+## Anonymous types
+
+quickly define an object without defining the type first
+
+---
+
+```cs
+var v = new { Amount = 108, Message = "Hello" };
+Console.WriteLine(v.Amount + v.Message);
+```
+
+---
+
+## Language Integrated Query (LINQ)
+
+provide a **unified** language for querying data from various sources
+
+---
+
+```cs
+// Query syntax
+var result = from student in students
+                where student.Scores[0] > 90
+                select student;
+
+// Fluent syntax
+var result = students.Where(student => student.Scores[0] > 90);
+```
+
+---
+
+The end.
+
+# Thanks!
+					</script>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="/scripts/reveal.js/lib/js/head.min.js"></script>
+		<script src="/scripts/reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '/scripts/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '/scripts/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/scripts/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/scripts/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '/scripts/reveal.js/plugin/search/search.js', async: true },
+					{ src: '/scripts/reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: '/scripts/reveal.js/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
