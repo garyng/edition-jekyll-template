@@ -62,6 +62,6 @@ Some of the prominent examples are:
 1. [W3Schools](https://www.w3schools.com/)
 1. [Dell](http://www.dell.com/)
 
-## Reference
+## References
 
 {% bibliography --cited_in_order --prefix current-usage %}
