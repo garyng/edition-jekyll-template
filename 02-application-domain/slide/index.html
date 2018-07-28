@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Slide | C# - TPL2141</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Slide" />
+<meta name="author" content="GaryNg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="What application domain(s)" />
+<meta property="og:description" content="What application domain(s)" />
+<link rel="canonical" href="https://tpl2141.garyng.xyz/02-application-domain/slide/" />
+<meta property="og:url" content="https://tpl2141.garyng.xyz/02-application-domain/slide/" />
+<meta property="og:site_name" content="C# - TPL2141" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-28T06:10:46+00:00" />
+<script type="application/ld+json">
+{"description":"What application domain(s)","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/02-application-domain/slide/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Slide","dateModified":"2018-07-28T06:10:46+00:00","datePublished":"2018-07-28T06:10:46+00:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
+
+		<title>Slide </title>
+
+		<link rel="stylesheet" href="/scripts/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="/scripts/reveal.js/css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="/scripts/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '/scripts/reveal.js/css/print/pdf.css' : '/scripts/reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="/scripts/reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				
+				<section data-markdown
+						data-separator="^\n---\n$"
+						data-separator-vertical="^\n--\n$"
+						data-separator-notes="^Note:">
+					<script type="text/template">
+						# What application domain(s)
+
+## is C# designed for?
+
+---
+
+C# is designed to be used in literally **any** application domain
+
+<!-- .element: class="fragment" --> but has mainly been used for developing _commercial_ applications
+
+---
+
+including
+
+1. business applications <!-- .element: class="fragment" -->
+1. web applications <!-- .element: class="fragment" -->
+
+---
+
+## As stated in the first edition of C# Language Specification
+
+## (EMCA-334)
+
+---
+
+C# is intended to be a
+
+- simple <!-- .element: class="fragment" -->
+- modern <!-- .element: class="fragment" -->
+- general-purpose <!-- .element: class="fragment" -->
+
+<!-- .element: class="fragment" --> object-oriented programming language
+
+---
+
+## and
+
+be suitable for writing applications for
+
+- hosted <!-- .element: class="fragment" -->
+- embedded <!-- .element: class="fragment" -->
+
+<!-- .element: class="fragment" --> systems
+
+---
+
+## in fact
+
+almost the entire `.NET framework` is written in C#
+
+---
+
+# What types of applications
+
+## is the language _actually_ being used mostly?
+
+---
+
+## desktop applications
+
+using various technologies like
+
+- WinForms (Windows Forms) <!-- .element: class="fragment" -->
+- WPF (Windows Presentation Foundation) <!-- .element: class="fragment" -->
+
+---
+
+## web sites, web applications and web services
+
+primarily using ASP.NET
+
+---
+
+# WinForms
+
+## or _Windows Forms_
+
+<!-- .element: class="fragment" --> graphical class library included as a part of Microsoft .NET Framework
+
+---
+
+its popularity can be seen though the large amount of commercially-available
+
+## custom user interface controls <!-- .element: class="fragment" -->
+
+---
+
+DevExpress WinForms
+
+![](/images/posts/current-usage/devexpress-winforms.png)
+
+---
+
+Windows Forms UI Controls by Infragistics
+
+![](/images/posts/current-usage/infragistics-winforms.png)
+
+---
+
+Syncfusion Essential Studio for Windows Forms
+
+![](/images/posts/current-usage/syncfusion-winforms.png)
+
+---
+
+1. Xceed for WinForms
+1. Telerik UI for WinForms <!-- .element: class="fragment" -->
+
+and much more... <!-- .element: class="fragment" -->
+
+---
+
+However, WinForms is now in
+
+## maintenance mode <!-- .element: class="fragment" -->
+
+no new features will be added <!-- .element: class="fragment" -->
+
+---
+
+Developers are also advised to move forward to its successor
+
+## the XAML based UI frameworks <!-- .element: class="fragment" -->
+
+like WPF and UWP <!-- .element: class="fragment" -->
+
+---
+
+even though WinForms is nearly
+
+## <!-- .element: class="fragment" --> _“dead”_
+
+<!-- .element: class="fragment" --> there are still a lot of **legacy** WinForms applications in **production** till this date
+
+---
+
+# WPF
+
+## Windows Presentation Foundation
+
+Almost all of the newer .NET desktop applications are written using WPF <!-- .element: class="fragment" -->
+
+---
+
+for example:
+
+1. Microsoft Visual Studio <!-- .element: class="fragment" -->
+1. Expression Blend (for designing XAML-based interfaces) <!-- .element: class="fragment" -->
+
+---
+
+and a lot more:
+
+1. Autodesk AutoCAD
+1. Nero
+1. Lenovo ThinkVantage
+1. HP Total Care Advisor
+1. Intel Rapid Storage Technology
+1. AMD Fusion Media Explorer
+1. Nokia Music
+1. HP TouchSmart
+1. ...
+
+---
+
+# ASP.NET
+
+## an open-source framework
+
+for building modern web apps and services with .NET <!-- .element: class="fragment" -->
+
+---
+
+According to [BuiltWith](https://trends.builtwith.com/websitelist/ASP.NET)
+
+there are more than 40 million websites using ASP.NET <!-- .element: class="fragment" -->
+
+---
+
+<img src="/images/posts/current-usage/builtwith-website-using-aspnet.png" style="max-width: 65%"/>
+
+---
+
+for example:
+
+1. StackOverflow <!-- .element: class="fragment" -->
+1. Bing, and other Microsoft sites <!-- .element: class="fragment" -->
+1. namecheap <!-- .element: class="fragment" -->
+1. W3Schools <!-- .element: class="fragment" -->
+1. Dell <!-- .element: class="fragment" -->
+1. ... etc <!-- .element: class="fragment" -->
+
+---
+
+Is C# currently a
+
+# popular language?
+
+---
+
+# Yes!
+
+based on <!-- .element: class="fragment" -->
+
+- Job Demand <!-- .element: class="fragment" -->
+- Salaries <!-- .element: class="fragment" -->
+- Number of users using C# (from GitHub) <!-- .element: class="fragment" -->
+
+---
+
+<img src="/images/posts/popularity/most-in-demand-languages.png" style="max-width: 65%"/>
+
+---
+
+Salaries
+
+![](/images/posts/popularity/glassdoor-csharp-average-base-pay.png)
+
+---
+
+GitHub monthly active users
+
+<img src="/images/posts/popularity/github-monthly-active-user.png" style="max-width: 65%"/>
+
+---
+
+# Why so many people are using C#?
+
+---
+
+## the mature ecosystem surrounding C&#35;
+
+- Microsoft Visual Studio, Microsoft Visual Studio Community, Microsoft Visual Studio for Mac and Visual Studio Code <!-- .element: class="fragment" -->
+- .NET Framework <!-- .element: class="fragment" -->
+- .NET Core <!-- .element: class="fragment" -->
+
+--
+
+## .NET Framework
+
+offers a lot of libraries for different purposes
+
+--
+
+## .NET Core
+
+the **open source** and **cross platform version** of .NET Framework
+
+---
+
+## a small learning curve
+
+---
+
+## very versatile
+
+for developing a multitude of different applications
+
+including <!-- .element: class="fragment" -->
+
+- Desktop apps <!-- .element: class="fragment" -->
+- Web servers and clients <!-- .element: class="fragment" -->
+- Mobile apps <!-- .element: class="fragment" -->
+- Games <!-- .element: class="fragment" -->
+
+---
+
+the language itself still
+
+## evolving continuously
+
+which gained even more traction with the open source of .NET
+
+--
+
+the C# (and Visual Basic) compiler
+
+## Roslyn
+
+is open source on [GitHub](https://github.com/dotnet/roslyn)
+
+--
+
+## C# language specification
+
+is also open source at [GitHub](https://github.com/dotnet/csharplang)
+
+where everyone can suggest ideas and make improvements to the language
+
+---
+
+# Where
+
+## C# is used?
+
+---
+
+1. Game development
+1. Mobile development <!-- .element: class="fragment" -->
+1. Cross-platform development <!-- .element: class="fragment" -->
+1. Artificial Intelligence <!-- .element: class="fragment" -->
+1. ... etc <!-- .element: class="fragment" -->
+
+---
+
+The end.
+
+# Thanks! <!-- .element: class="fragment" -->
+					</script>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="/scripts/reveal.js/lib/js/head.min.js"></script>
+		<script src="/scripts/reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '/scripts/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '/scripts/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/scripts/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/scripts/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '/scripts/reveal.js/plugin/search/search.js', async: true },
+					{ src: '/scripts/reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: '/scripts/reveal.js/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
