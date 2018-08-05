@@ -274,4 +274,20 @@
   url    = {https://mashable.com/2018/03/17/coding-course-class-bootcamp/},
 }
 
+@Online{Jones2001,
+  author = {Bradley L. Jones},
+  title  = {Storing Information with Variables in C#},
+  year   = {2001},
+  date   = {2001-12-14},
+  url    = {http://www.informit.com/articles/article.aspx?p=24472},
+}
+
+@Online{Docs2017a,
+  author = {Microsoft Docs},
+  title  = {C# Special Characters},
+  year   = {2017},
+  date   = {2017-02-14},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}
