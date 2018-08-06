@@ -87,6 +87,28 @@
 							</ul>
 						</li>
 					
+						<li class="nav-item top-level ">
+							
+							<a href="/03-names-and-bindings/names/">Names and Bindings</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/names/">Names</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-characters/">Special characters</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-words/">Special words</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/declarations/">Declarations</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/dynamic-type-binding/">Dynamic type binding</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/storage-binding/">Storage Binding</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/scoping/">Scoping</a></li>
+								
+							</ul>
+						</li>
+					
 				</ul>
 
 				<ul>
@@ -656,6 +678,713 @@
 <li><span id="popularity-Gousios2018">Gousios, G., Vasilescu, B., Serebrenik, A., &amp; Zaidman, A. (2018). Lean GHTorrent: GitHub Data on Demand. Retrieved from https://bvasiles.github.io/papers/lean-ghtorrent.pdf</span></li>
 <li><span id="popularity-Frederickson2018">Frederickson, B. (2018, January 25). Ranking Programming Languages by GitHub Users. Retrieved from https://www.benfrederickson.com/ranking-programming-languages-by-github-users/</span></li>
 <li><span id="popularity-Mashable2018">Mashable. (2018, March 17). It pays to learn to code with C# and here’s why. Retrieved from https://mashable.com/2018/03/17/coding-course-class-bootcamp/</span></li></ol>
+
+	</article>
+	<hr>
+	
+
+
+	
+	
+	<div class="page-header quick-guide-page">
+		<h2>Names and Bindings</h2>
+		<h3>Names</h3>
+	</div>
+	<article class="content">
+		<p>A name is a string of characters used to identify some entity in a program. C# imposes no limit on the length of names and all characters are significant (meaning that they are case sensitive).</p>
+
+<p>However, identifiers in C# must obey the following rules <a href="#names-Jones2001">(Jones, 2001)</a></p>
+
+<ol>
+  <li>starts with either
+    <ol>
+      <li>letters, or</li>
+      <li>underscore character</li>
+    </ol>
+  </li>
+  <li>contains only
+    <ol>
+      <li>letters</li>
+      <li>digits</li>
+      <li>underscore character</li>
+    </ol>
+  </li>
+  <li>must not be a keyword or a reserved word (which can be “escaped” by prefixing with the  <a href="/03-names-and-bindings/special-characters/#1-enable-keywords-to-be-used-as-identifiers">verbatim character @</a>)</li>
+</ol>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="names-Jones2001">Jones, B. L. (2001, December 14). Storing Information with Variables in C#. Retrieved from http://www.informit.com/articles/article.aspx?p=24472</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Names and Bindings</h2>
+		<h3>Special characters</h3>
+	</div>
+	<article class="content">
+		<p>Special characters are used to modify the program element which they prefixed. C# supports the following special characters <a href="#special-characters-Docs2017a">(Docs, 2017)</a>:</p>
+
+<ol>
+  <li><a href="#-the-verbatim-identifier-character">@, the verbatim identifier character</a></li>
+  <li><a href="#-the-interpolated-string-character">$, the interpolated string character</a></li>
+</ol>
+
+<h2 id="-the-verbatim-identifier-character">@, the verbatim identifier character</h2>
+
+<p>The verbatim character can be used to</p>
+
+<ol>
+  <li><a href="#1-enable-keywords-to-be-used-as-identifiers">enable <strong>keywords</strong> to be used as <strong>identifiers</strong></a></li>
+  <li><a href="#2-indicate-that-a-string-is-a-verbatim-string-literal">indicate that a string is a “verbatim string literal”</a>
+    <ol>
+      <li><a href="#11-escape-sequences-are-ignored"><strong>escape sequences</strong> are ignored</a></li>
+      <li><a href="#12-can-be-used-to-define-multiline-string">can be used to define <strong>multiline</strong> string</a></li>
+    </ol>
+  </li>
+</ol>
+
+<h4 id="1-enable-keywords-to-be-used-as-identifiers">1. enable keywords to be used as identifiers</h4>
+
+<p>This is illegal in C#:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span> <span class="kt">string</span> <span class="p">=</span> <span class="s">"this is a string"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>But this is a valid syntax:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span> <span class="n">@string</span> <span class="p">=</span> <span class="s">"this is a string"</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">@string</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h5 id="live-code-example">Live-code example</h5>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Vp7jjY" frameborder="0"></iframe>
+
+<h4 id="2-indicate-that-a-string-is-a-verbatim-string-literal">2. indicate that a string is a “verbatim string literal”</h4>
+
+<h5 id="11-escape-sequences-are-ignored">1.1 escape sequences are ignored</h5>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span> <span class="n">normal</span> <span class="p">=</span> <span class="s">"first line \n second line"</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">verbatim</span> <span class="p">=</span> <span class="s">@"first line \n second line"</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">normal</span><span class="p">);</span>
+<span class="c1">// --- output:</span>
+<span class="c1">// first line </span>
+<span class="c1">//	second line</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">verbatim</span><span class="p">);</span>
+<span class="c1">// --- output:</span>
+<span class="c1">// first line \n second line</span>
+</code></pre></div></div>
+
+<p>which is commonly used for specifying <em>file paths</em> in Windows</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// need to use '\' to escape the backslash character</span>
+<span class="kt">string</span> <span class="n">filename1</span> <span class="p">=</span> <span class="s">"c:\\documents\\files\\u0066.txt"</span><span class="p">;</span>
+<span class="c1">// ignore escape sequences</span>
+<span class="kt">string</span> <span class="n">filename2</span> <span class="p">=</span> <span class="s">@"c:\documents\files\u0066.txt"</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">filename1</span><span class="p">);</span>
+<span class="c1">// --- output:</span>
+<span class="c1">// c:\documents\files\u0066.txt</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">filename2</span><span class="p">);</span>
+<span class="c1">// --- output:</span>
+<span class="c1">// c:\documents\files\u0066.txt</span>
+</code></pre></div></div>
+
+<h5 id="live-code-example-1">Live-code example</h5>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/c7LIEt" frameborder="0"></iframe>
+
+<h4 id="12-can-be-used-to-define-multiline-string">1.2 can be used to define multiline string</h4>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span> <span class="n">normal</span> <span class="p">=</span> <span class="s">"line1\nline2\nline3\n---"</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">verbatim</span> <span class="p">=</span> <span class="s">@"line1
+line2
+line3
+---"</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">normal</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">verbatim</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>line1
+line2
+line3
+---
+line1
+line2
+line3
+---
+</code></pre></div></div>
+
+<h5 id="live-code-example-2">Live-code example</h5>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/MiLJFw" frameborder="0"></iframe>
+
+<h2 id="-the-interpolated-string-character">$, the interpolated string character</h2>
+
+<p>Provide a more readable and convenient syntax to format strings <a href="#special-characters-Docs2018">(Docs, 2018)</a>.</p>
+
+<p>Using this code snippet as an example:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="n">price</span> <span class="p">=</span> <span class="m">12.456</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">"Lorem Ipsum"</span><span class="p">;</span>
+<span class="n">DateTime</span> <span class="n">paidOn</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">DateTime</span><span class="p">(</span><span class="m">2018</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">34</span><span class="p">,</span> <span class="m">56</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Instead of doing this to join different variables together</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// instead of doing this</span>
+<span class="kt">string</span> <span class="n">normal</span> <span class="p">=</span> <span class="n">name</span> <span class="p">+</span> <span class="s">" paid "</span> <span class="p">+</span> <span class="n">price</span><span class="p">.</span><span class="nf">ToString</span><span class="p">(</span><span class="s">"0.00"</span><span class="p">)</span> <span class="p">+</span> <span class="s">" on "</span> <span class="p">+</span> <span class="n">paidOn</span><span class="p">.</span><span class="nf">ToString</span><span class="p">(</span><span class="s">"yyyy-MM-dd HH:mm:ss"</span><span class="p">);</span>
+
+<span class="c1">// Note: 00.00 -&gt; numbers are formatted into 2 decimal places, padded with zeros</span>
+</code></pre></div></div>
+
+<p>String interpolation is much simpler</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// you can do this</span>
+<span class="kt">string</span> <span class="n">interpolated</span> <span class="p">=</span> <span class="s">$"</span><span class="p">{</span><span class="n">name</span><span class="p">}</span><span class="s"> paid </span><span class="p">{</span><span class="n">price</span><span class="p">:</span><span class="m">0.00</span><span class="p">}</span><span class="s"> on </span><span class="p">{</span><span class="n">paidOn</span><span class="p">:</span><span class="n">yyyy</span><span class="p">-</span><span class="n">MM</span><span class="p">-</span><span class="n">dd</span> <span class="n">HH</span><span class="p">:</span><span class="n">mm</span><span class="p">:</span><span class="n">ss</span><span class="p">}</span><span class="s">"</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">normal</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">interpolated</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Lorem Ipsum paid 12.46 on 2018-01-01 12:34:56
+Lorem Ipsum paid 12.46 on 2018-01-01 12:34:56
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="special-characters-Docs2017a">Docs, M. (2017, February 14). C# Special Characters. Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/</span></li>
+<li><span id="special-characters-Docs2018">Docs, M. (Ed.). (2018, March 26). string interpolation (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Names and Bindings</h2>
+		<h3>Special words</h3>
+	</div>
+	<article class="content">
+		<h2 id="reserved-words">Reserved words</h2>
+
+<p>Reserved words are names or identifiers that have predefined meanings to the compiler. They cannot be used as a user-defined identifiers unless they are prefixed with the <a href="/03-names-and-bindings/special-characters/#1-enable-keywords-to-be-used-as-identifiers">verbatim character @</a>.</p>
+
+<p>Below are all the reserved words in C# <a href="#special-words-Docs2017b">(Docs, 2017)</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>abstract</td>
+      <td>as</td>
+      <td>base</td>
+      <td>bool</td>
+    </tr>
+    <tr>
+      <td>break</td>
+      <td>byte</td>
+      <td>case</td>
+      <td>catch</td>
+    </tr>
+    <tr>
+      <td>char</td>
+      <td>checked</td>
+      <td>class</td>
+      <td>const</td>
+    </tr>
+    <tr>
+      <td>continue</td>
+      <td>decimal</td>
+      <td>default</td>
+      <td>delegate</td>
+    </tr>
+    <tr>
+      <td>do</td>
+      <td>double</td>
+      <td>else</td>
+      <td>enum</td>
+    </tr>
+    <tr>
+      <td>event</td>
+      <td>explicit</td>
+      <td>extern</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>finally</td>
+      <td>fixed</td>
+      <td>float</td>
+      <td>for</td>
+    </tr>
+    <tr>
+      <td>foreach</td>
+      <td>goto</td>
+      <td>if</td>
+      <td>implicit</td>
+    </tr>
+    <tr>
+      <td>in</td>
+      <td>int</td>
+      <td>interface</td>
+      <td>internal</td>
+    </tr>
+    <tr>
+      <td>is</td>
+      <td>lock</td>
+      <td>long</td>
+      <td>namespace</td>
+    </tr>
+    <tr>
+      <td>new</td>
+      <td>null</td>
+      <td>object</td>
+      <td>operator</td>
+    </tr>
+    <tr>
+      <td>out</td>
+      <td>override</td>
+      <td>params</td>
+      <td>private</td>
+    </tr>
+    <tr>
+      <td>protected</td>
+      <td>public</td>
+      <td>readonly</td>
+      <td>ref</td>
+    </tr>
+    <tr>
+      <td>return</td>
+      <td>sbyte</td>
+      <td>sealed</td>
+      <td>short</td>
+    </tr>
+    <tr>
+      <td>sizeof</td>
+      <td>stackalloc</td>
+      <td>static</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>struct</td>
+      <td>switch</td>
+      <td>this</td>
+      <td>throw</td>
+    </tr>
+    <tr>
+      <td>true</td>
+      <td>try</td>
+      <td>typeof</td>
+      <td>uint</td>
+    </tr>
+    <tr>
+      <td>ulong</td>
+      <td>unchecked</td>
+      <td>unsafe</td>
+      <td>ushort</td>
+    </tr>
+    <tr>
+      <td>using</td>
+      <td>using static</td>
+      <td>virtual</td>
+      <td>void</td>
+    </tr>
+    <tr>
+      <td>volatile</td>
+      <td>while</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="contextual-keywords">Contextual keywords</h2>
+
+<p>They only have special meanings under certain <strong>contexts</strong> <a href="#special-words-Docs2017b">(Docs, 2017)</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>add</td>
+      <td>alias</td>
+      <td>ascending</td>
+    </tr>
+    <tr>
+      <td>async</td>
+      <td>await</td>
+      <td>descending</td>
+    </tr>
+    <tr>
+      <td>dynamic</td>
+      <td>from</td>
+      <td>get</td>
+    </tr>
+    <tr>
+      <td>global</td>
+      <td>group</td>
+      <td>into</td>
+    </tr>
+    <tr>
+      <td>join</td>
+      <td>let</td>
+      <td>nameof</td>
+    </tr>
+    <tr>
+      <td>orderby</td>
+      <td>partial (type)</td>
+      <td>partial (method)</td>
+    </tr>
+    <tr>
+      <td>remove</td>
+      <td>select</td>
+      <td>set</td>
+    </tr>
+    <tr>
+      <td>value</td>
+      <td>var</td>
+      <td>when (filter condition)</td>
+    </tr>
+    <tr>
+      <td>where (generic type constraint)</td>
+      <td>where (query clause)</td>
+      <td>yield</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="special-words-Docs2017b">Docs, M. (2017, March 7). C# Keywords. Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Names and Bindings</h2>
+		<h3>Declarations</h3>
+	</div>
+	<article class="content">
+		<h2 id="explicit-declarations">Explicit declarations</h2>
+<p>Explicit declaration is where the type of the variables is specified during declaration.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">age</span> <span class="p">=</span> <span class="m">23</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">"Lorem Ipsum"</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">money</span> <span class="p">=</span> <span class="m">123.45</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Type of age: </span><span class="p">{</span><span class="n">age</span><span class="p">.</span><span class="nf">GetType</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Type of name: </span><span class="p">{</span><span class="n">name</span><span class="p">.</span><span class="nf">GetType</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Type of money: </span><span class="p">{</span><span class="n">money</span><span class="p">.</span><span class="nf">GetType</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Type of age: System.Int32
+Type of name: System.String
+Type of money: System.Double
+</code></pre></div></div>
+
+<h2 id="implicit-declarations">Implicit declarations</h2>
+
+<p>C# compiler uses type inferencing to deduce the actual type of the variable declared with the keyword <code class="highlighter-rouge">var</code>. Note that <a href="#declarations-Docs2015c">(Docs, 2015)</a></p>
+
+<ol>
+  <li><code class="highlighter-rouge">var</code> keyword can <strong>only</strong> be used for variables declared at <strong>method scope</strong></li>
+  <li>an implicitly declared variable is <strong>strongly typed</strong> (just as if you had declared the type yourself), which is different from the <a href="/03-names-and-bindings/dynamic-type-binding/"><code class="highlighter-rouge">dynamic</code> type</a>.</li>
+</ol>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">age</span> <span class="p">=</span> <span class="m">23</span><span class="p">;</span>
+<span class="kt">var</span> <span class="n">name</span> <span class="p">=</span> <span class="s">"Lorem Ipsum"</span><span class="p">;</span>
+<span class="kt">var</span> <span class="n">money</span> <span class="p">=</span> <span class="m">123.45</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Type of age: </span><span class="p">{</span><span class="n">age</span><span class="p">.</span><span class="nf">GetType</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Type of name: </span><span class="p">{</span><span class="n">name</span><span class="p">.</span><span class="nf">GetType</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Type of money: </span><span class="p">{</span><span class="n">money</span><span class="p">.</span><span class="nf">GetType</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Type of age: System.Int32
+Type of name: System.String
+Type of money: System.Double
+</code></pre></div></div>
+
+<p>This is not allowed since <code class="highlighter-rouge">age</code> is statically-typed (as <code class="highlighter-rouge">int</code>)</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ERROR: Cannot implicitly convert type "string" to "int"</span>
+<span class="n">age</span> <span class="p">=</span> <span class="s">"123"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Implicit declaration is extremely useful for creating <strong>anonymous classes</strong>, which are used extensively in LINQ operation.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">anony</span> <span class="p">=</span> <span class="k">new</span> <span class="p">{</span>
+  <span class="n">Name</span> <span class="p">=</span> <span class="s">"Lorem Ipsum"</span><span class="p">,</span>
+  <span class="n">Age</span> <span class="p">=</span> <span class="m">23</span><span class="p">,</span>
+  <span class="n">Money</span> <span class="p">=</span> <span class="m">123.45</span>
+<span class="p">};</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Type: </span><span class="p">{</span><span class="n">anony</span><span class="p">.</span><span class="nf">GetType</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Name: </span><span class="p">{</span><span class="n">anony</span><span class="p">.</span><span class="n">Name</span><span class="p">}</span><span class="s"> Age: </span><span class="p">{</span><span class="n">anony</span><span class="p">.</span><span class="n">Age</span><span class="p">}</span><span class="s"> Money: </span><span class="p">{</span><span class="n">anony</span><span class="p">.</span><span class="n">Money</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Type: &lt;&gt; f__AnonymousType0`3[System.String, System.Int32, System.Double]      &lt;-- this will be different
+Name: Lorem Ipsum Age: 23 Money: 123.45
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="declarations-Docs2015c">Docs, M. (Ed.). (2015, July 20). var (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/var</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Names and Bindings</h2>
+		<h3>Dynamic type binding</h3>
+	</div>
+	<article class="content">
+		<p>Variables with the type of <code class="highlighter-rouge">dynamic</code> will bypass static type checking, errors will only be caught on runtime <a href="#dynamic-type-binding-Docs2015d">(Docs, 2015)</a>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">dynamic</span> <span class="n">number</span> <span class="p">=</span> <span class="m">123</span><span class="p">;</span>
+<span class="n">number</span> <span class="p">=</span> <span class="n">number</span> <span class="p">+</span> <span class="m">456</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Value: </span><span class="p">{</span><span class="n">number</span><span class="p">}</span><span class="s">\tType: </span><span class="p">{</span><span class="n">number</span><span class="p">.</span><span class="nf">GetType</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Value: 579  Type: System.Int32
+</code></pre></div></div>
+
+<p>We are allowed to assign a string to the same variable (which is initially an <code class="highlighter-rouge">int</code>).</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>number = "a string";
+Console.WriteLine($"Value: {number}\tType: {number.GetType()}");
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Value: a string Type: System.String
+</code></pre></div></div>
+
+<p>Because the variable is now a string, subtracting an <code class="highlighter-rouge">int</code> will result in a runtime error</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">number</span> <span class="p">=</span> <span class="n">number</span> <span class="p">-</span> <span class="m">1</span><span class="p">;</span>
+<span class="c1">// ERROR: Operator '-' cannot be applied to operands of type 'string' and 'int'</span>
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="dynamic-type-binding-Docs2015d">Docs, M. (Ed.). (2015, July 20). dynamic (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/dynamic</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Names and Bindings</h2>
+		<h3>Storage Binding</h3>
+	</div>
+	<article class="content">
+		<p>Storage binding defines when a variable is bound to a memory cell and for how long it remains bounded. C# only has 3 binding categories:</p>
+
+<ol>
+  <li><a href="#static">static</a></li>
+  <li><a href="#stack-dynamic">stack-dynamic</a></li>
+  <li><a href="#explicit-heap-dynamic">explicit heap-dynamic</a></li>
+</ol>
+
+<h2 id="static">Static</h2>
+
+<p>In C#, local variables cannot be defined as <code class="highlighter-rouge">static</code>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ERROR: The modifier "static" is not valid for this item</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">num</span> <span class="p">=</span> <span class="m">123</span><span class="p">;</span>
+
+<span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// ERROR: The modifier "static" is not valid for this item</span>
+  <span class="k">static</span> <span class="kt">int</span> <span class="n">age</span> <span class="p">=</span> <span class="m">123</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Instead, the <code class="highlighter-rouge">static</code> keyword has another meaning: it is used to declare a <strong>static member</strong>, which belongs to the <strong>type</strong> itself rather than to a <strong>specific instance</strong> of the class <a href="#storage-binding-Docs2015e">(Docs, 2015)</a>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+  <span class="c1">// static class member</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">=</span> <span class="m">123</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Age: </span><span class="p">{</span><span class="n">Person</span><span class="p">.</span><span class="n">Age</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Age: 123
+</code></pre></div></div>
+
+<p>It can only be used on:</p>
+
+<ol>
+  <li>classes</li>
+  <li>fields</li>
+  <li>methods</li>
+  <li>properties</li>
+  <li>operators</li>
+  <li>events</li>
+  <li>constructors</li>
+</ol>
+
+<h2 id="stack-dynamic">Stack-dynamic</h2>
+
+<p>In C#, <strong>value types</strong> are <em>often</em> but, <em>not necessarily always</em>, allocated on the <strong>stack</strong>. This includes <a href="#storage-binding-Cochran2006">(Cochran, 2006)</a>:</p>
+
+<ol>
+  <li>bool</li>
+  <li>byte</li>
+  <li>char</li>
+  <li>decimal</li>
+  <li>double</li>
+  <li>enum</li>
+  <li>float</li>
+  <li>int</li>
+  <li>long</li>
+  <li>sbyte</li>
+  <li>short</li>
+  <li>struct</li>
+  <li>uint</li>
+  <li>ulong</li>
+  <li>ushort</li>
+</ol>
+
+<h2 id="explicit-heap-dynamic">Explicit heap-dynamic</h2>
+
+<p><strong>Reference</strong> types are always allocated on the <strong>heap</strong>, which includes:</p>
+
+<ol>
+  <li>class</li>
+  <li>interface</li>
+  <li>delegate</li>
+  <li>object</li>
+  <li>string</li>
+</ol>
+
+<p>The heap is managed by <em>Garbage Collector (GC)</em>, which will find all objects in the heap that are <strong>not being accessed</strong> and delete them.
+Note that a value type will be allocated on the heap when <a href="#storage-binding-Gabe2010">(Gabe, 2010)</a>:</p>
+
+<ol>
+  <li>it is part of a class</li>
+  <li>it is boxed</li>
+  <li>it is an array</li>
+  <li>it is a static variable</li>
+  <li>it is capture by a closure</li>
+  <li>… etc</li>
+</ol>
+
+<h2 id="example">Example</h2>
+<p><small>Adapted from <a href="#storage-binding-Cochran2006">(Cochran, 2006)</a></small></p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">MyInt</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="kt">int</span> <span class="n">MyValue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// on stack</span>
+  <span class="kt">int</span> <span class="k">value</span> <span class="p">=</span> <span class="m">123</span><span class="p">;</span>
+  
+  <span class="c1">// on heap, but the reference/pointer to the object is on the stack</span>
+  <span class="n">MyInt</span> <span class="n">result</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MyInt</span><span class="p">();</span>
+  
+  <span class="c1">// on heap, because MyValue is part of a class (which is a reference type)</span>
+  <span class="n">result</span><span class="p">.</span><span class="n">MyValue</span> <span class="p">=</span> <span class="k">value</span> <span class="p">+</span> <span class="m">200</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="https://tpl2141.garyng.xyz/images/posts/storage-binding/stack-vs-heap-in-scope.png" alt="" /></p>
+
+<p>When the variables go out of scope, they are popped from the stack.</p>
+
+<p><img src="https://tpl2141.garyng.xyz/images/posts/storage-binding/stack-vs-heap-out-of-scope.png" alt="" /></p>
+
+<p>The object on the heap will eventually be collected by Garbage Collection.</p>
+
+<p><img src="https://tpl2141.garyng.xyz/images/posts/storage-binding/garbage-collector.png" alt="" /></p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="storage-binding-Docs2015e">Docs, M. (Ed.). (2015, July 20). static (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/static</span></li>
+<li><span id="storage-binding-Cochran2006">Cochran, M. (2006, January 14). C# Heap(ing) Vs Stack(ing) in .NET: Part I. Retrieved from https://www.c-sharpcorner.com/article/C-Sharp-heaping-vs-stacking-in-net-part-i/</span></li>
+<li><span id="storage-binding-Gabe2010">Gabe. (2010, December 20). Memory allocation: Stack vs Heap? Retrieved from https://stackoverflow.com/a/4487320</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Names and Bindings</h2>
+		<h3>Scoping</h3>
+	</div>
+	<article class="content">
+		<p>C# only support static scoping (also known as <strong>lexical scoping</strong>), where the scope of a variable is determined when the code is compiled <a href="#scoping-Rouse2011">(Rouse, 2011)</a>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+
+  <span class="k">static</span> <span class="k">void</span> <span class="nf">Func1</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="p">=</span> <span class="m">123</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="p">=</span> <span class="m">567</span><span class="p">;</span>
+    <span class="nf">Func1</span><span class="p">();</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"num1: </span><span class="p">{</span><span class="n">num</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The output is</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>num1: 567
+</code></pre></div></div>
+
+<p>instead of <code class="highlighter-rouge">123</code> as defined in <code class="highlighter-rouge">Func1()</code> (if C# uses dynamic scoping).</p>
+
+<h2 id="live-code-exmaple">Live-code exmaple</h2>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/nCtmnU" frameborder="0"></iframe>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="scoping-Rouse2011">Rouse, M. (2011, March 1). lexical scoping (static scoping). Retrieved from https://whatis.techtarget.com/definition/lexical-scoping-static-scoping</span></li></ol>
 
 	</article>
 	<hr>

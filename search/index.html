@@ -87,6 +87,28 @@
 							</ul>
 						</li>
 					
+						<li class="nav-item top-level ">
+							
+							<a href="/03-names-and-bindings/names/">Names and Bindings</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/names/">Names</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-characters/">Special characters</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-words/">Special words</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/declarations/">Declarations</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/dynamic-type-binding/">Dynamic type binding</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/storage-binding/">Storage Binding</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/scoping/">Scoping</a></li>
+								
+							</ul>
+						</li>
+					
 				</ul>
 
 				<ul>
@@ -241,6 +263,125 @@
 						"category": "",
 						"url": " /02-application-domain/slide/",
 						"content": "What application domain(s) is C# designed for? C# is designed to be used in literally any application domain but has mainly been used for developing commercial applications including business applications web applications As stated in the first edition of C# Language Specification (EMCA-334) C# is intended to be a simple modern general-purpose object-oriented programming language and be suitable for writing applications for hosted embedded systems in fact almost the entire .NET framework is written in C# What types of applications is the language actually being used mostly? desktop applications using various technologies like WinForms (Windows Forms) WPF (Windows Presentation Foundation) web sites, web applications and web services primarily using ASP.NET WinForms or Windows Forms graphical class library included as a part of Microsoft .NET Framework its popularity can be seen though the large amount of commercially-available custom user interface controls DevExpress WinForms Windows Forms UI Controls by Infragistics Syncfusion Essential Studio for Windows Forms Xceed for WinForms Telerik UI for WinForms and much more… However, WinForms is now in maintenance mode no new features will be added Developers are also advised to move forward to its successor the XAML based UI frameworks like WPF and UWP even though WinForms is nearly “dead” there are still a lot of legacy WinForms applications in production till this date WPF Windows Presentation Foundation Almost all of the newer .NET desktop applications are written using WPF for example: Microsoft Visual Studio Expression Blend (for designing XAML-based interfaces) and a lot more: Autodesk AutoCAD Nero Lenovo ThinkVantage HP Total Care Advisor Intel Rapid Storage Technology AMD Fusion Media Explorer Nokia Music HP TouchSmart … ASP.NET an open-source framework for building modern web apps and services with .NET According to BuiltWith there are more than 40 million websites using ASP.NET for example: StackOverflow Bing, and other Microsoft sites namecheap W3Schools Dell … etc Is C# currently a popular language? Yes! based on Job Demand Salaries Number of users using C# (from GitHub) Salaries GitHub monthly active users Why so many people are using C#? the mature ecosystem surrounding C# Microsoft Visual Studio, Microsoft Visual Studio Community, Microsoft Visual Studio for Mac and Visual Studio Code .NET Framework .NET Core – .NET Framework offers a lot of libraries for different purposes – .NET Core the open source and cross platform version of .NET Framework a small learning curve very versatile for developing a multitude of different applications including Desktop apps Web servers and clients Mobile apps Games the language itself still evolving continuously which gained even more traction with the open source of .NET – the C# (and Visual Basic) compiler Roslyn is open source on GitHub – C# language specification is also open source at GitHub where everyone can suggest ideas and make improvements to the language Where C# is used? Game development Mobile development Cross-platform development Artificial Intelligence … etc The end. Thanks!"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"03-names-and-bindings-declarations": {
+						"id": "03-names-and-bindings-declarations",
+						"title": "Declarations",
+						"category": "",
+						"url": " /03-names-and-bindings/declarations/",
+						"content": "Explicit declarations Explicit declaration is where the type of the variables is specified during declaration. int age = 23; string name = \"Lorem Ipsum\"; double money = 123.45; Console.WriteLine($\"Type of age: {age.GetType()}\"); Console.WriteLine($\"Type of name: {name.GetType()}\"); Console.WriteLine($\"Type of money: {money.GetType()}\"); Output: Type of age: System.Int32 Type of name: System.String Type of money: System.Double Implicit declarations C# compiler uses type inferencing to deduce the actual type of the variable declared with the keyword var. Note that (Docs, 2015) var keyword can only be used for variables declared at method scope an implicitly declared variable is strongly typed (just as if you had declared the type yourself), which is different from the dynamic type. var age = 23; var name = \"Lorem Ipsum\"; var money = 123.45; Console.WriteLine($\"Type of age: {age.GetType()}\"); Console.WriteLine($\"Type of name: {name.GetType()}\"); Console.WriteLine($\"Type of money: {money.GetType()}\"); Output: Type of age: System.Int32 Type of name: System.String Type of money: System.Double This is not allowed since age is statically-typed (as int) ERROR: Cannot implicitly convert type \"string\" to \"int\" age = \"123\"; Implicit declaration is extremely useful for creating anonymous classes, which are used extensively in LINQ operation. var anony = new { Name = \"Lorem Ipsum\", Age = 23, Money = 123.45 }; Console.WriteLine($\"Type: {anony.GetType()}\"); Console.WriteLine($\"Name: {anony.Name} Age: {anony.Age} Money: {anony.Money}\"); Output: Type: &lt;&gt; f__AnonymousType0`3[System.String, System.Int32, System.Double] &lt;-- this will be different Name: Lorem Ipsum Age: 23 Money: 123.45 References Docs, M. (Ed.). (2015, July 20). var (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords var"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"03-names-and-bindings-dynamic-type-binding": {
+						"id": "03-names-and-bindings-dynamic-type-binding",
+						"title": "Dynamic type binding",
+						"category": "",
+						"url": " /03-names-and-bindings/dynamic-type-binding/",
+						"content": "Variables with the type of dynamic will bypass static type checking, errors will only be caught on runtime (Docs, 2015). dynamic number = 123; number = number + 456; Console.WriteLine($\"Value: {number}\\tType: {number.GetType()}\"); Output: Value: 579 Type: System.Int32 We are allowed to assign a string to the same variable (which is initially an int). number = \"a string\"; Console.WriteLine($\"Value: {number}\\tType: {number.GetType()}\"); Output: Value: a string Type: System.String Because the variable is now a string, subtracting an int will result in a runtime error number = number - 1; ERROR: Operator '-' cannot be applied to operands of type 'string' and 'int' References Docs, M. (Ed.). (2015, July 20). dynamic (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords dynamic"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"03-names-and-bindings-names": {
+						"id": "03-names-and-bindings-names",
+						"title": "Names",
+						"category": "",
+						"url": " /03-names-and-bindings/names/",
+						"content": "A name is a string of characters used to identify some entity in a program. C# imposes no limit on the length of names and all characters are significant (meaning that they are case sensitive). However, identifiers in C# must obey the following rules (Jones, 2001) starts with either letters, or underscore character contains only letters digits underscore character must not be a keyword or a reserved word (which can be “escaped” by prefixing with the verbatim character @) References Jones, B. L. (2001, December 14). Storing Information with Variables in C#. Retrieved from http: www.informit.com articles article.aspx?p=24472"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"03-names-and-bindings-scoping": {
+						"id": "03-names-and-bindings-scoping",
+						"title": "Scoping",
+						"category": "",
+						"url": " /03-names-and-bindings/scoping/",
+						"content": "C# only support static scoping (also known as lexical scoping), where the scope of a variable is determined when the code is compiled (Rouse, 2011). public class Program { int num; static void Func1() { int num = 123; } public static void Main() { int num = 567; Func1(); Console.WriteLine($\"num1: {num}\"); } } The output is num1: 567 instead of 123 as defined in Func1() (if C# uses dynamic scoping). Live-code exmaple References Rouse, M. (2011, March 1). lexical scoping (static scoping). Retrieved from https: whatis.techtarget.com definition lexical-scoping-static-scoping"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"03-names-and-bindings-special-characters": {
+						"id": "03-names-and-bindings-special-characters",
+						"title": "Special characters",
+						"category": "",
+						"url": " /03-names-and-bindings/special-characters/",
+						"content": "Special characters are used to modify the program element which they prefixed. C# supports the following special characters (Docs, 2017): @, the verbatim identifier character $, the interpolated string character @, the verbatim identifier character The verbatim character can be used to enable keywords to be used as identifiers indicate that a string is a “verbatim string literal” escape sequences are ignored can be used to define multiline string 1. enable keywords to be used as identifiers This is illegal in C#: string string = \"this is a string\"; But this is a valid syntax: string @string = \"this is a string\"; Console.WriteLine(@string); Live-code example 2. indicate that a string is a “verbatim string literal” 1.1 escape sequences are ignored string normal = \"first line \\n second line\"; string verbatim = @\"first line \\n second line\"; Console.WriteLine(normal); --- output: first line second line Console.WriteLine(verbatim); --- output: first line \\n second line which is commonly used for specifying file paths in Windows need to use '\\' to escape the backslash character string filename1 = \"c:\\\\documents\\\\files\\\\u0066.txt\"; ignore escape sequences string filename2 = @\"c:\\documents\\files\\u0066.txt\"; Console.WriteLine(filename1); --- output: c:\\documents\\files\\u0066.txt Console.WriteLine(filename2); --- output: c:\\documents\\files\\u0066.txt Live-code example 1.2 can be used to define multiline string string normal = \"line1\\nline2\\nline3\\n---\"; string verbatim = @\"line1 line2 line3 ---\"; Console.WriteLine(normal); Console.WriteLine(verbatim); Output: line1 line2 line3 --- line1 line2 line3 --- Live-code example $, the interpolated string character Provide a more readable and convenient syntax to format strings (Docs, 2018). Using this code snippet as an example: double price = 12.456; string name = \"Lorem Ipsum\"; DateTime paidOn = new DateTime(2018, 1, 1, 12, 34, 56); Instead of doing this to join different variables together instead of doing this string normal = name + \" paid \" + price.ToString(\"0.00\") + \" on \" + paidOn.ToString(\"yyyy-MM-dd HH:mm:ss\"); Note: 00.00 -&gt; numbers are formatted into 2 decimal places, padded with zeros String interpolation is much simpler you can do this string interpolated = $\"{name} paid {price:0.00} on {paidOn:yyyy-MM-dd HH:mm:ss}\"; Console.WriteLine(normal); Console.WriteLine(interpolated); Output: Lorem Ipsum paid 12.46 on 2018-01-01 12:34:56 Lorem Ipsum paid 12.46 on 2018-01-01 12:34:56 References Docs, M. (2017, February 14). C# Special Characters. Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference tokens Docs, M. (Ed.). (2018, March 26). string interpolation (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference tokens interpolated"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"03-names-and-bindings-special-words": {
+						"id": "03-names-and-bindings-special-words",
+						"title": "Special words",
+						"category": "",
+						"url": " /03-names-and-bindings/special-words/",
+						"content": "Reserved words Reserved words are names or identifiers that have predefined meanings to the compiler. They cannot be used as a user-defined identifiers unless they are prefixed with the verbatim character @. Below are all the reserved words in C# (Docs, 2017).         abstract as base bool break byte case catch char checked class const continue decimal default delegate do double else enum event explicit extern false finally fixed float for foreach goto if implicit in int interface internal is lock long namespace new null object operator out override params private protected public readonly ref return sbyte sealed short sizeof stackalloc static string struct switch this throw true try typeof uint ulong unchecked unsafe ushort using using static virtual void volatile while     Contextual keywords They only have special meanings under certain contexts (Docs, 2017).       add alias ascending async await descending dynamic from get global group into join let nameof orderby partial (type) partial (method) remove select set value var when (filter condition) where (generic type constraint) where (query clause) yield       References Docs, M. (2017, March 7). C# Keywords. Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"03-names-and-bindings-storage-binding": {
+						"id": "03-names-and-bindings-storage-binding",
+						"title": "Storage Binding",
+						"category": "",
+						"url": " /03-names-and-bindings/storage-binding/",
+						"content": "Storage binding defines when a variable is bound to a memory cell and for how long it remains bounded. C# only has 3 binding categories: static stack-dynamic explicit heap-dynamic Static In C#, local variables cannot be defined as static. ERROR: The modifier \"static\" is not valid for this item static int num = 123; void Main() { ERROR: The modifier \"static\" is not valid for this item static int age = 123; } Instead, the static keyword has another meaning: it is used to declare a static member, which belongs to the type itself rather than to a specific instance of the class (Docs, 2015). public class Person { static class member public static int Age = 123; } void Main() { Console.WriteLine($\"Age: {Person.Age}\"); } Output: Age: 123 It can only be used on: classes fields methods properties operators events constructors Stack-dynamic In C#, value types are often but, not necessarily always, allocated on the stack. This includes (Cochran, 2006): bool byte char decimal double enum float int long sbyte short struct uint ulong ushort Explicit heap-dynamic Reference types are always allocated on the heap, which includes: class interface delegate object string The heap is managed by Garbage Collector (GC), which will find all objects in the heap that are not being accessed and delete them. Note that a value type will be allocated on the heap when (Gabe, 2010): it is part of a class it is boxed it is an array it is a static variable it is capture by a closure … etc Example Adapted from (Cochran, 2006) public class MyInt { public int MyValue; } void Main() { on stack int value = 123; on heap, but the reference pointer to the object is on the stack MyInt result = new MyInt(); on heap, because MyValue is part of a class (which is a reference type) result.MyValue = value + 200; } When the variables go out of scope, they are popped from the stack. The object on the heap will eventually be collected by Garbage Collection. References Docs, M. (Ed.). (2015, July 20). static (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords static Cochran, M. (2006, January 14). C# Heap(ing) Vs Stack(ing) in .NET: Part I. Retrieved from https: www.c-sharpcorner.com article C-Sharp-heaping-vs-stacking-in-net-part-i Gabe. (2010, December 20). Memory allocation: Stack vs Heap? Retrieved from https: stackoverflow.com a 4487320"
 					}
 
 					

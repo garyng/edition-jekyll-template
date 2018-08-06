@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Storage Binding | C# - TPL2141</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Storage Binding" />
+<meta name="author" content="GaryNg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Storage binding defines when a variable is bound to a memory cell and for how long it remains bounded. C# only has 3 binding categories:" />
+<meta property="og:description" content="Storage binding defines when a variable is bound to a memory cell and for how long it remains bounded. C# only has 3 binding categories:" />
+<link rel="canonical" href="https://tpl2141.garyng.xyz/03-names-and-bindings/storage-binding/" />
+<meta property="og:url" content="https://tpl2141.garyng.xyz/03-names-and-bindings/storage-binding/" />
+<meta property="og:site_name" content="C# - TPL2141" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-06T02:22:15+00:00" />
+<script type="application/ld+json">
+{"description":"Storage binding defines when a variable is bound to a memory cell and for how long it remains bounded. C# only has 3 binding categories:","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/03-names-and-bindings/storage-binding/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Storage Binding","dateModified":"2018-08-06T02:22:15+00:00","datePublished":"2018-08-06T02:22:15+00:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/images/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/emblem.svg" width="40" height="40" alt="C# - TPL2141 logo"></a>
+				C# - TPL2141
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/">Welcome</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/01-introduction/history/">Introduction</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/01-introduction/history/">Brief history</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/styles/">Supported programming styles</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/features/">Unique features</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/02-application-domain/Initial-intended-usage/">Application Domain</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/02-application-domain/Initial-intended-usage/">Initial intended usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/current-usage/">Current usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/popularity/">Popularity</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level current">
+							
+							<a href="/03-names-and-bindings/names/">Names and Bindings</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/names/">Names</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-characters/">Special characters</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-words/">Special words</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/declarations/">Declarations</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/dynamic-type-binding/">Dynamic type binding</a></li>
+								
+									<li class="nav-item current"><a href="/03-names-and-bindings/storage-binding/">Storage Binding</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/scoping/">Scoping</a></li>
+								
+							</ul>
+						</li>
+					
+				</ul>
+
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/quick-guide/">Quick Guide</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>Names and Bindings</h2>
+				<h3>Storage Binding</h3>
+				
+			</div>
+			<article class="content">
+				<p>Storage binding defines when a variable is bound to a memory cell and for how long it remains bounded. C# only has 3 binding categories:</p>
+
+<ol>
+  <li><a href="#static">static</a></li>
+  <li><a href="#stack-dynamic">stack-dynamic</a></li>
+  <li><a href="#explicit-heap-dynamic">explicit heap-dynamic</a></li>
+</ol>
+
+<h2 id="static">Static</h2>
+
+<p>In C#, local variables cannot be defined as <code class="highlighter-rouge">static</code>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ERROR: The modifier "static" is not valid for this item</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">num</span> <span class="p">=</span> <span class="m">123</span><span class="p">;</span>
+
+<span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// ERROR: The modifier "static" is not valid for this item</span>
+  <span class="k">static</span> <span class="kt">int</span> <span class="n">age</span> <span class="p">=</span> <span class="m">123</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Instead, the <code class="highlighter-rouge">static</code> keyword has another meaning: it is used to declare a <strong>static member</strong>, which belongs to the <strong>type</strong> itself rather than to a <strong>specific instance</strong> of the class <a href="#storage-binding-Docs2015e">(Docs, 2015)</a>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+  <span class="c1">// static class member</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">=</span> <span class="m">123</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Age: </span><span class="p">{</span><span class="n">Person</span><span class="p">.</span><span class="n">Age</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Age: 123
+</code></pre></div></div>
+
+<p>It can only be used on:</p>
+
+<ol>
+  <li>classes</li>
+  <li>fields</li>
+  <li>methods</li>
+  <li>properties</li>
+  <li>operators</li>
+  <li>events</li>
+  <li>constructors</li>
+</ol>
+
+<h2 id="stack-dynamic">Stack-dynamic</h2>
+
+<p>In C#, <strong>value types</strong> are <em>often</em> but, <em>not necessarily always</em>, allocated on the <strong>stack</strong>. This includes <a href="#storage-binding-Cochran2006">(Cochran, 2006)</a>:</p>
+
+<ol>
+  <li>bool</li>
+  <li>byte</li>
+  <li>char</li>
+  <li>decimal</li>
+  <li>double</li>
+  <li>enum</li>
+  <li>float</li>
+  <li>int</li>
+  <li>long</li>
+  <li>sbyte</li>
+  <li>short</li>
+  <li>struct</li>
+  <li>uint</li>
+  <li>ulong</li>
+  <li>ushort</li>
+</ol>
+
+<h2 id="explicit-heap-dynamic">Explicit heap-dynamic</h2>
+
+<p><strong>Reference</strong> types are always allocated on the <strong>heap</strong>, which includes:</p>
+
+<ol>
+  <li>class</li>
+  <li>interface</li>
+  <li>delegate</li>
+  <li>object</li>
+  <li>string</li>
+</ol>
+
+<p>The heap is managed by <em>Garbage Collector (GC)</em>, which will find all objects in the heap that are <strong>not being accessed</strong> and delete them.
+Note that a value type will be allocated on the heap when <a href="#storage-binding-Gabe2010">(Gabe, 2010)</a>:</p>
+
+<ol>
+  <li>it is part of a class</li>
+  <li>it is boxed</li>
+  <li>it is an array</li>
+  <li>it is a static variable</li>
+  <li>it is capture by a closure</li>
+  <li>… etc</li>
+</ol>
+
+<h2 id="example">Example</h2>
+<p><small>Adapted from <a href="#storage-binding-Cochran2006">(Cochran, 2006)</a></small></p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">MyInt</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="kt">int</span> <span class="n">MyValue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// on stack</span>
+  <span class="kt">int</span> <span class="k">value</span> <span class="p">=</span> <span class="m">123</span><span class="p">;</span>
+  
+  <span class="c1">// on heap, but the reference/pointer to the object is on the stack</span>
+  <span class="n">MyInt</span> <span class="n">result</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MyInt</span><span class="p">();</span>
+  
+  <span class="c1">// on heap, because MyValue is part of a class (which is a reference type)</span>
+  <span class="n">result</span><span class="p">.</span><span class="n">MyValue</span> <span class="p">=</span> <span class="k">value</span> <span class="p">+</span> <span class="m">200</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="https://tpl2141.garyng.xyz/images/posts/storage-binding/stack-vs-heap-in-scope.png" alt="" /></p>
+
+<p>When the variables go out of scope, they are popped from the stack.</p>
+
+<p><img src="https://tpl2141.garyng.xyz/images/posts/storage-binding/stack-vs-heap-out-of-scope.png" alt="" /></p>
+
+<p>The object on the heap will eventually be collected by Garbage Collection.</p>
+
+<p><img src="https://tpl2141.garyng.xyz/images/posts/storage-binding/garbage-collector.png" alt="" /></p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="storage-binding-Docs2015e">Docs, M. (Ed.). (2015, July 20). static (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/static</span></li>
+<li><span id="storage-binding-Cochran2006">Cochran, M. (2006, January 14). C# Heap(ing) Vs Stack(ing) in .NET: Part I. Retrieved from https://www.c-sharpcorner.com/article/C-Sharp-heaping-vs-stacking-in-net-part-i/</span></li>
+<li><span id="storage-binding-Gabe2010">Gabe. (2010, December 20). Memory allocation: Stack vs Heap? Retrieved from https://stackoverflow.com/a/4487320</span></li></ol>
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>
