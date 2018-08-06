@@ -17,9 +17,9 @@
 <meta property="og:url" content="https://tpl2141.garyng.xyz/03-names-and-bindings/declarations/" />
 <meta property="og:site_name" content="C# - TPL2141" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-08-06T02:22:15+00:00" />
+<meta property="article:published_time" content="2018-08-06T02:40:29+00:00" />
 <script type="application/ld+json">
-{"description":"Explicit declarations Explicit declaration is where the type of the variables is specified during declaration.","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/03-names-and-bindings/declarations/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Declarations","dateModified":"2018-08-06T02:22:15+00:00","datePublished":"2018-08-06T02:22:15+00:00","@context":"http://schema.org"}</script>
+{"description":"Explicit declarations Explicit declaration is where the type of the variables is specified during declaration.","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/03-names-and-bindings/declarations/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Declarations","dateModified":"2018-08-06T02:40:29+00:00","datePublished":"2018-08-06T02:40:29+00:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
@@ -148,6 +148,10 @@ Type of name: System.String
 Type of money: System.Double
 </code></pre></div></div>
 
+<h4 id="live-code-example">Live-code example</h4>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/mHOUwC" frameborder="0"></iframe>
+
 <h2 id="implicit-declarations">Implicit declarations</h2>
 
 <p>C# compiler uses type inferencing to deduce the actual type of the variable declared with the keyword <code class="highlighter-rouge">var</code>. Note that <a href="#declarations-Docs2015c">(Docs, 2015)</a></p>
@@ -173,11 +177,15 @@ Type of name: System.String
 Type of money: System.Double
 </code></pre></div></div>
 
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Pm8uu8" frameborder="0"></iframe>
+
 <p>This is not allowed since <code class="highlighter-rouge">age</code> is statically-typed (as <code class="highlighter-rouge">int</code>)</p>
 
 <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ERROR: Cannot implicitly convert type "string" to "int"</span>
 <span class="n">age</span> <span class="p">=</span> <span class="s">"123"</span><span class="p">;</span>
 </code></pre></div></div>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/VitbMw" frameborder="0"></iframe>
 
 <p>Implicit declaration is extremely useful for creating <strong>anonymous classes</strong>, which are used extensively in LINQ operation.</p>
 
@@ -195,6 +203,8 @@ Type of money: System.Double
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Type: &lt;&gt; f__AnonymousType0`3[System.String, System.Int32, System.Double]      &lt;-- this will be different
 Name: Lorem Ipsum Age: 23 Money: 123.45
 </code></pre></div></div>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/MGwPaP" frameborder="0"></iframe>
 
 <h2 id="references">References</h2>
 

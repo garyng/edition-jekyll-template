@@ -859,6 +859,10 @@ line3
 Lorem Ipsum paid 12.46 on 2018-01-01 12:34:56
 </code></pre></div></div>
 
+<h5 id="live-code-example-3">Live-code example</h5>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/RXBnOw" frameborder="0"></iframe>
+
 <h2 id="references">References</h2>
 
 <ol class="bibliography"><li><span id="special-characters-Docs2017a">Docs, M. (2017, February 14). C# Special Characters. Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/</span></li>
@@ -1108,6 +1112,10 @@ Type of name: System.String
 Type of money: System.Double
 </code></pre></div></div>
 
+<h4 id="live-code-example">Live-code example</h4>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/mHOUwC" frameborder="0"></iframe>
+
 <h2 id="implicit-declarations">Implicit declarations</h2>
 
 <p>C# compiler uses type inferencing to deduce the actual type of the variable declared with the keyword <code class="highlighter-rouge">var</code>. Note that <a href="#declarations-Docs2015c">(Docs, 2015)</a></p>
@@ -1133,11 +1141,15 @@ Type of name: System.String
 Type of money: System.Double
 </code></pre></div></div>
 
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Pm8uu8" frameborder="0"></iframe>
+
 <p>This is not allowed since <code class="highlighter-rouge">age</code> is statically-typed (as <code class="highlighter-rouge">int</code>)</p>
 
 <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ERROR: Cannot implicitly convert type "string" to "int"</span>
 <span class="n">age</span> <span class="p">=</span> <span class="s">"123"</span><span class="p">;</span>
 </code></pre></div></div>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/VitbMw" frameborder="0"></iframe>
 
 <p>Implicit declaration is extremely useful for creating <strong>anonymous classes</strong>, which are used extensively in LINQ operation.</p>
 
@@ -1155,6 +1167,8 @@ Type of money: System.Double
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Type: &lt;&gt; f__AnonymousType0`3[System.String, System.Int32, System.Double]      &lt;-- this will be different
 Name: Lorem Ipsum Age: 23 Money: 123.45
 </code></pre></div></div>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/MGwPaP" frameborder="0"></iframe>
 
 <h2 id="references">References</h2>
 
@@ -1197,6 +1211,10 @@ Console.WriteLine($"Value: {number}\tType: {number.GetType()}");
 <span class="c1">// ERROR: Operator '-' cannot be applied to operands of type 'string' and 'int'</span>
 </code></pre></div></div>
 
+<h4 id="live-code-example">Live-code example</h4>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/QROE6J" frameborder="0"></iframe>
+
 <h2 id="references">References</h2>
 
 <ol class="bibliography"><li><span id="dynamic-type-binding-Docs2015d">Docs, M. (Ed.). (2015, July 20). dynamic (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/dynamic</span></li></ol>
@@ -1221,10 +1239,7 @@ Console.WriteLine($"Value: {number}\tType: {number.GetType()}");
 
 <p>In C#, local variables cannot be defined as <code class="highlighter-rouge">static</code>.</p>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ERROR: The modifier "static" is not valid for this item</span>
-<span class="k">static</span> <span class="kt">int</span> <span class="n">num</span> <span class="p">=</span> <span class="m">123</span><span class="p">;</span>
-
-<span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="c1">// ERROR: The modifier "static" is not valid for this item</span>
   <span class="k">static</span> <span class="kt">int</span> <span class="n">age</span> <span class="p">=</span> <span class="m">123</span><span class="p">;</span>
@@ -1248,6 +1263,8 @@ Console.WriteLine($"Value: {number}\tType: {number.GetType()}");
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Age: 123
 </code></pre></div></div>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/5ty5k6" frameborder="0"></iframe>
 
 <p>It can only be used on:</p>
 
