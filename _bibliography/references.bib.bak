@@ -338,7 +338,7 @@
   url    = {https://www.c-sharpcorner.com/article/C-Sharp-heaping-vs-stacking-in-net-part-i/},
 }
 
-@Online{,
+@Online{Gabe2010,
   author = {Gabe},
   title  = {Memory allocation: Stack vs Heap?},
   year   = {2010},

@@ -20,7 +20,6 @@ The verbatim character can be used to
     1. [can be used to define **multiline** string](#12-can-be-used-to-define-multiline-string)
 
 #### 1. enable keywords to be used as identifiers
-<small>Live code example: <https://dotnetfiddle.net/Vp7jjY></small>
 
 This is illegal in C#:
 
@@ -35,10 +34,13 @@ string @string = "this is a string";
 Console.WriteLine(@string);
 ```
 
+##### Live-code example
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Vp7jjY" frameborder="0"></iframe>
+
 #### 2. indicate that a string is a “verbatim string literal”
 
 ##### 1.1 escape sequences are ignored
-<small>Live code example: https://dotnetfiddle.net/c7LIE</small>
 
 ```cs
 string normal = "first line \n second line";
@@ -70,8 +72,11 @@ Console.WriteLine(filename2);
 // c:\documents\files\u0066.txt
 ```
 
+##### Live-code example
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/c7LIEt" frameborder="0"></iframe>
+
 #### 1.2 can be used to define multiline string
-<small>Live code example: https://dotnetfiddle.net/MiLJFw</small>
 
 ```cs
 string normal = "line1\nline2\nline3\n---";
@@ -95,6 +100,10 @@ line2
 line3
 ---
 ```
+
+##### Live-code example
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/MiLJFw" frameborder="0"></iframe>
 
 ## $, the interpolated string character
 

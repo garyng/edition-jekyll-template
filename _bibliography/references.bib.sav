@@ -346,4 +346,12 @@
   url    = {https://stackoverflow.com/a/4487320},
 }
 
+@Online{Rouse2011,
+  author = {Margaret Rouse},
+  title  = {lexical scoping (static scoping)},
+  year   = {2011},
+  date   = {2011-03-01},
+  url    = {https://whatis.techtarget.com/definition/lexical-scoping-static-scoping},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}
