@@ -16,7 +16,7 @@ However, identifiers in C# must obey the following rules {% cite Jones2001 --pre
     1. letters
     1. digits
     1. underscore character
-1. must not be a keyword or a reserved word (which can be “escaped” by prefixing with the `@` verbatim character)
+1. must not be a keyword or a reserved word (which can be “escaped” by prefixing with the  [verbatim character @]({% link _docs/03-names-and-bindings/special-characters.md %}#1-enable-keywords-to-be-used-as-identifiers))
 
 ## References
 

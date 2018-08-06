@@ -290,4 +290,60 @@
   url    = {https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/},
 }
 
+@Online{Docs2018,
+  editor = {Microsoft Docs},
+  title  = {string interpolation (C# Reference)},
+  year   = {2018},
+  date   = {2018-03-26},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated},
+}
+
+@Online{Docs2017b,
+  author = {Microsoft Docs},
+  title  = {C# Keywords},
+  year   = {2017},
+  date   = {2017-03-07},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/},
+}
+
+@Online{Docs2015c,
+  editor = {Microsoft Docs},
+  title  = {var (C# Reference)},
+  year   = {2015},
+  date   = {2015-07-20},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/var},
+}
+
+@Online{Docs2015d,
+  editor = {Microsoft Docs},
+  title  = {dynamic (C# Reference)},
+  year   = {2015},
+  date   = {2015-07-20},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/dynamic},
+}
+
+@Online{Docs2015e,
+  editor = {Microsoft Docs},
+  title  = {static (C# Reference)},
+  year   = {2015},
+  date   = {2015-07-20},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/static},
+}
+
+@Online{Cochran2006,
+  author = {Matthew Cochran},
+  title  = {C# Heap(ing) Vs Stack(ing) in .NET: Part I},
+  year   = {2006},
+  date   = {2006-01-14},
+  url    = {https://www.c-sharpcorner.com/article/C-Sharp-heaping-vs-stacking-in-net-part-i/},
+}
+
+@Online{,
+  author = {Gabe},
+  title  = {Memory allocation: Stack vs Heap?},
+  year   = {2010},
+  date   = {2010-12-20},
+  url    = {https://stackoverflow.com/a/4487320},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}

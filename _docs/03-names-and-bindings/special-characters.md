@@ -108,7 +108,7 @@ string name = "Lorem Ipsum";
 DateTime paidOn = new DateTime(2018, 1, 1, 12, 34, 56);
 ```
 
-instead of doing this to join different variables together
+Instead of doing this to join different variables together
 
 ```cs
 // instead of doing this
@@ -117,7 +117,7 @@ string normal = name + " paid " + price.ToString("0.00") + " on " + paidOn.ToStr
 // Note: 00.00 -> numbers are formatted into 2 decimal places, padded with zeros
 ```
 
-string interpolation is much simpler
+String interpolation is much simpler
 
 ```cs
 // you can do this
