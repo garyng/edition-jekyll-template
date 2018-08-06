@@ -143,6 +143,10 @@ Lorem Ipsum paid 12.46 on 2018-01-01 12:34:56
 Lorem Ipsum paid 12.46 on 2018-01-01 12:34:56
 ```
 
+##### Live-code example
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/RXBnOw" frameborder="0"></iframe>
+
 ## References
 
 {% bibliography --cited_in_order --prefix special-characters %}

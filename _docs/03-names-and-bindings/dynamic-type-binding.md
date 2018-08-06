@@ -39,6 +39,10 @@ number = number - 1;
 // ERROR: Operator '-' cannot be applied to operands of type 'string' and 'int'
 ```
 
+#### Live-code example
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/QROE6J" frameborder="0"></iframe>
+
 ## References
 
 {% bibliography --cited_in_order --prefix dynamic-type-binding %}

@@ -26,6 +26,10 @@ Type of name: System.String
 Type of money: System.Double
 ```
 
+#### Live-code example
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/mHOUwC" frameborder="0"></iframe>
+
 ## Implicit declarations
 
 C# compiler uses type inferencing to deduce the actual type of the variable declared with the keyword `var`. Note that {% cite Docs2015c --prefix declarations %}
@@ -51,12 +55,16 @@ Type of name: System.String
 Type of money: System.Double
 ```
 
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Pm8uu8" frameborder="0"></iframe>
+
 This is not allowed since `age` is statically-typed (as `int`)
 
 ```cs
 // ERROR: Cannot implicitly convert type "string" to "int"
 age = "123";
 ```
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/VitbMw" frameborder="0"></iframe>
 
 Implicit declaration is extremely useful for creating **anonymous classes**, which are used extensively in LINQ operation.
 
@@ -76,6 +84,8 @@ Output:
 Type: <> f__AnonymousType0`3[System.String, System.Int32, System.Double]      <-- this will be different
 Name: Lorem Ipsum Age: 23 Money: 123.45
 ```
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/MGwPaP" frameborder="0"></iframe>
 
 ## References
 

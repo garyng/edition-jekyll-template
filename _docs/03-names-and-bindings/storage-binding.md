@@ -16,9 +16,6 @@ Storage binding defines when a variable is bound to a memory cell and for how lo
 In C#, local variables cannot be defined as `static`.
 
 ```cs
-// ERROR: The modifier "static" is not valid for this item
-static int num = 123;
-
 void Main()
 {
   // ERROR: The modifier "static" is not valid for this item
@@ -45,6 +42,8 @@ Output:
 ```
 Age: 123
 ```
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/5ty5k6" frameborder="0"></iframe>
 
 It can only be used on:
 
