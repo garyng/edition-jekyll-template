@@ -6,18 +6,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Welcome | C# - TPL2141</title>
+<title>Operator precedence and associativity | C# - TPL2141</title>
 <meta name="generator" content="Jekyll v3.8.3" />
-<meta property="og:title" content="Welcome" />
+<meta property="og:title" content="Operator precedence and associativity" />
 <meta name="author" content="GaryNg" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="TPL2141: Programming Language Concept project - C#" />
-<meta property="og:description" content="TPL2141: Programming Language Concept project - C#" />
-<link rel="canonical" href="https://tpl2141.garyng.xyz/" />
-<meta property="og:url" content="https://tpl2141.garyng.xyz/" />
+<meta name="description" content="An expression can contain multiple operators – in that case, when two operators share an operand, the order in which the operators are applied is determined by" />
+<meta property="og:description" content="An expression can contain multiple operators – in that case, when two operators share an operand, the order in which the operators are applied is determined by" />
+<link rel="canonical" href="https://tpl2141.garyng.xyz/04-expressions-and-assignments/operator-precedence-and-associativity/" />
+<meta property="og:url" content="https://tpl2141.garyng.xyz/04-expressions-and-assignments/operator-precedence-and-associativity/" />
 <meta property="og:site_name" content="C# - TPL2141" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-19T13:23:10+00:00" />
 <script type="application/ld+json">
-{"name":"C# - TPL2141","description":"TPL2141: Programming Language Concept project - C#","author":{"@type":"Person","name":"GaryNg"},"@type":"WebSite","url":"https://tpl2141.garyng.xyz/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Welcome","sameAs":["https://tpl2141.garyng.xyz"],"@context":"http://schema.org"}</script>
+{"description":"An expression can contain multiple operators – in that case, when two operators share an operand, the order in which the operators are applied is determined by","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/04-expressions-and-assignments/operator-precedence-and-associativity/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Operator precedence and associativity","dateModified":"2018-08-19T13:23:10+00:00","datePublished":"2018-08-19T13:23:10+00:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
@@ -46,7 +48,7 @@
 
 			<nav class="full-navigation">
 				<ul>
-					<li class="nav-item top-level current">
+					<li class="nav-item top-level ">
 						
 						<a href="/">Welcome</a>
 					</li>
@@ -109,7 +111,7 @@
 							</ul>
 						</li>
 					
-						<li class="nav-item top-level ">
+						<li class="nav-item top-level current">
 							
 							<a href="/04-expressions-and-assignments/expressions/">Expressions and Assignments</a>
 							<ul>
@@ -120,7 +122,7 @@
 								
 									<li class="nav-item "><a href="/04-expressions-and-assignments/operators/">Operators</a></li>
 								
-									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-precedence-and-associativity/">Operator precedence and associativity</a></li>
+									<li class="nav-item current"><a href="/04-expressions-and-assignments/operator-precedence-and-associativity/">Operator precedence and associativity</a></li>
 								
 									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-overloading/">Operator overloading</a></li>
 								
@@ -148,52 +150,134 @@
 
 		<section class="main">
 			<div class="page-header">
-				<h2>C# - TPL2141</h2>
-				<h3>Welcome</h3>
+				<h2>Expressions and Assignments</h2>
+				<h3>Operator precedence and associativity</h3>
 				
 			</div>
 			<article class="content">
-				<p><a href="https://travis-ci.org/garyng/tpl2141"><img src="https://travis-ci.org/garyng/tpl2141.svg?branch=master" alt="Build Status" /></a>
-<img src="https://img.shields.io/github/last-commit/garyng/tpl2141.svg" alt="GitHub last commit" /></p>
+				<p>An expression can contain multiple operators – in that case, when two operators share an operand, the <strong>order</strong> in which the operators are applied is determined by</p>
 
-<p>This site is made for <code class="highlighter-rouge">TPL2141 Programming Language Concept</code> using the <code class="highlighter-rouge">Edition</code> template by <a href="https://github.com/CloudCannon/edition-jekyll-template">CloudCannon</a>.</p>
+<ol>
+  <li>operator precedence</li>
+  <li>associativity, and</li>
+  <li><a href="#parenthesis">parentheses</a></li>
+</ol>
 
-<p>Deployment of this <code class="highlighter-rouge">Jekyll</code> site to <code class="highlighter-rouge">GitHub Pages</code> is handled by <code class="highlighter-rouge">Travis CI</code>.</p>
+<p><a href="#operators-associativity-Docs2015g">(Docs, 2015)</a></p>
 
-<h2 id="group-member">Group member</h2>
+<p>For example,</p>
 
-<p>Group name: <code class="highlighter-rouge">hello</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3 + 4 * 5
+</code></pre></div></div>
+
+<p>is treated as</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3 + (4 * 5)
+</code></pre></div></div>
+
+<p>which evaluates to <code class="highlighter-rouge">23</code> because multiplication <code class="highlighter-rouge">*</code> has <em>higher precedence</em> over addition <code class="highlighter-rouge">+</code>.</p>
+
+<p>Here is a list of almost all operators in C#, sorted in their order of precedence.</p>
 
 <table>
   <thead>
     <tr>
-      <th>Student ID</th>
-      <th>Name</th>
+      <th>Category</th>
+      <th>Operator</th>
+      <th>Associativity</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1151105500</td>
-      <td>Ng Zhong Bo</td>
+      <td>Postfix</td>
+      <td>() [] -&gt; . ++ –</td>
+      <td>Left to right</td>
     </tr>
     <tr>
-      <td>1151105261</td>
-      <td>Low Yong Ee</td>
+      <td>Unary</td>
+      <td>+ - ! ~ ++ – (type)* &amp; sizeof</td>
+      <td>Right to left</td>
     </tr>
     <tr>
-      <td>1161102195</td>
-      <td>Carol Ng Jie Rou</td>
+      <td>Multiplicative</td>
+      <td>* / %</td>
+      <td>Left to right</td>
     </tr>
     <tr>
-      <td>1161100897</td>
-      <td>Ng Xiang Yin</td>
+      <td>Additive</td>
+      <td>+ -</td>
+      <td>Left to right</td>
     </tr>
     <tr>
-      <td>1161101364</td>
-      <td>Chua Jie Nee</td>
+      <td>Shift</td>
+      <td>« »</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Relational</td>
+      <td>&lt; &lt;= &gt; &gt;=</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Equality</td>
+      <td>== !=</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Bitwise AND</td>
+      <td>&amp;</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Bitwise XOR</td>
+      <td>^</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Bitwise OR</td>
+      <td>|</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Logical AND</td>
+      <td>&amp;&amp;</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Logical OR</td>
+      <td>||</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Conditional</td>
+      <td>?:</td>
+      <td>Right to left</td>
+    </tr>
+    <tr>
+      <td>Assignment</td>
+      <td>= += -= *= /= %=»= «= &amp;= ^= |=</td>
+      <td>Right to left</td>
+    </tr>
+    <tr>
+      <td>Comma</td>
+      <td>,</td>
+      <td>Left to right</td>
     </tr>
   </tbody>
 </table>
+
+<h2 id="parenthesis">Parenthesis</h2>
+
+<p>The implied evaluation order can be changed by using parenthesis. For example,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(3 + 4) * 5
+</code></pre></div></div>
+
+<p>results in <code class="highlighter-rouge">35</code> because the <em>addition</em> operator is evaluated first, even though the <em>multiplication</em> operator has higher precedence</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="precedence-associativity-Docs2015g">Docs, M. (2015, July 20). ?: Operator (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator</span></li></ol>
 
 			</article>
 		</section>

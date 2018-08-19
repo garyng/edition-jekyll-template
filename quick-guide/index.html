@@ -109,6 +109,32 @@
 							</ul>
 						</li>
 					
+						<li class="nav-item top-level ">
+							
+							<a href="/04-expressions-and-assignments/expressions/">Expressions and Assignments</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/expressions/">Expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/arithmetic-expressions/">Arithmetic expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operators/">Operators</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-precedence-and-associativity/">Operator precedence and associativity</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-overloading/">Operator overloading</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/functional-side-effects/">Functional side effects</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/type-conversion/">Type conversion</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/boolean-expressions/">Boolean expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/short-circuit-evaluation/">Short circuit evaluation</a></li>
+								
+							</ul>
+						</li>
+					
 				</ul>
 
 				<ul>
@@ -1402,6 +1428,810 @@ Note that a value type will be allocated on the heap when <a href="#storage-bind
 <h2 id="references">References</h2>
 
 <ol class="bibliography"><li><span id="scoping-Rouse2011">Rouse, M. (2011, March 1). lexical scoping (static scoping). Retrieved from https://whatis.techtarget.com/definition/lexical-scoping-static-scoping</span></li></ol>
+
+	</article>
+	<hr>
+	
+
+
+	
+	
+	<div class="page-header quick-guide-page">
+		<h2>Expressions and Assignments</h2>
+		<h3>Expressions</h3>
+	</div>
+	<article class="content">
+		<p>An expression is a sequence of</p>
+
+<ol>
+  <li>one or more <strong>operands</strong>, and</li>
+  <li>or more <strong>operators</strong></li>
+</ol>
+
+<p>that can be evaluated into some value <a href="#expressions-Docs2017c">(Docs, 2017)</a>.</p>
+
+<p>In C#, expressions can consist of</p>
+
+<ol>
+  <li>literal value
+    <ul>
+      <li><code class="highlighter-rouge">1</code>, <code class="highlighter-rouge">“abc”</code></li>
+    </ul>
+  </li>
+  <li>method invocation
+    <ul>
+      <li><code class="highlighter-rouge">CallMe()</code></li>
+    </ul>
+  </li>
+  <li>operator and operands
+    <ul>
+      <li><code class="highlighter-rouge">1 + 2 - 3</code></li>
+    </ul>
+  </li>
+  <li>simple name
+    <ul>
+      <li>variable: <code class="highlighter-rouge">num</code>, <code class="highlighter-rouge">age</code></li>
+      <li>method parameter: <code class="highlighter-rouge">CallMe(myNumber)</code></li>
+    </ul>
+  </li>
+</ol>
+
+<p>There are also other types of expressions, for example:</p>
+
+<ol>
+  <li>LINQ query expressions <a href="#expressions-Docs2016">(Docs, 2016)</a>
+    <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">scoreQuery</span> <span class="p">=</span>
+     <span class="k">from</span> <span class="n">score</span> <span class="k">in</span> <span class="n">scores</span>
+     <span class="k">where</span> <span class="n">score</span> <span class="p">&gt;</span> <span class="m">80</span>
+     <span class="k">select</span> <span class="n">score</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>lambda expressions, <code class="highlighter-rouge">(int x, string s) =&gt; s.Length &gt; x</code></li>
+</ol>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="expressions-Docs2017c">Docs, M. (2017, May 11). Expressions (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/expressions</span></li>
+<li><span id="expressions-Docs2016">Docs, M. (2016, November 30). Language Integrated Query (LINQ). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/linq/index</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Expressions and Assignments</h2>
+		<h3>Arithmetic expressions</h3>
+	</div>
+	<article class="content">
+		<p>An arithmetic expression is an expression built up using</p>
+
+<ol>
+  <li>numbers</li>
+  <li>arithmetic operators (such as <code class="highlighter-rouge">+</code>, <code class="highlighter-rouge">-</code>, <code class="highlighter-rouge">*</code>, <code class="highlighter-rouge">/</code>), and</li>
+  <li>parentheses</li>
+</ol>
+
+<p><a href="#arithmetic-expressions-Wagner2001">(Wagner, 2001)</a></p>
+
+<h2 id="arithmetic-operators">Arithmetic operators</h2>
+
+<p>In C#, the primary arithmetic operators are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Operators</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>- (unary)</td>
+      <td>Negation</td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>Multiplication</td>
+    </tr>
+    <tr>
+      <td>/</td>
+      <td>Division</td>
+    </tr>
+    <tr>
+      <td>+</td>
+      <td>Addition</td>
+    </tr>
+    <tr>
+      <td>-</td>
+      <td>Subtraction</td>
+    </tr>
+    <tr>
+      <td>%</td>
+      <td>Modulo</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="#arithmetic-expressions-Techotopia2016">(Techotopia, 2016)</a></p>
+
+<p>Here is a simple example demonstrating some of the operators:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="m">1</span> <span class="p">+</span> <span class="m">2</span><span class="p">);</span>   <span class="c1">// 3</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="m">1</span> <span class="p">-</span> <span class="p">-</span><span class="m">2</span><span class="p">);</span>  <span class="c1">// 3</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="m">1</span> <span class="p">*</span> <span class="m">2</span><span class="p">);</span>   <span class="c1">// 2</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="m">1</span> <span class="p">/</span> <span class="m">2</span><span class="p">);</span>   <span class="c1">// 0</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="m">1</span> <span class="p">/</span> <span class="m">2.0</span><span class="p">);</span> <span class="c1">// 0.5</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="m">5</span> <span class="p">%</span> <span class="m">3</span><span class="p">);</span>   <span class="c1">// 2</span>
+</code></pre></div></div>
+
+<h4 id="live-code-example">Live-code example</h4>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/cEdjlF" frameborder="0"></iframe>
+
+<h2 id="mixed-mode-arithmetic-operations">Mixed mode arithmetic operations</h2>
+
+<p>In C#, an arithmetic expression can contain operands of different integral type. However, the resulting type will often be the <strong>larger</strong> integral type (<strong><em>widening</em> assignment coercions</strong>). For example,</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">a</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">b</span> <span class="p">=</span> <span class="m">1.2</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="nf">GetType</span><span class="p">());</span>
+</code></pre></div></div>
+
+<p>The output will be</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>System.Double
+</code></pre></div></div>
+
+<h4 id="live-code-example-1">Live-code example</h4>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/sv0S4d" frameborder="0"></iframe>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="arithmetic-expressions-Wagner2001">Wagner, E. G. (2001, October 23). Arithmetic Expressions. Retrieved from https://www.ii.uib.no/ wagner/hsalg/arithexp.htm</span></li>
+<li><span id="arithmetic-expressions-Techotopia2016">Techotopia. (2016, October 27). C Sharp Operators and Expressions. Retrieved from https://www.techotopia.com/index.php/C_Sharp_Operators_and_Expressions</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Expressions and Assignments</h2>
+		<h3>Operators</h3>
+	</div>
+	<article class="content">
+		<h2 id="types-of-operator">Types of operator</h2>
+
+<ol>
+  <li><a href="#unary-operators">unary operators</a></li>
+  <li><a href="#binary-operators">binary operators</a></li>
+  <li><a href="#ternary-operators">ternary operators</a></li>
+</ol>
+
+<p><a href="#operators-Docs2015f">(Docs, 2015)</a></p>
+
+<h4 id="unary-operators">Unary operators</h4>
+
+<p>Operators that take 1 operand. For example,</p>
+
+<ol>
+  <li>increment operator, <code class="highlighter-rouge">++</code></li>
+  <li>new operator, <code class="highlighter-rouge">new Friend();</code></li>
+  <li>… etc</li>
+</ol>
+
+<h4 id="binary-operators">Binary operators</h4>
+
+<p>Operators that take 2 operands. For example,</p>
+
+<ol>
+  <li>arithmetic operators
+    <ol>
+      <li>addition, <code class="highlighter-rouge">+</code></li>
+      <li>subtraction, <code class="highlighter-rouge">-</code></li>
+      <li>multiplication, <code class="highlighter-rouge">*</code></li>
+      <li>division, <code class="highlighter-rouge">/</code></li>
+      <li>modulo, <code class="highlighter-rouge">%</code></li>
+    </ol>
+  </li>
+  <li>logical operators
+    <ol>
+      <li>Logical AND, <code class="highlighter-rouge">x &amp; y</code></li>
+      <li>Logical XOR, <code class="highlighter-rouge">x ^ y</code></li>
+      <li>Logical OR, <code class="highlighter-rouge">x | y</code></li>
+      <li>Conditional AND, <code class="highlighter-rouge">x &amp;&amp; y</code></li>
+      <li>Conditional OR, <code class="highlighter-rouge">x || y</code></li>
+    </ol>
+  </li>
+  <li>.. etc</li>
+</ol>
+
+<h4 id="ternary-operators">Ternary operators</h4>
+
+<p>Operators that take 3 operands. The only ternary operator in C# is the <strong>conditional operator</strong>, <code class="highlighter-rouge">?:</code> <a href="#operators-Docs2015g">(Docs, 2015)</a></p>
+
+<p>For example, this <code class="highlighter-rouge">if-else</code> statement</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">input</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">classify</span> <span class="p">=</span> <span class="s">"positive"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">classify</span> <span class="p">=</span> <span class="s">"negative"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>can be written as</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">classify</span> <span class="p">=</span> <span class="p">(</span><span class="n">input</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">?</span> <span class="s">"positive"</span> <span class="p">:</span> <span class="s">"negative"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="operators-Docs2015f">Docs, M. (2015, July 20). Operators (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/operators</span></li>
+<li><span id="operators-Docs2015g">Docs, M. (2015, July 20). ?: Operator (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Expressions and Assignments</h2>
+		<h3>Operator precedence and associativity</h3>
+	</div>
+	<article class="content">
+		<p>An expression can contain multiple operators – in that case, when two operators share an operand, the <strong>order</strong> in which the operators are applied is determined by</p>
+
+<ol>
+  <li>operator precedence</li>
+  <li>associativity, and</li>
+  <li><a href="#parenthesis">parentheses</a></li>
+</ol>
+
+<p><a href="#operators-associativity-Docs2015g">(Docs, 2015)</a></p>
+
+<p>For example,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3 + 4 * 5
+</code></pre></div></div>
+
+<p>is treated as</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3 + (4 * 5)
+</code></pre></div></div>
+
+<p>which evaluates to <code class="highlighter-rouge">23</code> because multiplication <code class="highlighter-rouge">*</code> has <em>higher precedence</em> over addition <code class="highlighter-rouge">+</code>.</p>
+
+<p>Here is a list of almost all operators in C#, sorted in their order of precedence.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Operator</th>
+      <th>Associativity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Postfix</td>
+      <td>() [] -&gt; . ++ –</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Unary</td>
+      <td>+ - ! ~ ++ – (type)* &amp; sizeof</td>
+      <td>Right to left</td>
+    </tr>
+    <tr>
+      <td>Multiplicative</td>
+      <td>* / %</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Additive</td>
+      <td>+ -</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Shift</td>
+      <td>« »</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Relational</td>
+      <td>&lt; &lt;= &gt; &gt;=</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Equality</td>
+      <td>== !=</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Bitwise AND</td>
+      <td>&amp;</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Bitwise XOR</td>
+      <td>^</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Bitwise OR</td>
+      <td>|</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Logical AND</td>
+      <td>&amp;&amp;</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Logical OR</td>
+      <td>||</td>
+      <td>Left to right</td>
+    </tr>
+    <tr>
+      <td>Conditional</td>
+      <td>?:</td>
+      <td>Right to left</td>
+    </tr>
+    <tr>
+      <td>Assignment</td>
+      <td>= += -= *= /= %=»= «= &amp;= ^= |=</td>
+      <td>Right to left</td>
+    </tr>
+    <tr>
+      <td>Comma</td>
+      <td>,</td>
+      <td>Left to right</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="parenthesis">Parenthesis</h2>
+
+<p>The implied evaluation order can be changed by using parenthesis. For example,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(3 + 4) * 5
+</code></pre></div></div>
+
+<p>results in <code class="highlighter-rouge">35</code> because the <em>addition</em> operator is evaluated first, even though the <em>multiplication</em> operator has higher precedence</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="precedence-associativity-Docs2015g">Docs, M. (2015, July 20). ?: Operator (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Expressions and Assignments</h2>
+		<h3>Operator overloading</h3>
+	</div>
+	<article class="content">
+		<p>In C#, <em>user-defined types</em> can define custom behaviors for certain operators with static member functions using the <code class="highlighter-rouge">operator</code> keyword. However, not all operators can be overloaded, and some of them have certain restrictions <a href="#operator-overloading-Docs2015h">(Docs, 2015)</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Operators</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>+, -, !, ~, ++, –</td>
+      <td>Can be overloaded</td>
+    </tr>
+    <tr>
+      <td>+, -, *, /, %</td>
+      <td>Can be overloaded</td>
+    </tr>
+    <tr>
+      <td>==, !=, , &lt;=, &gt;=</td>
+      <td>Can be overloaded</td>
+    </tr>
+    <tr>
+      <td>&amp;&amp;, ||</td>
+      <td>Cannot be overloaded directly</td>
+    </tr>
+    <tr>
+      <td>+=, -=, *=, /=, %=</td>
+      <td>Cannot be overloaded directly</td>
+    </tr>
+    <tr>
+      <td>=, ., ?:, -&gt;, new, is, sizeof, typeof</td>
+      <td>Cannot be overloaded</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="example-fraction">Example: <code class="highlighter-rouge">Fraction</code></h2>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Fraction</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="kt">int</span> <span class="n">_numerator</span><span class="p">;</span>
+    <span class="k">private</span> <span class="kt">int</span> <span class="n">_denominator</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">Fraction</span><span class="p">(</span><span class="kt">int</span> <span class="n">numerator</span><span class="p">,</span> <span class="kt">int</span> <span class="n">denominator</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_numerator</span> <span class="p">=</span> <span class="n">numerator</span><span class="p">;</span>
+        <span class="n">_denominator</span> <span class="p">=</span> <span class="n">denominator</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Value</span> <span class="p">=&gt;</span> <span class="p">((</span><span class="kt">double</span><span class="p">)</span><span class="n">_numerator</span><span class="p">)</span> <span class="p">/</span> <span class="n">_denominator</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="n">Fraction</span> <span class="k">operator</span> <span class="p">+(</span><span class="n">Fraction</span> <span class="n">first</span><span class="p">,</span> <span class="n">Fraction</span> <span class="n">second</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">numerator</span> <span class="p">=</span> <span class="n">first</span><span class="p">.</span><span class="n">_numerator</span> <span class="p">*</span> <span class="n">second</span><span class="p">.</span><span class="n">_denominator</span> <span class="p">+</span> <span class="n">second</span><span class="p">.</span><span class="n">_numerator</span> <span class="p">*</span> <span class="n">first</span><span class="p">.</span><span class="n">_denominator</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">denominator</span> <span class="p">=</span> <span class="n">first</span><span class="p">.</span><span class="n">_denominator</span> <span class="p">*</span> <span class="n">second</span><span class="p">.</span><span class="n">_denominator</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Fraction</span><span class="p">(</span><span class="n">numerator</span><span class="p">,</span> <span class="n">denominator</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>To see the class in action,</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Fraction</span> <span class="n">f1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Fraction</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">);</span>
+<span class="n">Fraction</span> <span class="n">f2</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Fraction</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">);</span>
+
+<span class="n">Fraction</span> <span class="n">result</span> <span class="p">=</span> <span class="n">f1</span> <span class="p">+</span> <span class="n">f2</span><span class="p">;</span>  <span class="c1">// adding 2 fractions together</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.26666666666667
+</code></pre></div></div>
+
+<p>which is equivalent to <code class="highlighter-rouge">2 / 3 + 3 / 5</code>.</p>
+
+<p>The method</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">static</span> <span class="n">Fraction</span> <span class="k">operator</span> <span class="p">+(</span><span class="n">Fraction</span> <span class="n">first</span><span class="p">,</span> <span class="n">Fraction</span> <span class="n">second</span><span class="p">)</span>
+</code></pre></div></div>
+<p>overload the operator <code class="highlighter-rouge">+</code> to provide <strong>custom logic</strong> for adding two fractions.</p>
+
+<h4 id="live-code-example">Live-code example</h4>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/1mBSYH" frameborder="0"></iframe>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="operator-overloading-Docs2015h">Docs, M. (2015, July 20). Overloadable Operators (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/overloadable-operators</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Expressions and Assignments</h2>
+		<h3>Functional side effects</h3>
+	</div>
+	<article class="content">
+		<p>Functional side effects occur when functions</p>
+
+<ol>
+  <li>modify a global variable, or</li>
+  <li><a href="#modifying-one-of-its-parameters">modify one of its parameters</a></li>
+</ol>
+
+<h2 id="modifying-one-of-its-parameters">Modifying one of its parameters</h2>
+
+<p>Mutations made by the function will <strong>persist</strong> only if the parameters are <strong>passed by reference</strong>, which can be achieved using either the keyword <code class="highlighter-rouge">ref</code> or <code class="highlighter-rouge">out</code>.</p>
+
+<p>For example,</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">fun1</span><span class="p">(</span><span class="k">ref</span> <span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">num</span> <span class="p">=</span> <span class="m">100</span><span class="p">;</span>
+    <span class="k">return</span> <span class="m">10</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">void</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
+    <span class="n">a</span> <span class="p">=</span> <span class="nf">fun1</span><span class="p">(</span><span class="k">ref</span> <span class="n">a</span><span class="p">)</span> <span class="p">+</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The output will be <code class="highlighter-rouge">110</code></p>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/D02EAT" frameborder="0"></iframe>
+
+<p>However, the variable will <strong>not be modified</strong> if there is no <code class="highlighter-rouge">ref</code> or <code class="highlighter-rouge">out</code> keyword:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">fun1</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">num</span> <span class="p">=</span> <span class="m">100</span><span class="p">;</span>
+    <span class="k">return</span> <span class="m">10</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">void</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
+    <span class="n">a</span> <span class="p">=</span> <span class="nf">fun1</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">+</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The result will be <code class="highlighter-rouge">12</code></p>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/C4K2RF" frameborder="0"></iframe>
+
+<p>The difference between <code class="highlighter-rouge">ref</code> and <code class="highlighter-rouge">out</code> is that <code class="highlighter-rouge">ref</code> parameter <strong>must be initialized</strong> before it is passed; while <code class="highlighter-rouge">out</code> parameter <strong>do not have to be explicitly initialized</strong> before they are passed <a href="#side-effects-Docs2018a">(Docs, 2018)</a>.</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="side-effects-Docs2018a">Docs, M. (2018, March 6). ref (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/ref</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Expressions and Assignments</h2>
+		<h3>Type conversion</h3>
+	</div>
+	<article class="content">
+		<p>Type conversion is a process where data of one type is converted into data of another type <a href="#type-conversion-Docs2015i">(Docs, 2015)</a>. C# has 2 forms of type conversions:</p>
+
+<ol>
+  <li><a href="#implicit-conversions">implicit conversions</a></li>
+  <li><a href="#explicit-type-conversion">explicit conversions</a> (or type casting)</li>
+</ol>
+
+<h2 id="implicit-conversions">Implicit conversions</h2>
+
+<p>The conversions are performed by C# in a <em>type-safe</em> manner, most of which are <strong>widening conversion</strong>.</p>
+
+<p>For example, conversions</p>
+
+<ol>
+  <li><a href="#from-smaller-to-larger-integral-types">from smaller to larger integral types</a></li>
+  <li><a href="#from-derived-classes-to-base-classes">from derived classes to base classes</a></li>
+</ol>
+
+<h4 id="from-smaller-to-larger-integral-types">from smaller to larger integral types</h4>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">num1</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">num2</span> <span class="p">=</span> <span class="n">num1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="from-derived-classes-to-base-classes">from derived classes to base classes</h4>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Derived</span> <span class="n">d</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Derived</span><span class="p">();</span>
+<span class="n">Base</span> <span class="n">b</span> <span class="p">=</span> <span class="n">d</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="explicit-type-conversion">Explicit type conversion</h2>
+
+<p><em>Casting</em> is required when <strong>information might be lost</strong> in the conversion, which is also known as a <strong>narrowing conversion</strong>. Explicit conversions require a cast operator in the form of <code class="highlighter-rouge">(&lt;target_type&gt;)&lt;data&gt;</code>.</p>
+
+<p>For example, conversions</p>
+
+<ol>
+  <li><a href="#from-larger-to-smaller-integral-types">from larger to smaller integral types</a></li>
+  <li><a href="#from-base-class-to-child-class">from base class to child class</a></li>
+</ol>
+
+<h4 id="from-larger-to-smaller-integral-types">from larger to smaller integral types</h4>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="n">num1</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
+<span class="c1">// int num2 = num1; // error</span>
+<span class="kt">int</span> <span class="n">num2</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">num1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="from-base-class-to-child-class">from base class to child class</h4>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Derived</span> <span class="n">d</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Derived</span><span class="p">();</span>
+<span class="n">Base</span> <span class="n">b</span> <span class="p">=</span> <span class="n">d</span><span class="p">;</span>
+
+<span class="c1">// Derived d2 = b; // error</span>
+<span class="n">Derived</span> <span class="n">d2</span> <span class="p">=</span> <span class="p">(</span><span class="n">Derived</span><span class="p">)</span><span class="n">b</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="type-conversion-Docs2015i">Docs, M. (2015, July 20). Casting and Type Conversions (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/casting-and-type-conversions</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Expressions and Assignments</h2>
+		<h3>Boolean expressions</h3>
+	</div>
+	<article class="content">
+		<p>Boolean expressions are those that always evaluate to either <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>. Here are some examples of operators that usually can be found within a boolean expression:</p>
+
+<ol>
+  <li>relational and equality operators</li>
+  <li>logical negation, <code class="highlighter-rouge">!</code></li>
+  <li>type operators</li>
+</ol>
+
+<h2 id="relational-expressions">Relational expressions</h2>
+
+<p>A relational expression consists of two or more expressions whose values are compared to determine whether the relationship stated by the relational operator is satisfied <a href="#boolean-expressions-Schmalzl1999">(Schmalzl, 1999)</a>.</p>
+
+<p>Example of relational and equality operators:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expression</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>x &lt; y</td>
+      <td>Less than</td>
+    </tr>
+    <tr>
+      <td>x &gt; y</td>
+      <td>Greater than</td>
+    </tr>
+    <tr>
+      <td>x &lt;= y</td>
+      <td>Less than or equal</td>
+    </tr>
+    <tr>
+      <td>x &gt;= y</td>
+      <td>Greater than or equal</td>
+    </tr>
+    <tr>
+      <td>x == y</td>
+      <td>Equal</td>
+    </tr>
+    <tr>
+      <td>x != y</td>
+      <td>Not equal</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"1 &gt; 2 is </span><span class="p">{</span><span class="m">1</span> <span class="p">&gt;</span> <span class="m">2</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"1 &lt; 2 is </span><span class="p">{</span><span class="m">1</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"1 &lt;= 1 is </span><span class="p">{</span><span class="m">1</span> <span class="p">&lt;=</span> <span class="m">1</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"2 &gt;= 2 is </span><span class="p">{</span><span class="m">2</span> <span class="p">&gt;=</span> <span class="m">2</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"2 == 2 is </span><span class="p">{</span><span class="m">2</span> <span class="p">==</span> <span class="m">2</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"2 != 2 is </span><span class="p">{</span><span class="m">2</span> <span class="p">!=</span> <span class="m">2</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 &gt; 2 is False
+1 &lt; 2 is True
+1 &lt;= 1 is True
+2 &gt;= 2 is True
+2 == 2 is True
+2 != 2 is False
+</code></pre></div></div>
+
+<h4 id="live-code-example">Live-code example</h4>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/ejmawU" frameborder="0"></iframe>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="boolean-expressions-Schmalzl1999">Schmalzl, J. (1999, July 5). Relational Expressions. Retrieved from http://earth.uni-muenster.de/ joergs/doc/f90/lrm/lrm0064.htm</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Expressions and Assignments</h2>
+		<h3>Short circuit evaluation</h3>
+	</div>
+	<article class="content">
+		<p>Short-circuit evaluation is a process whereby the value of an expression is determined without evaluating all of the operands and/or operands.</p>
+
+<p>C# offers both short-circuiting and non-short-circuiting boolean operators <a href="#short-circuit-Shamseer2017">(Shamseer, 2017)</a>:</p>
+
+<ol>
+  <li>short-circuiting operators
+    <ol>
+      <li>conditional OR, <code class="highlighter-rouge">||</code></li>
+      <li>conditional AND, <code class="highlighter-rouge">&amp;&amp;</code></li>
+    </ol>
+  </li>
+  <li>non-short-circuiting operators
+    <ol>
+      <li>logical OR, <code class="highlighter-rouge">|</code></li>
+      <li>logical AND, <code class="highlighter-rouge">&amp;</code></li>
+    </ol>
+  </li>
+</ol>
+
+<p>Here is an example demonstrating the differences between them</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">Condition1</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"\tCondition 1 is evaluated"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">Condition2</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"\tCondition 2 is evaluated"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"--- Conditional operators"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Condition1() &amp;&amp; Condition2()"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">Condition1</span><span class="p">()</span> <span class="p">&amp;&amp;</span> <span class="nf">Condition2</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="c1">// only Condition 1 is evaluated</span>
+<span class="p">}</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Condition2() || Condition1()"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">Condition2</span><span class="p">()</span> <span class="p">||</span> <span class="nf">Condition1</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="c1">// only Condition 2 is evaluated</span>
+<span class="p">}</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Condition1() || Condition2()"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">Condition1</span><span class="p">()</span> <span class="p">||</span> <span class="nf">Condition2</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="c1">// both are evaluated</span>
+<span class="p">}</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"--- Logical operators"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Condition1() &amp; Condition2()"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">Condition1</span><span class="p">()</span> <span class="p">&amp;</span> <span class="nf">Condition2</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="c1">// only Condition 1 is evaluated</span>
+<span class="p">}</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Condition1() | Condition2()"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">Condition1</span><span class="p">()</span> <span class="p">|</span> <span class="nf">Condition2</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="c1">// both are evaluated</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The output:</p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">Condition1()</code> returns <code class="highlighter-rouge">false</code>, while <code class="highlighter-rouge">Condition2()</code> returns <code class="highlighter-rouge">true</code></p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- Conditional operators
+
+Condition1() &amp;&amp; Condition2()
+  Condition 1 is evaluated
+
+Condition2() || Condition1()
+  Condition 2 is evaluated
+
+Condition1() || Condition2()
+  Condition 1 is evaluated
+  Condition 2 is evaluated
+
+--- Logical operators
+
+Condition1() &amp; Condition2()
+  Condition 1 is evaluated
+  Condition 2 is evaluated
+
+Condition1() | Condition2()
+  Condition 1 is evaluated
+  Condition 2 is evaluated
+</code></pre></div></div>
+
+<h2 id="live-code-example">Live-code example</h2>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Z8nuzH" frameborder="0"></iframe>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="short-circuit-Shamseer2017">Shamseer. (2017, January 19). Short-Circuit Evaluation In C#. Retrieved from https://www.c-sharpcorner.com/article/short-circuit-evaluation-in-c-sharp/</span></li></ol>
 
 	</article>
 	<hr>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Short circuit evaluation | C# - TPL2141</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Short circuit evaluation" />
+<meta name="author" content="GaryNg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Short-circuit evaluation is a process whereby the value of an expression is determined without evaluating all of the operands and/or operands." />
+<meta property="og:description" content="Short-circuit evaluation is a process whereby the value of an expression is determined without evaluating all of the operands and/or operands." />
+<link rel="canonical" href="https://tpl2141.garyng.xyz/04-expressions-and-assignments/short-circuit-evaluation/" />
+<meta property="og:url" content="https://tpl2141.garyng.xyz/04-expressions-and-assignments/short-circuit-evaluation/" />
+<meta property="og:site_name" content="C# - TPL2141" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-19T13:23:10+00:00" />
+<script type="application/ld+json">
+{"description":"Short-circuit evaluation is a process whereby the value of an expression is determined without evaluating all of the operands and/or operands.","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/04-expressions-and-assignments/short-circuit-evaluation/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Short circuit evaluation","dateModified":"2018-08-19T13:23:10+00:00","datePublished":"2018-08-19T13:23:10+00:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/images/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/emblem.svg" width="40" height="40" alt="C# - TPL2141 logo"></a>
+				C# - TPL2141
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/">Welcome</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/01-introduction/history/">Introduction</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/01-introduction/history/">Brief history</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/styles/">Supported programming styles</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/features/">Unique features</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/02-application-domain/Initial-intended-usage/">Application Domain</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/02-application-domain/Initial-intended-usage/">Initial intended usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/current-usage/">Current usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/popularity/">Popularity</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/03-names-and-bindings/names/">Names and Bindings</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/names/">Names</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-characters/">Special characters</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-words/">Special words</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/declarations/">Declarations</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/dynamic-type-binding/">Dynamic type binding</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/storage-binding/">Storage Binding</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/scoping/">Scoping</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level current">
+							
+							<a href="/04-expressions-and-assignments/expressions/">Expressions and Assignments</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/expressions/">Expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/arithmetic-expressions/">Arithmetic expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operators/">Operators</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-precedence-and-associativity/">Operator precedence and associativity</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-overloading/">Operator overloading</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/functional-side-effects/">Functional side effects</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/type-conversion/">Type conversion</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/boolean-expressions/">Boolean expressions</a></li>
+								
+									<li class="nav-item current"><a href="/04-expressions-and-assignments/short-circuit-evaluation/">Short circuit evaluation</a></li>
+								
+							</ul>
+						</li>
+					
+				</ul>
+
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/quick-guide/">Quick Guide</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>Expressions and Assignments</h2>
+				<h3>Short circuit evaluation</h3>
+				
+			</div>
+			<article class="content">
+				<p>Short-circuit evaluation is a process whereby the value of an expression is determined without evaluating all of the operands and/or operands.</p>
+
+<p>C# offers both short-circuiting and non-short-circuiting boolean operators <a href="#short-circuit-Shamseer2017">(Shamseer, 2017)</a>:</p>
+
+<ol>
+  <li>short-circuiting operators
+    <ol>
+      <li>conditional OR, <code class="highlighter-rouge">||</code></li>
+      <li>conditional AND, <code class="highlighter-rouge">&amp;&amp;</code></li>
+    </ol>
+  </li>
+  <li>non-short-circuiting operators
+    <ol>
+      <li>logical OR, <code class="highlighter-rouge">|</code></li>
+      <li>logical AND, <code class="highlighter-rouge">&amp;</code></li>
+    </ol>
+  </li>
+</ol>
+
+<p>Here is an example demonstrating the differences between them</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">Condition1</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"\tCondition 1 is evaluated"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">Condition2</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"\tCondition 2 is evaluated"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"--- Conditional operators"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Condition1() &amp;&amp; Condition2()"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">Condition1</span><span class="p">()</span> <span class="p">&amp;&amp;</span> <span class="nf">Condition2</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="c1">// only Condition 1 is evaluated</span>
+<span class="p">}</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Condition2() || Condition1()"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">Condition2</span><span class="p">()</span> <span class="p">||</span> <span class="nf">Condition1</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="c1">// only Condition 2 is evaluated</span>
+<span class="p">}</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Condition1() || Condition2()"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">Condition1</span><span class="p">()</span> <span class="p">||</span> <span class="nf">Condition2</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="c1">// both are evaluated</span>
+<span class="p">}</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"--- Logical operators"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Condition1() &amp; Condition2()"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">Condition1</span><span class="p">()</span> <span class="p">&amp;</span> <span class="nf">Condition2</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="c1">// only Condition 1 is evaluated</span>
+<span class="p">}</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Condition1() | Condition2()"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">Condition1</span><span class="p">()</span> <span class="p">|</span> <span class="nf">Condition2</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="c1">// both are evaluated</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The output:</p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">Condition1()</code> returns <code class="highlighter-rouge">false</code>, while <code class="highlighter-rouge">Condition2()</code> returns <code class="highlighter-rouge">true</code></p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- Conditional operators
+
+Condition1() &amp;&amp; Condition2()
+  Condition 1 is evaluated
+
+Condition2() || Condition1()
+  Condition 2 is evaluated
+
+Condition1() || Condition2()
+  Condition 1 is evaluated
+  Condition 2 is evaluated
+
+--- Logical operators
+
+Condition1() &amp; Condition2()
+  Condition 1 is evaluated
+  Condition 2 is evaluated
+
+Condition1() | Condition2()
+  Condition 1 is evaluated
+  Condition 2 is evaluated
+</code></pre></div></div>
+
+<h2 id="live-code-example">Live-code example</h2>
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Z8nuzH" frameborder="0"></iframe>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="short-circuit-Shamseer2017">Shamseer. (2017, January 19). Short-Circuit Evaluation In C#. Retrieved from https://www.c-sharpcorner.com/article/short-circuit-evaluation-in-c-sharp/</span></li></ol>
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Type conversion | C# - TPL2141</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Type conversion" />
+<meta name="author" content="GaryNg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Type conversion is a process where data of one type is converted into data of another type (Docs, 2015). C# has 2 forms of type conversions:" />
+<meta property="og:description" content="Type conversion is a process where data of one type is converted into data of another type (Docs, 2015). C# has 2 forms of type conversions:" />
+<link rel="canonical" href="https://tpl2141.garyng.xyz/04-expressions-and-assignments/type-conversion/" />
+<meta property="og:url" content="https://tpl2141.garyng.xyz/04-expressions-and-assignments/type-conversion/" />
+<meta property="og:site_name" content="C# - TPL2141" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-19T13:23:10+00:00" />
+<script type="application/ld+json">
+{"description":"Type conversion is a process where data of one type is converted into data of another type (Docs, 2015). C# has 2 forms of type conversions:","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/04-expressions-and-assignments/type-conversion/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Type conversion","dateModified":"2018-08-19T13:23:10+00:00","datePublished":"2018-08-19T13:23:10+00:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/images/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/emblem.svg" width="40" height="40" alt="C# - TPL2141 logo"></a>
+				C# - TPL2141
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/">Welcome</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/01-introduction/history/">Introduction</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/01-introduction/history/">Brief history</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/styles/">Supported programming styles</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/features/">Unique features</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/02-application-domain/Initial-intended-usage/">Application Domain</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/02-application-domain/Initial-intended-usage/">Initial intended usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/current-usage/">Current usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/popularity/">Popularity</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/03-names-and-bindings/names/">Names and Bindings</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/names/">Names</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-characters/">Special characters</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-words/">Special words</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/declarations/">Declarations</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/dynamic-type-binding/">Dynamic type binding</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/storage-binding/">Storage Binding</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/scoping/">Scoping</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level current">
+							
+							<a href="/04-expressions-and-assignments/expressions/">Expressions and Assignments</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/expressions/">Expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/arithmetic-expressions/">Arithmetic expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operators/">Operators</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-precedence-and-associativity/">Operator precedence and associativity</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-overloading/">Operator overloading</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/functional-side-effects/">Functional side effects</a></li>
+								
+									<li class="nav-item current"><a href="/04-expressions-and-assignments/type-conversion/">Type conversion</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/boolean-expressions/">Boolean expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/short-circuit-evaluation/">Short circuit evaluation</a></li>
+								
+							</ul>
+						</li>
+					
+				</ul>
+
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/quick-guide/">Quick Guide</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>Expressions and Assignments</h2>
+				<h3>Type conversion</h3>
+				
+			</div>
+			<article class="content">
+				<p>Type conversion is a process where data of one type is converted into data of another type <a href="#type-conversion-Docs2015i">(Docs, 2015)</a>. C# has 2 forms of type conversions:</p>
+
+<ol>
+  <li><a href="#implicit-conversions">implicit conversions</a></li>
+  <li><a href="#explicit-type-conversion">explicit conversions</a> (or type casting)</li>
+</ol>
+
+<h2 id="implicit-conversions">Implicit conversions</h2>
+
+<p>The conversions are performed by C# in a <em>type-safe</em> manner, most of which are <strong>widening conversion</strong>.</p>
+
+<p>For example, conversions</p>
+
+<ol>
+  <li><a href="#from-smaller-to-larger-integral-types">from smaller to larger integral types</a></li>
+  <li><a href="#from-derived-classes-to-base-classes">from derived classes to base classes</a></li>
+</ol>
+
+<h4 id="from-smaller-to-larger-integral-types">from smaller to larger integral types</h4>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">num1</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">num2</span> <span class="p">=</span> <span class="n">num1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="from-derived-classes-to-base-classes">from derived classes to base classes</h4>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Derived</span> <span class="n">d</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Derived</span><span class="p">();</span>
+<span class="n">Base</span> <span class="n">b</span> <span class="p">=</span> <span class="n">d</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="explicit-type-conversion">Explicit type conversion</h2>
+
+<p><em>Casting</em> is required when <strong>information might be lost</strong> in the conversion, which is also known as a <strong>narrowing conversion</strong>. Explicit conversions require a cast operator in the form of <code class="highlighter-rouge">(&lt;target_type&gt;)&lt;data&gt;</code>.</p>
+
+<p>For example, conversions</p>
+
+<ol>
+  <li><a href="#from-larger-to-smaller-integral-types">from larger to smaller integral types</a></li>
+  <li><a href="#from-base-class-to-child-class">from base class to child class</a></li>
+</ol>
+
+<h4 id="from-larger-to-smaller-integral-types">from larger to smaller integral types</h4>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="n">num1</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
+<span class="c1">// int num2 = num1; // error</span>
+<span class="kt">int</span> <span class="n">num2</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">num1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="from-base-class-to-child-class">from base class to child class</h4>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Derived</span> <span class="n">d</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Derived</span><span class="p">();</span>
+<span class="n">Base</span> <span class="n">b</span> <span class="p">=</span> <span class="n">d</span><span class="p">;</span>
+
+<span class="c1">// Derived d2 = b; // error</span>
+<span class="n">Derived</span> <span class="n">d2</span> <span class="p">=</span> <span class="p">(</span><span class="n">Derived</span><span class="p">)</span><span class="n">b</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="type-conversion-Docs2015i">Docs, M. (2015, July 20). Casting and Type Conversions (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/casting-and-type-conversions</span></li></ol>
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>
