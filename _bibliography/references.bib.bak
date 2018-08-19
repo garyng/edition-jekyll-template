@@ -346,4 +346,100 @@
   url    = {https://stackoverflow.com/a/4487320},
 }
 
+@Online{Rouse2011,
+  author = {Margaret Rouse},
+  title  = {lexical scoping (static scoping)},
+  year   = {2011},
+  date   = {2011-03-01},
+  url    = {https://whatis.techtarget.com/definition/lexical-scoping-static-scoping},
+}
+
+@Online{Docs2016,
+  author = {Microsoft Docs},
+  title  = {Language Integrated Query (LINQ)},
+  year   = {2016},
+  date   = {2016-11-30},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/linq/index},
+}
+
+@Online{Docs2017c,
+  author = {Microsoft Docs},
+  title  = {Expressions (C# Programming Guide)},
+  year   = {2017},
+  date   = {2017-05-11},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/expressions},
+}
+
+@Online{Wagner2001,
+  author = {Eric G. Wagner},
+  title  = {Arithmetic Expressions},
+  year   = {2001},
+  date   = {2001-10-23},
+  url    = {https://www.ii.uib.no/~wagner/hsalg/arithexp.htm},
+}
+
+@Online{Techotopia2016,
+  author = {Techotopia},
+  title  = {C Sharp Operators and Expressions},
+  year   = {2016},
+  date   = {2016-10-27},
+  url    = {https://www.techotopia.com/index.php/C_Sharp_Operators_and_Expressions},
+}
+
+@Online{Docs2015f,
+  author = {Microsoft Docs},
+  title  = {Operators (C# Programming Guide)},
+  year   = {2015},
+  date   = {2015-07-20},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/operators},
+}
+
+@Online{Docs2015g,
+  author = {Microsoft Docs},
+  title  = {?: Operator (C# Reference)},
+  year   = {2015},
+  date   = {2015-7-20},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator},
+}
+
+@Online{Docs2015h,
+  author = {Microsoft Docs},
+  title  = {Overloadable Operators (C# Programming Guide)},
+  year   = {2015},
+  date   = {2015-07-20},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/overloadable-operators},
+}
+
+@Online{Docs2018a,
+  author = {Microsoft Docs},
+  title  = {ref (C# Reference)},
+  year   = {2018},
+  date   = {2018-03-06},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/ref},
+}
+
+@Online{Docs2015i,
+  author = {Microsoft Docs},
+  title  = {Casting and Type Conversions (C# Programming Guide)},
+  year   = {2015},
+  date   = {2015-07-20},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/casting-and-type-conversions},
+}
+
+@Online{Schmalzl1999,
+  author = {Jorg Schmalzl},
+  title  = {Relational Expressions},
+  year   = {1999},
+  date   = {1999-07-05},
+  url    = {http://earth.uni-muenster.de/~joergs/doc/f90/lrm/lrm0064.htm},
+}
+
+@Online{Shamseer2017,
+  author = {Shamseer},
+  title  = {Short-Circuit Evaluation In C#},
+  year   = {2017},
+  date   = {2017-01-19},
+  url    = {https://www.c-sharpcorner.com/article/short-circuit-evaluation-in-c-sharp/},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}
