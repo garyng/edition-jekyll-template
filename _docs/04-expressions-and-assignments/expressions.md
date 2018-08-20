@@ -8,7 +8,7 @@ order: 1
 An expression is a sequence of
 
 1. one or more **operands**, and
-1. one or more **operators**
+1. zero or more **operators**
 
 that can be evaluated into some value {% cite Docs2017c --prefix expressions %}.
 
