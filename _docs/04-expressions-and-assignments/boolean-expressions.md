@@ -46,9 +46,8 @@ The output:
 2 != 2 is False
 ```
 
-#### Live-code example
-
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/ejmawU" frameborder="0"></iframe>
+> Live-code example
+> <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/ejmawU" frameborder="0"></iframe>
 
 ## References
 

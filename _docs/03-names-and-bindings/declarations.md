@@ -26,9 +26,8 @@ Type of name: System.String
 Type of money: System.Double
 ```
 
-#### Live-code example
-
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/mHOUwC" frameborder="0"></iframe>
+> Live-code example
+> <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/mHOUwC" frameborder="0"></iframe>
 
 ## Implicit declarations
 

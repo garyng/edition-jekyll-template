@@ -67,10 +67,8 @@ public static Fraction operator +(Fraction first, Fraction second)
 ```
 overload the operator `+` to provide **custom logic** for adding two fractions.
 
-
-#### Live-code example
-
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/1mBSYH" frameborder="0"></iframe>
+> Live-code example
+> <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/1mBSYH" frameborder="0"></iframe>
 
 ## References
 

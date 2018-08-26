@@ -34,9 +34,8 @@ string @string = "this is a string";
 Console.WriteLine(@string);
 ```
 
-##### Live-code example
-
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Vp7jjY" frameborder="0"></iframe>
+> Live-code example
+> <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Vp7jjY" frameborder="0"></iframe>
 
 #### 2. indicate that a string is a “verbatim string literal”
 
@@ -72,9 +71,8 @@ Console.WriteLine(filename2);
 // c:\documents\files\u0066.txt
 ```
 
-##### Live-code example
-
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/c7LIEt" frameborder="0"></iframe>
+> Live-code example
+> <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/c7LIEt" frameborder="0"></iframe>
 
 #### 1.2 can be used to define multiline string
 
@@ -101,9 +99,8 @@ line3
 ---
 ```
 
-##### Live-code example
-
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/MiLJFw" frameborder="0"></iframe>
+> Live-code example
+> <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/MiLJFw" frameborder="0"></iframe>
 
 ## $, the interpolated string character
 
@@ -143,9 +140,8 @@ Lorem Ipsum paid 12.46 on 2018-01-01 12:34:56
 Lorem Ipsum paid 12.46 on 2018-01-01 12:34:56
 ```
 
-##### Live-code example
-
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/RXBnOw" frameborder="0"></iframe>
+> Live-code example
+> <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/RXBnOw" frameborder="0"></iframe>
 
 ## References
 

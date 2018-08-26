@@ -39,9 +39,8 @@ Console.WriteLine(1 / 2.0); // 0.5
 Console.WriteLine(5 % 3);   // 2
 ```
 
-#### Live-code example
-
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/cEdjlF" frameborder="0"></iframe>
+> Live-code example
+> <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/cEdjlF" frameborder="0"></iframe>
 
 ## Mixed mode arithmetic operations
 
@@ -60,9 +59,8 @@ The output will be
 System.Double
 ```
 
-#### Live-code example
-
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/sv0S4d" frameborder="0"></iframe>
+> Live-code example
+> <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/sv0S4d" frameborder="0"></iframe>
 
 ## References
 

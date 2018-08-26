@@ -94,9 +94,8 @@ Condition1() | Condition2()
   Condition 2 is evaluated
 ```
 
-## Live-code example
-
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Z8nuzH" frameborder="0"></iframe>
+> Live-code example
+> <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Z8nuzH" frameborder="0"></iframe>
 
 ## References
 
