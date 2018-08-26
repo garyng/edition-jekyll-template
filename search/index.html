@@ -135,6 +135,36 @@
 							</ul>
 						</li>
 					
+						<li class="nav-item top-level ">
+							
+							<a href="/05-control-structures/selection-statements/">Control Structures</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/05-control-structures/selection-statements/">Selection statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/if-statements/">if statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/switch-statements/">switch statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/iteration-statements/">Iteration statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/while-loop/">while loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/do-while-loop/">do...while loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/for-loop/">for loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/foreach-in-loop/">foreach...in loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/break/">break</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/continue/">continue</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/goto/">goto</a></li>
+								
+							</ul>
+						</li>
+					
 				</ul>
 
 				<ul>
@@ -561,6 +591,193 @@
 						"category": "",
 						"url": " /04-expressions-and-assignments/type-conversion/",
 						"content": "Type conversion is a process where data of one type is converted into data of another type (Docs, 2015). C# has 2 forms of type conversions: implicit conversions explicit conversions (or type casting) Implicit conversions The conversions are performed by C# in a type-safe manner, most of which are widening conversion. For example, conversions from smaller to larger integral types from derived classes to base classes from smaller to larger integral types int num1 = 10; double num2 = num1; from derived classes to base classes Derived d = new Derived(); Base b = d; Explicit type conversion Casting is required when information might be lost in the conversion, which is also known as a narrowing conversion. Explicit conversions require a cast operator in the form of (&lt;target_type&gt;)&lt;data&gt;. For example, conversions from larger to smaller integral types from base class to child class from larger to smaller integral types double num1 = 10; int num2 = num1; error int num2 = (int)num1; from base class to child class Derived d = new Derived(); Base b = d; Derived d2 = b; error Derived d2 = (Derived)b; References Docs, M. (2015, July 20). Casting and Type Conversions (C# Programming Guide). Retrieved from https: docs.microsoft.com en-us dotnet csharp programming-guide types casting-and-type-conversions"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"05-control-structures-break": {
+						"id": "05-control-structures-break",
+						"title": "break",
+						"category": "",
+						"url": " /05-control-structures/break/",
+						"content": "A break statement will terminate the closest enclosing loop, or the switch statement and return the program control to the statements right after the terminated statements (Docs, 2015). For example for (int i = 0; i &lt;= 10; i++) { if (i == 5) { break; } Console.WriteLine(i); } will print: 0 1 2 3 4 because the for loop is terminated when i is 5. Live-code example When break is used within a nested loop, it will only terminate the closest enclosing loop and return the control to the outer loop. For example for (int i = 0; i &lt; 10; i++) { for (int j = 0; j &lt; 10; j++) { if (j &gt; i) { break; } Console.Write($\"{j}\"); } Console.WriteLine(); } Output: 0 01 012 0123 01234 012345 0123456 01234567 012345678 0123456789 Live-code example As discussed earlier, break statement is also used in switch statements. References Docs, M. (2015, July 20). break (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords break"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"05-control-structures-continue": {
+						"id": "05-control-structures-continue",
+						"title": "continue",
+						"category": "",
+						"url": " /05-control-structures/continue/",
+						"content": "Different from break, the continue statement does not terminate the loop, instead it passes the control to the next iteration (Docs, 2015). Using the previous example for (int i = 0; i &lt;= 10; i++) { if (i == 5) { continue; } Console.WriteLine(i); } The output will be: 0 1 2 3 4 6 7 8 9 10 where only the number 5 is skipped. Live-code example References Docs, M. (2015, July 20). continue (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords continue"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"05-control-structures-do-while-loop": {
+						"id": "05-control-structures-do-while-loop",
+						"title": "do...while loop",
+						"category": "",
+						"url": " /05-control-structures/do-while-loop/",
+						"content": "The structure of the do...while loop is as follow: do { statements } while (condition); As the condition is evaluated after executing the statements, do…while loop is guaranteed to be executed at least once (Docs, 2018). int x = 10; do { Console.WriteLine($\"Value of x: {x}\"); x++; } while (x &lt; 20); Output: Value of x: 10 Value of x: 11 Value of x: 12 Value of x: 13 Value of x: 14 Value of x: 15 Value of x: 16 Value of x: 17 Value of x: 18 Value of x: 19 Live-code example References Docs, M. (2018, May 28). do (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords do"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"05-control-structures-for-loop": {
+						"id": "05-control-structures-for-loop",
+						"title": "for loop",
+						"category": "",
+						"url": " /05-control-structures/for-loop/",
+						"content": "The structure of a for loop is as follow: for (initializer; condition; iterator) { body } The body of the for loop is executed when the condition evaluates to true. A for loop consists of main 3 parts: initializer condition iterator (Docs, 2018) initializer The statements in the initializer section are executed first and executed only once before entering the loop. This is usually where a local loop variable is declared and initialized. condition The condition section is a Boolean expression which is evaluated before every iteration. The for loop will stop executing when it evaluates to false. iterator The statements in the iterator section are executed after each iteration. This is usually where the loop variable is incremented or decremented. Example The same example used in while and do…while loop can be written using for loop, which is more concise: for (int x = 10; x &lt; 20; x++) { Console.WriteLine($\"Value of x: {x}\"); } Output: Value of x: 10 Value of x: 11 Value of x: 12 Value of x: 13 Value of x: 14 Value of x: 15 Value of x: 16 Value of x: 17 Value of x: 18 Value of x: 19 In this case, Initializer Condition Iterator int x = 10 x &lt; 20 x++ Live-code example References Docs, M. (2018, June 13). for (C# reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords for"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"05-control-structures-foreach-in-loop": {
+						"id": "05-control-structures-foreach-in-loop",
+						"title": "foreach...in loop",
+						"category": "",
+						"url": " /05-control-structures/foreach-in-loop/",
+						"content": "foreach statement provide a simpler way to iterate over a collection of elements. It can be used with types that implement the System.Collections.IEnumerable or System.Collections.Generic.IEnumerable&lt;T&gt; interface. Examples of those types include: arrays List&lt;T&gt; Dictionary&lt;TKey,TValue&gt; Queue&lt;T&gt; SortedList&lt;TKey,TValue&gt; Stack&lt;T&gt; Class … etc (Docs, 2018) The structure of a foreach…in loop is as follow: foreach (type name in collection) { body } where type is the type of the elements inside the collection, var keyword can also be used here collection is the groups of elements to be iterated For example, this for loop that print out all the elements in an array int[] nums = {1, 2, 3, 45, 6, 7, 8, 9}; for (int i = 0; i &lt; nums.Length; i++) { Console.WriteLine(nums[i]); } can be written using foreach…in loop int[] nums = {1, 2, 3, 45, 6, 7, 8, 9}; foreach (int num in nums) { Console.WriteLine(num); } Live-code example References Docs, M. (2018, June 29). foreach, in (C# reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords foreach-in‘"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"05-control-structures-goto": {
+						"id": "05-control-structures-goto",
+						"title": "goto",
+						"category": "",
+						"url": " /05-control-structures/goto/",
+						"content": "The goto statement transfers the control of the program immediately to a labeled statement (Docs, 2015). Even though goto is useful in jumping out of a deeply nested loop, the use of goto statement is highly discouraged as it often results in spaghetti code: …widespread and unconstrained use of GOTO statements has led to programmers producing inconsistent, incomplete and generally unmaintainable programs. Such code is often known as ‘spaghetti’, given its convoluted and tangled control structure. (Cram &amp; Hedley, 2005) The previous nested for loop for (int i = 0; i &lt; 10; i++) { for (int j = 0; j &lt; 10; j++) { if (j &gt; i) { break; } Console.Write($\"{j}\"); } Console.WriteLine(); } can be written using goto as for (int i = 0; i &lt; 10; i++) { for (int j = 0; j &lt; 10; j++) { if (j &gt; i) { goto outer; } Console.Write($\"{j}\"); } outer: Console.WriteLine(); } Note that we need a label (outer: in the example above) to indicate the position we want the program control to go. Live-code example References Docs, M. (2015, July 20). goto (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords goto Cram, D., &amp; Hedley, P. (2005). Pronouns and procedural meaning: The relevance of spaghetti code and paranoid delusion. Oxford University Working Papers in Linguistics, Philology and Phonetic, 10, 187–210."
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"05-control-structures-if-statements": {
+						"id": "05-control-structures-if-statements",
+						"title": "if statements",
+						"category": "",
+						"url": " /05-control-structures/if-statements/",
+						"content": "An if statement identifies which block code to run based on the value of a Boolean expression (Docs, 2015) bool condition = true; if (condition) { Console.WriteLine(\"The variable is set to true.\"); } else { Console.WriteLine(\"The variable is set to false.\"); } Output: The variable is set to true. If the condition is set to false: bool condition = false; if (condition) { Console.WriteLine(\"The variable is set to true.\"); } else { Console.WriteLine(\"The variable is set to false.\"); } Output: The variable is set to false. Live-code example The else part of the if-else statement is optional: bool condition = true; if (condition) { Console.WriteLine(\"The variable is set to true.\"); } Console.WriteLine(\"This will always be printed.\"); Output: The variable is set to true. This will always be printed. Nested if-else If-else statements can be nested as well in which multiple conditions can be tested. bool condition1 = true; bool condition2 = false; if (condition1) { if (condition2) { Console.WriteLine(\"condition1 and condition2 is true\"); } else { Console.WriteLine(\"condition1 is true but condition2 is false\"); } } else { Console.WriteLine(\"condition1 is false\"); } Live-code example Here is another example that test whether the user input is a letter, then check whether it is uppercase or lowercase: Console.Write(\"Enter a character: \"); char c = (char)Console.ReadLine()[0]; if (Char.IsLetter(c)) { if (Char.IsLower(c)) { Console.WriteLine(\"The character is lowercase.\"); } else { Console.WriteLine(\"The character is uppercase.\"); } } else { Console.WriteLine(\"The character isn't an alphabetic character.\"); } Sample output (try it on the live-code example below!): Enter a character: a The character is lowercase. Enter a character: A The character is uppercase. Enter a character: 1 The character isn't an alphabetic character. Live-code example else if Other than nesting if-else statements, the else if clause can be used to test multiple condition. The same example above can be written as: Console.Write(\"Enter a character: \"); char c = (char)Console.ReadLine()[0]; if (Char.IsLower(c)) { Console.WriteLine(\"The character is lowercase.\"); } else if (Char.IsUpper(c)) { Console.WriteLine(\"The character is uppercase.\"); } else if (Char.IsDigit(c)) { Console.WriteLine(\"The character is a digit\"); } else { Console.WriteLine(\"The character isn't an alphabetic character.\"); } Sample output: Enter a character: a The character is lowercase. Enter a character: B The character is uppercase. Enter a character: 1 The character is a digit Enter a character: ) The character isn't an alphabetic character. Live-code example Logical operators As we have covered earlier, we can use logical operators to make a compound condition. NOT Logical NOT, ! bool result = true; if (!result) { Console.WriteLine(\"result is not true\"); } else { Console.WriteLine(\"result is not false\"); } AND AND, &amp;&amp; int m = 9; int n = 7; int p = 5; if (m &gt;= n &amp;&amp; m &gt;= p) { Console.WriteLine(\"Nothing is larger than m.\"); } OR OR, || if (m &gt; n || m &gt; p) { Console.WriteLine(\"m isn't the smallest.\"); } Combined AND and NOT if (m &gt;= n &amp;&amp; !(p &gt; m)) { Console.WriteLine(\"Nothing is larger than m.\"); } NOT and OR m = 4; if (!(m &gt;= n || m &gt;= p)) { Console.WriteLine(\"Now m is the smallest.\"); } Live-code example References Docs, M. (2015, July 20). if-else (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords if-else"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"05-control-structures-iteration-statements": {
+						"id": "05-control-structures-iteration-statements",
+						"title": "Iteration statements",
+						"category": "",
+						"url": " /05-control-structures/iteration-statements/",
+						"content": "In C#, there are several constructs that can be used to repeat a block of code, including: while do…while for foreach…in (Docs, 2015) do and while are logically-controlled loop constructs, for is counter-controller, and finally foreach…in is used together for iteration based on data structures (specifically, those that implement IEnumerable&lt;T&gt;) User-located loop control mechanisms are achieved using jump statements, some of which include (Docs, 2015): break continue goto References Docs, M. (2015, July 20). Iteration Statements (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords iteration-statements Docs, M. (2015, July 20). Jump Statements (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords jump-statements"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"05-control-structures-selection-statements": {
+						"id": "05-control-structures-selection-statements",
+						"title": "Selection statements",
+						"category": "",
+						"url": " /05-control-structures/selection-statements/",
+						"content": "Selection statements are used for transferring the program control to a specific flow based on the result of some conditional expressions (which return either true or false) (Docs, 2015). In C# exists mainly 2 types of selection statement: if statements (two-way selectors) switch statements (multiple-way selectors) References Docs, M. (2015, July 20). Selection Statements (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords selection-statements"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"05-control-structures-switch-statements": {
+						"id": "05-control-structures-switch-statements",
+						"title": "switch statements",
+						"category": "",
+						"url": " /05-control-structures/switch-statements/",
+						"content": "switch is a selection statement that chooses a single switch section to execute from a list of candidates based on a pattern match with the match expression (Docs, 2018) int caseSwitch = 2; switch (caseSwitch) { case 1: Console.WriteLine(\"Case 1\"); break; case 2: case 4: Console.WriteLine($\"Case {caseSwitch}\"); break; case 3: Console.WriteLine(\"Case 3\"); break; default: Console.WriteLine($\"Unexpcted value ({caseSwitch})\"); break; } Output: Case 2 Live-code example The general syntax for each case label is case constant: where constant can be any of the following expressions: A bool literal true, or false Any integral constant int long byte etc The name of a declared const variable. An enumeration constant. DayOfWeek.Sunday A char literal. A string literal. The switch statement provides a clean alternative for writing multiple if-else statements. The example above can be written as: int caseSwitch = 1; if (caseSwitch == 1) { Console.WriteLine(\"Case 1\"); } else if (caseSwitch == 2 || caseSwitch == 4) { Console.WriteLine($\"Case {caseSwitch}\"); } else if (caseSwitch == 3) { Console.WriteLine(\"Case 3\"); } else { Console.WriteLine($\"Unexpcted value ({caseSwitch})\"); } Live-code example Multiple case labels As you might have noticed in the previous switch example, a switch section can have multiple case labels case 2: case 4: Console.WriteLine($\"Case {caseSwitch}\"); However in that case, C# does not allow execution to continue from one switch section to the next. The code below will generate a compiler error: CS0163: “Control cannot fall through from one case label () to another.” int caseSwitch = 1; switch (caseSwitch) { The following switch section causes an error. case 1: Console.WriteLine(\"Case 1...\"); a jump statement is needed here case 2: Console.WriteLine(\"... and or Case 2\"); break; } Live-code example Jump statements include: break goto case goto label return throw default case The default case, which is optional, specifies what to execute if the match expression does not match with any of the case labels. This is similar to the last else clause in the if-elseif-else example. References Docs, M. (Ed.). (2018, August 14). switch (C# reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords switch"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"05-control-structures-while-loop": {
+						"id": "05-control-structures-while-loop",
+						"title": "while loop",
+						"category": "",
+						"url": " /05-control-structures/while-loop/",
+						"content": "The structure of while loop is as follow: while (condition) { statements } The condition is tested before the statements in the body of the while loop is executed. Hence, while loop executes zero or more times (Docs, 2018). int x = 10; while (x &lt; 20) { Console.WriteLine($\"Value of x: {x}\"); x++; } Output: Value of x: 10 Value of x: 11 Value of x: 12 Value of x: 13 Value of x: 14 Value of x: 15 Value of x: 16 Value of x: 17 Value of x: 18 Value of x: 19 Live-code example References Docs, M. (2018, May 28). while (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords while"
 					}
 
 					

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>switch statements | C# - TPL2141</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="switch statements" />
+<meta name="author" content="GaryNg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="switch is a selection statement that chooses a single switch section to execute from a list of candidates based on a pattern match with the match expression (Docs, 2018)" />
+<meta property="og:description" content="switch is a selection statement that chooses a single switch section to execute from a list of candidates based on a pattern match with the match expression (Docs, 2018)" />
+<link rel="canonical" href="https://tpl2141.garyng.xyz/05-control-structures/switch-statements/" />
+<meta property="og:url" content="https://tpl2141.garyng.xyz/05-control-structures/switch-statements/" />
+<meta property="og:site_name" content="C# - TPL2141" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-26T12:52:00+00:00" />
+<script type="application/ld+json">
+{"description":"switch is a selection statement that chooses a single switch section to execute from a list of candidates based on a pattern match with the match expression (Docs, 2018)","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/05-control-structures/switch-statements/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"switch statements","dateModified":"2018-08-26T12:52:00+00:00","datePublished":"2018-08-26T12:52:00+00:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/images/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/emblem.svg" width="40" height="40" alt="C# - TPL2141 logo"></a>
+				C# - TPL2141
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/">Welcome</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/01-introduction/history/">Introduction</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/01-introduction/history/">Brief history</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/styles/">Supported programming styles</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/features/">Unique features</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/02-application-domain/Initial-intended-usage/">Application Domain</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/02-application-domain/Initial-intended-usage/">Initial intended usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/current-usage/">Current usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/popularity/">Popularity</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/03-names-and-bindings/names/">Names and Bindings</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/names/">Names</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-characters/">Special characters</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-words/">Special words</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/declarations/">Declarations</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/dynamic-type-binding/">Dynamic type binding</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/storage-binding/">Storage Binding</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/scoping/">Scoping</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/04-expressions-and-assignments/expressions/">Expressions and Assignments</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/expressions/">Expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/arithmetic-expressions/">Arithmetic expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operators/">Operators</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-precedence-and-associativity/">Operator precedence and associativity</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-overloading/">Operator overloading</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/functional-side-effects/">Functional side effects</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/type-conversion/">Type conversion</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/boolean-expressions/">Boolean expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/short-circuit-evaluation/">Short circuit evaluation</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level current">
+							
+							<a href="/05-control-structures/selection-statements/">Control Structures</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/05-control-structures/selection-statements/">Selection statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/if-statements/">if statements</a></li>
+								
+									<li class="nav-item current"><a href="/05-control-structures/switch-statements/">switch statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/iteration-statements/">Iteration statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/while-loop/">while loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/do-while-loop/">do...while loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/for-loop/">for loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/foreach-in-loop/">foreach...in loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/break/">break</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/continue/">continue</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/goto/">goto</a></li>
+								
+							</ul>
+						</li>
+					
+				</ul>
+
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/quick-guide/">Quick Guide</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>Control Structures</h2>
+				<h3>switch statements</h3>
+				
+			</div>
+			<article class="content">
+				<p>switch is a selection statement that chooses a single switch section to execute from a list of candidates based on a pattern match with the match expression <a href="#switch-statements-Docs2018b">(Docs, 2018)</a></p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">caseSwitch</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
+<span class="k">switch</span> <span class="p">(</span><span class="n">caseSwitch</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">case</span> <span class="m">1</span><span class="p">:</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Case 1"</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="m">2</span><span class="p">:</span>
+    <span class="k">case</span> <span class="m">4</span><span class="p">:</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Case </span><span class="p">{</span><span class="n">caseSwitch</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="m">3</span><span class="p">:</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Case 3"</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Unexpcted value (</span><span class="p">{</span><span class="n">caseSwitch</span><span class="p">}</span><span class="s">)"</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Case 2
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/YjhFcn" frameborder="0"></iframe>
+</blockquote>
+
+<p>The general syntax for each case label is</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>case constant:
+</code></pre></div></div>
+
+<p>where constant can be any of the following expressions:</p>
+
+<ol>
+  <li>A <code class="highlighter-rouge">bool</code> literal
+    <ol>
+      <li><code class="highlighter-rouge">true</code>, or</li>
+      <li><code class="highlighter-rouge">false</code></li>
+    </ol>
+  </li>
+  <li>Any integral constant
+    <ol>
+      <li><code class="highlighter-rouge">int</code></li>
+      <li><code class="highlighter-rouge">long</code></li>
+      <li><code class="highlighter-rouge">byte</code></li>
+      <li>etc</li>
+    </ol>
+  </li>
+  <li>The name of a declared <code class="highlighter-rouge">const</code> variable.</li>
+  <li>An enumeration constant.
+    <ol>
+      <li><code class="highlighter-rouge">DayOfWeek.Sunday</code></li>
+    </ol>
+  </li>
+  <li>A <code class="highlighter-rouge">char</code> literal.</li>
+  <li>A <code class="highlighter-rouge">string</code> literal.</li>
+</ol>
+
+<p>The switch statement provides a <em>clean alternative</em> for writing multiple if-else statements. The example above can be written as:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">caseSwitch</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">caseSwitch</span> <span class="p">==</span> <span class="m">1</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Case 1"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">caseSwitch</span> <span class="p">==</span> <span class="m">2</span> <span class="p">||</span> <span class="n">caseSwitch</span> <span class="p">==</span> <span class="m">4</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Case </span><span class="p">{</span><span class="n">caseSwitch</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">caseSwitch</span> <span class="p">==</span> <span class="m">3</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Case 3"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Unexpcted value (</span><span class="p">{</span><span class="n">caseSwitch</span><span class="p">}</span><span class="s">)"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/UgOh7n" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="multiple-case-labels">Multiple case labels</h2>
+
+<p>As you might have noticed in the previous switch example, a switch section can have <strong>multiple case labels</strong></p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="m">2</span><span class="p">:</span>
+<span class="k">case</span> <span class="m">4</span><span class="p">:</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Case </span><span class="p">{</span><span class="n">caseSwitch</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>However in that <em>case</em>, C# does not allow execution to continue from one switch section to the next. The code below will generate a compiler error:</p>
+
+<blockquote>
+  <p>CS0163: “Control cannot fall through from one case label () to another.”</p>
+</blockquote>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">caseSwitch</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+
+<span class="k">switch</span> <span class="p">(</span><span class="n">caseSwitch</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// The following switch section causes an error.</span>
+    <span class="k">case</span> <span class="m">1</span><span class="p">:</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Case 1..."</span><span class="p">);</span>
+        <span class="c1">// a jump statement is needed here</span>
+    <span class="k">case</span> <span class="m">2</span><span class="p">:</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"... and/or Case 2"</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Phku4t" frameborder="0"></iframe>
+</blockquote>
+
+<p>Jump statements include:</p>
+
+<ol>
+  <li>break</li>
+  <li>goto case</li>
+  <li>goto label</li>
+  <li>return</li>
+  <li>throw</li>
+</ol>
+
+<h2 id="default-case">default case</h2>
+
+<p>The <code class="highlighter-rouge">default</code> case, which is optional, specifies what to execute if the match expression does not match with any of the case labels. This is similar to the last <code class="highlighter-rouge">else</code> clause in the if-elseif-else example.</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="switch-statements-Docs2018b">Docs, M. (Ed.). (2018, August 14). switch (C# reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/switch</span></li></ol>
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

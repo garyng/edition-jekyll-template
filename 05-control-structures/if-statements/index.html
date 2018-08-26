@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>if statements | C# - TPL2141</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="if statements" />
+<meta name="author" content="GaryNg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An if statement identifies which block code to run based on the value of a Boolean expression (Docs, 2015)" />
+<meta property="og:description" content="An if statement identifies which block code to run based on the value of a Boolean expression (Docs, 2015)" />
+<link rel="canonical" href="https://tpl2141.garyng.xyz/05-control-structures/if-statements/" />
+<meta property="og:url" content="https://tpl2141.garyng.xyz/05-control-structures/if-statements/" />
+<meta property="og:site_name" content="C# - TPL2141" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-26T12:52:00+00:00" />
+<script type="application/ld+json">
+{"description":"An if statement identifies which block code to run based on the value of a Boolean expression (Docs, 2015)","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/05-control-structures/if-statements/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"if statements","dateModified":"2018-08-26T12:52:00+00:00","datePublished":"2018-08-26T12:52:00+00:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/images/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/emblem.svg" width="40" height="40" alt="C# - TPL2141 logo"></a>
+				C# - TPL2141
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/">Welcome</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/01-introduction/history/">Introduction</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/01-introduction/history/">Brief history</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/styles/">Supported programming styles</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/features/">Unique features</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/02-application-domain/Initial-intended-usage/">Application Domain</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/02-application-domain/Initial-intended-usage/">Initial intended usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/current-usage/">Current usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/popularity/">Popularity</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/03-names-and-bindings/names/">Names and Bindings</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/names/">Names</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-characters/">Special characters</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-words/">Special words</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/declarations/">Declarations</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/dynamic-type-binding/">Dynamic type binding</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/storage-binding/">Storage Binding</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/scoping/">Scoping</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/04-expressions-and-assignments/expressions/">Expressions and Assignments</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/expressions/">Expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/arithmetic-expressions/">Arithmetic expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operators/">Operators</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-precedence-and-associativity/">Operator precedence and associativity</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-overloading/">Operator overloading</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/functional-side-effects/">Functional side effects</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/type-conversion/">Type conversion</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/boolean-expressions/">Boolean expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/short-circuit-evaluation/">Short circuit evaluation</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level current">
+							
+							<a href="/05-control-structures/selection-statements/">Control Structures</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/05-control-structures/selection-statements/">Selection statements</a></li>
+								
+									<li class="nav-item current"><a href="/05-control-structures/if-statements/">if statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/switch-statements/">switch statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/iteration-statements/">Iteration statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/while-loop/">while loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/do-while-loop/">do...while loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/for-loop/">for loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/foreach-in-loop/">foreach...in loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/break/">break</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/continue/">continue</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/goto/">goto</a></li>
+								
+							</ul>
+						</li>
+					
+				</ul>
+
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/quick-guide/">Quick Guide</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>Control Structures</h2>
+				<h3>if statements</h3>
+				
+			</div>
+			<article class="content">
+				<p>An if statement identifies which block code to run based on the value of a <code class="highlighter-rouge">Boolean</code> expression <a href="#if-statements-Docs2015k">(Docs, 2015)</a></p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">condition</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The variable is set to true."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The variable is set to false."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The variable is set to true.
+</code></pre></div></div>
+
+<p>If the condition is set to <code class="highlighter-rouge">false</code>:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">condition</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The variable is set to true."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The variable is set to false."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The variable is set to false.
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/CAqeg8" frameborder="0"></iframe>
+</blockquote>
+
+<p>The <code class="highlighter-rouge">else</code> part of the <code class="highlighter-rouge">if-else</code> statement is <strong>optional</strong>:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">condition</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The variable is set to true."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"This will always be printed."</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The variable is set to true.
+This will always be printed.
+</code></pre></div></div>
+
+<h2 id="nested-if-else">Nested if-else</h2>
+<p>If-else statements can be <em>nested</em> as well in which <strong>multiple</strong> conditions can be tested.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">condition1</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="kt">bool</span> <span class="n">condition2</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">condition1</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">condition2</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"condition1 and condition2 is true"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"condition1 is true but condition2 is false"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"condition1 is false"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/ZJWMYC" frameborder="0"></iframe>
+</blockquote>
+
+<p>Here is another example that test whether the user input is a letter, then check whether it is uppercase or lowercase:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Enter a character: "</span><span class="p">);</span>
+<span class="kt">char</span> <span class="n">c</span> <span class="p">=</span> <span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="n">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">()[</span><span class="m">0</span><span class="p">];</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">Char</span><span class="p">.</span><span class="nf">IsLetter</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">Char</span><span class="p">.</span><span class="nf">IsLower</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The character is lowercase."</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The character is uppercase."</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The character isn't an alphabetic character."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Sample output (try it on the live-code example below!):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter a character: a
+The character is lowercase.
+Enter a character: A
+The character is uppercase.
+Enter a character: 1
+The character isn't an alphabetic character.
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/kSwhxV" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="else-if">else if</h2>
+
+<p>Other than <em>nesting</em> <code class="highlighter-rouge">if-else</code> statements, the <code class="highlighter-rouge">else if</code> clause can be used to test multiple condition. The same example above can be written as:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Enter a character: "</span><span class="p">);</span>
+<span class="kt">char</span> <span class="n">c</span> <span class="p">=</span> <span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="n">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">()[</span><span class="m">0</span><span class="p">];</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">Char</span><span class="p">.</span><span class="nf">IsLower</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The character is lowercase."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Char</span><span class="p">.</span><span class="nf">IsUpper</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The character is uppercase."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Char</span><span class="p">.</span><span class="nf">IsDigit</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The character is a digit"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The character isn't an alphabetic character."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Sample output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter a character: a
+The character is lowercase.
+Enter a character: B
+The character is uppercase.
+Enter a character: 1
+The character is a digit
+Enter a character: )
+The character isn't an alphabetic character.
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/3aAC8t" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="logical-operators">Logical operators</h2>
+
+<p><a href="/04-expressions-and-assignments/short-circuit-evaluation/">As we have covered earlier</a>, we can use logical operators to make a compound condition.</p>
+
+<h4 id="not">NOT</h4>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Logical NOT, !</span>
+<span class="kt">bool</span> <span class="n">result</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(!</span><span class="n">result</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"result is not true"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"result is not false"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="and">AND</h4>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// AND, &amp;&amp;</span>
+<span class="kt">int</span> <span class="n">m</span> <span class="p">=</span> <span class="m">9</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span> <span class="p">=</span> <span class="m">7</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">p</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="p">&gt;=</span> <span class="n">n</span> <span class="p">&amp;&amp;</span> <span class="n">m</span> <span class="p">&gt;=</span> <span class="n">p</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Nothing is larger than m."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="or">OR</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// OR, ||
+if (m &gt; n || m &gt; p)
+{
+    Console.WriteLine("m isn't the smallest.");
+}
+</code></pre></div></div>
+
+<h4 id="combined">Combined</h4>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// AND and NOT</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="p">&gt;=</span> <span class="n">n</span> <span class="p">&amp;&amp;</span> <span class="p">!(</span><span class="n">p</span> <span class="p">&gt;</span> <span class="n">m</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Nothing is larger than m."</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// NOT and OR</span>
+<span class="n">m</span> <span class="p">=</span> <span class="m">4</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(!(</span><span class="n">m</span> <span class="p">&gt;=</span> <span class="n">n</span> <span class="p">||</span> <span class="n">m</span> <span class="p">&gt;=</span> <span class="n">p</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Now m is the smallest."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/02uQvo" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="if-statements-Docs2015k">Docs, M. (2015, July 20). if-else (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/if-else</span></li></ol>
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

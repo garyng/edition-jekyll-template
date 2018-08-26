@@ -135,6 +135,36 @@
 							</ul>
 						</li>
 					
+						<li class="nav-item top-level ">
+							
+							<a href="/05-control-structures/selection-statements/">Control Structures</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/05-control-structures/selection-statements/">Selection statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/if-statements/">if statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/switch-statements/">switch statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/iteration-statements/">Iteration statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/while-loop/">while loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/do-while-loop/">do...while loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/for-loop/">for loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/foreach-in-loop/">foreach...in loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/break/">break</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/continue/">continue</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/goto/">goto</a></li>
+								
+							</ul>
+						</li>
+					
 				</ul>
 
 				<ul>
@@ -2243,6 +2273,916 @@ Condition1() | Condition2()
 <h2 id="references">References</h2>
 
 <ol class="bibliography"><li><span id="short-circuit-Shamseer2017">Shamseer. (2017, January 19). Short-Circuit Evaluation In C#. Retrieved from https://www.c-sharpcorner.com/article/short-circuit-evaluation-in-c-sharp/</span></li></ol>
+
+	</article>
+	<hr>
+	
+
+
+	
+	
+	<div class="page-header quick-guide-page">
+		<h2>Control Structures</h2>
+		<h3>Selection statements</h3>
+	</div>
+	<article class="content">
+		<p>Selection statements are used for transferring the program control to a specific flow based on the result of some conditional expressions (which return either <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>) <a href="#selection-statements-Docs2015j">(Docs, 2015)</a>.</p>
+
+<p>In C# exists mainly 2 types of selection statement:</p>
+
+<ol>
+  <li><a href="/05-control-structures/if-statements/">if statements (two-way selectors)</a></li>
+  <li><a href="/05-control-structures/switch-statements/">switch statements (multiple-way selectors)</a></li>
+</ol>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="selection-statements-Docs2015j">Docs, M. (2015, July 20). Selection Statements (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/selection-statements</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Control Structures</h2>
+		<h3>if statements</h3>
+	</div>
+	<article class="content">
+		<p>An if statement identifies which block code to run based on the value of a <code class="highlighter-rouge">Boolean</code> expression <a href="#if-statements-Docs2015k">(Docs, 2015)</a></p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">condition</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The variable is set to true."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The variable is set to false."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The variable is set to true.
+</code></pre></div></div>
+
+<p>If the condition is set to <code class="highlighter-rouge">false</code>:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">condition</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The variable is set to true."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The variable is set to false."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The variable is set to false.
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/CAqeg8" frameborder="0"></iframe>
+</blockquote>
+
+<p>The <code class="highlighter-rouge">else</code> part of the <code class="highlighter-rouge">if-else</code> statement is <strong>optional</strong>:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">condition</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The variable is set to true."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"This will always be printed."</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The variable is set to true.
+This will always be printed.
+</code></pre></div></div>
+
+<h2 id="nested-if-else">Nested if-else</h2>
+<p>If-else statements can be <em>nested</em> as well in which <strong>multiple</strong> conditions can be tested.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">condition1</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="kt">bool</span> <span class="n">condition2</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">condition1</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">condition2</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"condition1 and condition2 is true"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"condition1 is true but condition2 is false"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"condition1 is false"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/ZJWMYC" frameborder="0"></iframe>
+</blockquote>
+
+<p>Here is another example that test whether the user input is a letter, then check whether it is uppercase or lowercase:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Enter a character: "</span><span class="p">);</span>
+<span class="kt">char</span> <span class="n">c</span> <span class="p">=</span> <span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="n">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">()[</span><span class="m">0</span><span class="p">];</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">Char</span><span class="p">.</span><span class="nf">IsLetter</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">Char</span><span class="p">.</span><span class="nf">IsLower</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The character is lowercase."</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The character is uppercase."</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The character isn't an alphabetic character."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Sample output (try it on the live-code example below!):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter a character: a
+The character is lowercase.
+Enter a character: A
+The character is uppercase.
+Enter a character: 1
+The character isn't an alphabetic character.
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/kSwhxV" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="else-if">else if</h2>
+
+<p>Other than <em>nesting</em> <code class="highlighter-rouge">if-else</code> statements, the <code class="highlighter-rouge">else if</code> clause can be used to test multiple condition. The same example above can be written as:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Enter a character: "</span><span class="p">);</span>
+<span class="kt">char</span> <span class="n">c</span> <span class="p">=</span> <span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="n">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">()[</span><span class="m">0</span><span class="p">];</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">Char</span><span class="p">.</span><span class="nf">IsLower</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The character is lowercase."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Char</span><span class="p">.</span><span class="nf">IsUpper</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The character is uppercase."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Char</span><span class="p">.</span><span class="nf">IsDigit</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The character is a digit"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The character isn't an alphabetic character."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Sample output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter a character: a
+The character is lowercase.
+Enter a character: B
+The character is uppercase.
+Enter a character: 1
+The character is a digit
+Enter a character: )
+The character isn't an alphabetic character.
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/3aAC8t" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="logical-operators">Logical operators</h2>
+
+<p><a href="/04-expressions-and-assignments/short-circuit-evaluation/">As we have covered earlier</a>, we can use logical operators to make a compound condition.</p>
+
+<h4 id="not">NOT</h4>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Logical NOT, !</span>
+<span class="kt">bool</span> <span class="n">result</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(!</span><span class="n">result</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"result is not true"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"result is not false"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="and">AND</h4>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// AND, &amp;&amp;</span>
+<span class="kt">int</span> <span class="n">m</span> <span class="p">=</span> <span class="m">9</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span> <span class="p">=</span> <span class="m">7</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">p</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="p">&gt;=</span> <span class="n">n</span> <span class="p">&amp;&amp;</span> <span class="n">m</span> <span class="p">&gt;=</span> <span class="n">p</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Nothing is larger than m."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="or">OR</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// OR, ||
+if (m &gt; n || m &gt; p)
+{
+    Console.WriteLine("m isn't the smallest.");
+}
+</code></pre></div></div>
+
+<h4 id="combined">Combined</h4>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// AND and NOT</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="p">&gt;=</span> <span class="n">n</span> <span class="p">&amp;&amp;</span> <span class="p">!(</span><span class="n">p</span> <span class="p">&gt;</span> <span class="n">m</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Nothing is larger than m."</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// NOT and OR</span>
+<span class="n">m</span> <span class="p">=</span> <span class="m">4</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(!(</span><span class="n">m</span> <span class="p">&gt;=</span> <span class="n">n</span> <span class="p">||</span> <span class="n">m</span> <span class="p">&gt;=</span> <span class="n">p</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Now m is the smallest."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/02uQvo" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="if-statements-Docs2015k">Docs, M. (2015, July 20). if-else (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/if-else</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Control Structures</h2>
+		<h3>switch statements</h3>
+	</div>
+	<article class="content">
+		<p>switch is a selection statement that chooses a single switch section to execute from a list of candidates based on a pattern match with the match expression <a href="#switch-statements-Docs2018b">(Docs, 2018)</a></p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">caseSwitch</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
+<span class="k">switch</span> <span class="p">(</span><span class="n">caseSwitch</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">case</span> <span class="m">1</span><span class="p">:</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Case 1"</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="m">2</span><span class="p">:</span>
+    <span class="k">case</span> <span class="m">4</span><span class="p">:</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Case </span><span class="p">{</span><span class="n">caseSwitch</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="m">3</span><span class="p">:</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Case 3"</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Unexpcted value (</span><span class="p">{</span><span class="n">caseSwitch</span><span class="p">}</span><span class="s">)"</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Case 2
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/YjhFcn" frameborder="0"></iframe>
+</blockquote>
+
+<p>The general syntax for each case label is</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>case constant:
+</code></pre></div></div>
+
+<p>where constant can be any of the following expressions:</p>
+
+<ol>
+  <li>A <code class="highlighter-rouge">bool</code> literal
+    <ol>
+      <li><code class="highlighter-rouge">true</code>, or</li>
+      <li><code class="highlighter-rouge">false</code></li>
+    </ol>
+  </li>
+  <li>Any integral constant
+    <ol>
+      <li><code class="highlighter-rouge">int</code></li>
+      <li><code class="highlighter-rouge">long</code></li>
+      <li><code class="highlighter-rouge">byte</code></li>
+      <li>etc</li>
+    </ol>
+  </li>
+  <li>The name of a declared <code class="highlighter-rouge">const</code> variable.</li>
+  <li>An enumeration constant.
+    <ol>
+      <li><code class="highlighter-rouge">DayOfWeek.Sunday</code></li>
+    </ol>
+  </li>
+  <li>A <code class="highlighter-rouge">char</code> literal.</li>
+  <li>A <code class="highlighter-rouge">string</code> literal.</li>
+</ol>
+
+<p>The switch statement provides a <em>clean alternative</em> for writing multiple if-else statements. The example above can be written as:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">caseSwitch</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">caseSwitch</span> <span class="p">==</span> <span class="m">1</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Case 1"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">caseSwitch</span> <span class="p">==</span> <span class="m">2</span> <span class="p">||</span> <span class="n">caseSwitch</span> <span class="p">==</span> <span class="m">4</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Case </span><span class="p">{</span><span class="n">caseSwitch</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">caseSwitch</span> <span class="p">==</span> <span class="m">3</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Case 3"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Unexpcted value (</span><span class="p">{</span><span class="n">caseSwitch</span><span class="p">}</span><span class="s">)"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/UgOh7n" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="multiple-case-labels">Multiple case labels</h2>
+
+<p>As you might have noticed in the previous switch example, a switch section can have <strong>multiple case labels</strong></p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="m">2</span><span class="p">:</span>
+<span class="k">case</span> <span class="m">4</span><span class="p">:</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Case </span><span class="p">{</span><span class="n">caseSwitch</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>However in that <em>case</em>, C# does not allow execution to continue from one switch section to the next. The code below will generate a compiler error:</p>
+
+<blockquote>
+  <p>CS0163: “Control cannot fall through from one case label () to another.”</p>
+</blockquote>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">caseSwitch</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+
+<span class="k">switch</span> <span class="p">(</span><span class="n">caseSwitch</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// The following switch section causes an error.</span>
+    <span class="k">case</span> <span class="m">1</span><span class="p">:</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Case 1..."</span><span class="p">);</span>
+        <span class="c1">// a jump statement is needed here</span>
+    <span class="k">case</span> <span class="m">2</span><span class="p">:</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"... and/or Case 2"</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Phku4t" frameborder="0"></iframe>
+</blockquote>
+
+<p>Jump statements include:</p>
+
+<ol>
+  <li>break</li>
+  <li>goto case</li>
+  <li>goto label</li>
+  <li>return</li>
+  <li>throw</li>
+</ol>
+
+<h2 id="default-case">default case</h2>
+
+<p>The <code class="highlighter-rouge">default</code> case, which is optional, specifies what to execute if the match expression does not match with any of the case labels. This is similar to the last <code class="highlighter-rouge">else</code> clause in the if-elseif-else example.</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="switch-statements-Docs2018b">Docs, M. (Ed.). (2018, August 14). switch (C# reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/switch</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Control Structures</h2>
+		<h3>Iteration statements</h3>
+	</div>
+	<article class="content">
+		<p>In C#, there are several constructs that can be used to repeat a block of code, including:</p>
+
+<ol>
+  <li><a href="/05-control-structures/while-loop/">while</a></li>
+  <li><a href="/05-control-structures/do-while-loop/">do…while</a></li>
+  <li><a href="/05-control-structures/for-loop/">for</a></li>
+  <li><a href="/05-control-structures/foreach-in-loop/">foreach…in</a></li>
+</ol>
+
+<p><a href="#iteration-statements-Docs2015l">(Docs, 2015)</a></p>
+
+<p><code class="highlighter-rouge">do</code> and <code class="highlighter-rouge">while</code> are logically-controlled loop constructs, <code class="highlighter-rouge">for</code> is counter-controller, and finally <code class="highlighter-rouge">foreach…in</code> is used together for iteration based on data structures (specifically, those that implement <code class="highlighter-rouge">IEnumerable&lt;T&gt;</code>)
+User-located loop control mechanisms are achieved using jump statements, some of which include <a href="#iteration-statements-Docs2015m">(Docs, 2015)</a>:</p>
+
+<ol>
+  <li><a href="/05-control-structures/break/">break</a></li>
+  <li><a href="/05-control-structures/continue/">continue</a></li>
+  <li><a href="/05-control-structures/goto/">goto</a></li>
+</ol>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="iteration-statements-Docs2015l">Docs, M. (2015, July 20). Iteration Statements (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/iteration-statements</span></li>
+<li><span id="iteration-statements-Docs2015m">Docs, M. (2015, July 20). Jump Statements (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/jump-statements</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Control Structures</h2>
+		<h3>while loop</h3>
+	</div>
+	<article class="content">
+		<p>The structure of <code class="highlighter-rouge">while</code> loop is as follow:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">statements</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">condition</code> is tested before the <code class="highlighter-rouge">statements</code> in the body of the while loop is executed. Hence, <code class="highlighter-rouge">while</code> loop executes <strong>zero or more times</strong> <a href="#while-loop-Docs2018c">(Docs, 2018)</a>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="p">&lt;</span> <span class="m">20</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Value of x: </span><span class="p">{</span><span class="n">x</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">x</span><span class="p">++;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Value of x: 10
+Value of x: 11
+Value of x: 12
+Value of x: 13
+Value of x: 14
+Value of x: 15
+Value of x: 16
+Value of x: 17
+Value of x: 18
+Value of x: 19
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/h6F4f2" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="while-loop-Docs2018c">Docs, M. (2018, May 28). while (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/while</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Control Structures</h2>
+		<h3>do...while loop</h3>
+	</div>
+	<article class="content">
+		<p>The structure of the <code class="highlighter-rouge">do...while</code> loop is as follow:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">do</span>
+<span class="p">{</span>
+    <span class="n">statements</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">condition</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>As the <code class="highlighter-rouge">condition</code> is evaluated after executing the <code class="highlighter-rouge">statements</code>, <code class="highlighter-rouge">do…while</code> loop is guaranteed to be executed <strong>at least once</strong> <a href="#do-while-loop-Docs2018d">(Docs, 2018)</a>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
+<span class="k">do</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Value of x: </span><span class="p">{</span><span class="n">x</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">x</span><span class="p">++;</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="p">&lt;</span> <span class="m">20</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Value of x: 10
+Value of x: 11
+Value of x: 12
+Value of x: 13
+Value of x: 14
+Value of x: 15
+Value of x: 16
+Value of x: 17
+Value of x: 18
+Value of x: 19
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/IR8TIT" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="do-while-loop-Docs2018d">Docs, M. (2018, May 28). do (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/do</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Control Structures</h2>
+		<h3>for loop</h3>
+	</div>
+	<article class="content">
+		<p>The structure of a <code class="highlighter-rouge">for</code> loop is as follow:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="n">initializer</span><span class="p">;</span> <span class="n">condition</span><span class="p">;</span> <span class="n">iterator</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">body</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">body</code> of the for loop is executed when the <code class="highlighter-rouge">condition</code> evaluates to <code class="highlighter-rouge">true</code>.</p>
+
+<p>A <code class="highlighter-rouge">for</code> loop consists of main 3 parts:</p>
+
+<ol>
+  <li>initializer</li>
+  <li>condition</li>
+  <li>iterator</li>
+</ol>
+
+<p><a href="#for-loop-Docs2018e">(Docs, 2018)</a></p>
+
+<h4 id="initializer"><code class="highlighter-rouge">initializer</code></h4>
+
+<blockquote>
+  <p>The statements in the initializer section are executed <strong>first</strong> and executed only <strong>once</strong> before entering the loop.</p>
+</blockquote>
+
+<p>This is usually where a <em>local loop variable</em> is declared and initialized.</p>
+
+<h4 id="condition"><code class="highlighter-rouge">condition</code></h4>
+
+<blockquote>
+  <p>The condition section is a <code class="highlighter-rouge">Boolean</code> expression which is evaluated <strong>before</strong> every iteration.</p>
+</blockquote>
+
+<p>The for loop will <strong>stop</strong> executing when it evaluates to <code class="highlighter-rouge">false</code>.</p>
+
+<h4 id="iterator"><code class="highlighter-rouge">iterator</code></h4>
+
+<blockquote>
+  <p>The statements in the iterator section are executed <strong>after</strong> each iteration.</p>
+</blockquote>
+
+<p>This is usually where the loop variable is incremented or decremented.</p>
+
+<h2 id="example">Example</h2>
+
+<p>The same example used in <code class="highlighter-rouge">while</code> and <code class="highlighter-rouge">do…while</code> loop can be written using for loop, which is more concise:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span> <span class="n">x</span> <span class="p">&lt;</span> <span class="m">20</span><span class="p">;</span> <span class="n">x</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Value of x: </span><span class="p">{</span><span class="n">x</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Value of x: 10
+Value of x: 11
+Value of x: 12
+Value of x: 13
+Value of x: 14
+Value of x: 15
+Value of x: 16
+Value of x: 17
+Value of x: 18
+Value of x: 19
+</code></pre></div></div>
+
+<p>In this case,</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Initializer</th>
+      <th>Condition</th>
+      <th>Iterator</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">int x = 10</code></td>
+      <td><code class="highlighter-rouge">x &lt; 20</code></td>
+      <td><code class="highlighter-rouge">x++</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/GYSteF" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="for-loop-Docs2018e">Docs, M. (2018, June 13). for (C# reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/for</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Control Structures</h2>
+		<h3>foreach...in loop</h3>
+	</div>
+	<article class="content">
+		<p><code class="highlighter-rouge">foreach</code> statement provide a simpler way to iterate over a <strong>collection of elements</strong>. It can be used with types that implement the <code class="highlighter-rouge">System.Collections.IEnumerable</code> or <code class="highlighter-rouge">System.Collections.Generic.IEnumerable&lt;T&gt;</code> interface. Examples of those types include:</p>
+
+<ol>
+  <li>arrays</li>
+  <li><code class="highlighter-rouge">List&lt;T&gt;</code></li>
+  <li><code class="highlighter-rouge">Dictionary&lt;TKey,TValue&gt;</code></li>
+  <li><code class="highlighter-rouge">Queue&lt;T&gt;</code></li>
+  <li><code class="highlighter-rouge">SortedList&lt;TKey,TValue&gt;</code></li>
+  <li><code class="highlighter-rouge">Stack&lt;T&gt; Class</code></li>
+  <li>… etc</li>
+</ol>
+
+<p><a href="#foreach-in-loop-Docs2018f">(Docs, 2018)</a></p>
+
+<p>The structure of a <code class="highlighter-rouge">foreach…in</code> loop is as follow:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">foreach</span> <span class="p">(</span><span class="n">type</span> <span class="n">name</span> <span class="k">in</span> <span class="n">collection</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">body</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>where</p>
+
+<ol>
+  <li><code class="highlighter-rouge">type</code> is the type of the elements inside the <code class="highlighter-rouge">collection</code>, <code class="highlighter-rouge">var</code> keyword can also be used here</li>
+  <li><code class="highlighter-rouge">collection</code> is the groups of elements to be iterated</li>
+</ol>
+
+<p>For example, this for loop that print out all the elements in an array</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="p">[]</span> <span class="n">nums</span> <span class="p">=</span> <span class="p">{</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">45</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">9</span><span class="p">};</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>can be written using <code class="highlighter-rouge">foreach…in</code> loop</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="p">[]</span> <span class="n">nums</span> <span class="p">=</span> <span class="p">{</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">45</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">9</span><span class="p">};</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="k">in</span> <span class="n">nums</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/ccSWJd" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="foreach-in-loop-Docs2018f">Docs, M. (2018, June 29). foreach, in (C# reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/foreach-in‘</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Control Structures</h2>
+		<h3>break</h3>
+	</div>
+	<article class="content">
+		<p>A <code class="highlighter-rouge">break</code> statement will terminate</p>
+
+<ol>
+  <li>the closest enclosing loop, or</li>
+  <li>the switch statement</li>
+</ol>
+
+<p>and return the program control to the statements right after the terminated statements <a href="#break-Docs2015n">(Docs, 2015)</a>.</p>
+
+<p>For example</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;=</span> <span class="m">10</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="p">==</span> <span class="m">5</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>will print:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0
+1
+2
+3
+4
+</code></pre></div></div>
+
+<p>because the for loop is terminated when <code class="highlighter-rouge">i</code> is 5.</p>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/EnDBIp" frameborder="0"></iframe>
+</blockquote>
+
+<p>When break is used within a <strong>nested loop</strong>, it will only terminate the <strong>closest enclosing loop</strong> and return the control to the <strong>outer loop</strong>.</p>
+
+<p>For example</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">10</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;</span> <span class="m">10</span><span class="p">;</span> <span class="n">j</span><span class="p">++)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="p">&gt;</span> <span class="n">i</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">$"</span><span class="p">{</span><span class="n">j</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0
+01
+012
+0123
+01234
+012345
+0123456
+01234567
+012345678
+0123456789
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/Cfzvx5" frameborder="0"></iframe>
+</blockquote>
+
+<p>As discussed earlier, <code class="highlighter-rouge">break</code> statement is also used in <code class="highlighter-rouge">switch</code> statements.</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="break-Docs2015n">Docs, M. (2015, July 20). break (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/break</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Control Structures</h2>
+		<h3>continue</h3>
+	</div>
+	<article class="content">
+		<p>Different from <code class="highlighter-rouge">break</code>, the <code class="highlighter-rouge">continue</code> statement <strong>does not terminate</strong> the loop, instead it passes the control to the <strong>next iteration</strong> <a href="#continue-Docs2015o">(Docs, 2015)</a>.</p>
+
+<p>Using the previous example</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;=</span> <span class="m">10</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="p">==</span> <span class="m">5</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">continue</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The output will be:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0
+1
+2
+3
+4
+6
+7
+8
+9
+10
+</code></pre></div></div>
+
+<p>where only the number <code class="highlighter-rouge">5</code> is skipped.</p>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/V5xJrn" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="continue-Docs2015o">Docs, M. (2015, July 20). continue (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/continue</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Control Structures</h2>
+		<h3>goto</h3>
+	</div>
+	<article class="content">
+		<p>The <code class="highlighter-rouge">goto</code> statement transfers the control of the program immediately to a <strong>labeled</strong> statement <a href="#goto-Docs2015p">(Docs, 2015)</a>.</p>
+
+<p>Even though <code class="highlighter-rouge">goto</code> is useful in jumping out of a <em>deeply nested loop</em>, the use of goto statement is highly <strong>discouraged</strong> as it often results in <em>spaghetti code</em>:</p>
+
+<blockquote>
+  <p>…widespread and unconstrained use of GOTO statements has led to programmers producing <strong>inconsistent</strong>, <strong>incomplete</strong> and generally <strong>unmaintainable</strong> programs.<br />
+Such code is often known as ‘spaghetti’, given its convoluted and tangled control structure.</p>
+
+  <p><a href="#goto-Cram2005">(Cram &amp; Hedley, 2005)</a></p>
+</blockquote>
+
+<p>The previous nested <code class="highlighter-rouge">for</code> loop</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">10</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;</span> <span class="m">10</span><span class="p">;</span> <span class="n">j</span><span class="p">++)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="p">&gt;</span> <span class="n">i</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">$"</span><span class="p">{</span><span class="n">j</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>can be written using <code class="highlighter-rouge">goto</code> as</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">10</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;</span> <span class="m">10</span><span class="p">;</span> <span class="n">j</span><span class="p">++)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="p">&gt;</span> <span class="n">i</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">goto</span> <span class="n">outer</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">$"</span><span class="p">{</span><span class="n">j</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="n">outer</span><span class="p">:</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Note that we need a label (<code class="highlighter-rouge">outer:</code> in the example above) to indicate the position we want the program control to go.</p>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/TJTzv9" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="goto-Docs2015p">Docs, M. (2015, July 20). goto (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/goto</span></li>
+<li><span id="goto-Cram2005">Cram, D., &amp; Hedley, P. (2005). Pronouns and procedural meaning: The relevance of spaghetti code and paranoid delusion. <i>Oxford University Working Papers in Linguistics, Philology and Phonetic</i>, <i>10</i>, 187–210.</span></li></ol>
 
 	</article>
 	<hr>
