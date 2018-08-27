@@ -5,7 +5,7 @@ category: Expressions and Assignments
 order: 9
 ---
 
-Short-circuit evaluation is a process whereby the value of an expression is determined without evaluating all of the operands and/or operands.
+Short-circuit evaluation is a process whereby the value of an expression is determined without evaluating all of the operands and/or operators.
 
 C# offers both short-circuiting and non-short-circuiting boolean operators {% cite Shamseer2017 --prefix short-circuit %}:
 
