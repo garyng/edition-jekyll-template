@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Positional and keyword parameters | C# - TPL2141</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Positional and keyword parameters" />
+<meta name="author" content="GaryNg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In C#, arguments are bound to parameters based on their position (or order) by default; but C# also supports keyword parameters through the use of named arguments (Docs, 2015)." />
+<meta property="og:description" content="In C#, arguments are bound to parameters based on their position (or order) by default; but C# also supports keyword parameters through the use of named arguments (Docs, 2015)." />
+<link rel="canonical" href="https://tpl2141.garyng.xyz/06-subprograms/positional-keyword-parameters/" />
+<meta property="og:url" content="https://tpl2141.garyng.xyz/06-subprograms/positional-keyword-parameters/" />
+<meta property="og:site_name" content="C# - TPL2141" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-09-02T12:43:27+00:00" />
+<script type="application/ld+json">
+{"description":"In C#, arguments are bound to parameters based on their position (or order) by default; but C# also supports keyword parameters through the use of named arguments (Docs, 2015).","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/06-subprograms/positional-keyword-parameters/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Positional and keyword parameters","dateModified":"2018-09-02T12:43:27+00:00","datePublished":"2018-09-02T12:43:27+00:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/images/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/emblem.svg" width="40" height="40" alt="C# - TPL2141 logo"></a>
+				C# - TPL2141
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/">Welcome</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/01-introduction/history/">Introduction</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/01-introduction/history/">Brief history</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/styles/">Supported programming styles</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/features/">Unique features</a></li>
+								
+									<li class="nav-item "><a href="/01-introduction/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/02-application-domain/Initial-intended-usage/">Application Domain</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/02-application-domain/Initial-intended-usage/">Initial intended usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/current-usage/">Current usage</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/popularity/">Popularity</a></li>
+								
+									<li class="nav-item "><a href="/02-application-domain/slide/">Slide</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/03-names-and-bindings/names/">Names and Bindings</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/names/">Names</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-characters/">Special characters</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/special-words/">Special words</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/declarations/">Declarations</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/dynamic-type-binding/">Dynamic type binding</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/storage-binding/">Storage Binding</a></li>
+								
+									<li class="nav-item "><a href="/03-names-and-bindings/scoping/">Scoping</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/04-expressions-and-assignments/expressions/">Expressions and Assignments</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/expressions/">Expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/arithmetic-expressions/">Arithmetic expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operators/">Operators</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-precedence-and-associativity/">Operator precedence and associativity</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-overloading/">Operator overloading</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/functional-side-effects/">Functional side effects</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/type-conversion/">Type conversion</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/boolean-expressions/">Boolean expressions</a></li>
+								
+									<li class="nav-item "><a href="/04-expressions-and-assignments/short-circuit-evaluation/">Short circuit evaluation</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/05-control-structures/selection-statements/">Control Structures</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/05-control-structures/selection-statements/">Selection statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/if-statements/">if statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/switch-statements/">switch statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/iteration-statements/">Iteration statements</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/while-loop/">while loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/do-while-loop/">do...while loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/for-loop/">for loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/foreach-in-loop/">foreach...in loop</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/break/">break</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/continue/">continue</a></li>
+								
+									<li class="nav-item "><a href="/05-control-structures/goto/">goto</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level current">
+							
+							<a href="/06-subprograms/methods-definition/">Subprograms</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/06-subprograms/methods-definition/">Methods definition</a></li>
+								
+									<li class="nav-item current"><a href="/06-subprograms/positional-keyword-parameters/">Positional and keyword parameters</a></li>
+								
+									<li class="nav-item "><a href="/06-subprograms/passing-parameters/">Passing parameters</a></li>
+								
+									<li class="nav-item "><a href="/06-subprograms/method-overloading/">Method overloading</a></li>
+								
+							</ul>
+						</li>
+					
+				</ul>
+
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/quick-guide/">Quick Guide</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>Subprograms</h2>
+				<h3>Positional and keyword parameters</h3>
+				
+			</div>
+			<article class="content">
+				<p>In C#, arguments are bound to parameters based on their <strong>position</strong> (or order) by default; but C# also supports keyword parameters through the use of <strong>named arguments</strong> <a href="#positional-keyword-Docs2015s">(Docs, 2015)</a>.</p>
+
+<p>Take this <code class="highlighter-rouge">Add</code> method as an example:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">first</span><span class="p">,</span> <span class="kt">int</span> <span class="n">second</span><span class="p">,</span> <span class="kt">int</span> <span class="n">third</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">first</span> <span class="p">+</span> <span class="n">second</span> <span class="p">+</span> <span class="n">third</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="positional">Positional</h2>
+
+<p>This is the default way of how arguments and parameters are bound to each other:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">result</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+    <span class="n">result</span> <span class="p">=</span> <span class="nf">Add</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="named">Named</h2>
+
+<p>The caller can specify the value of a parameter by associating the <strong>argument</strong> with the <strong>parameter’s name</strong> in the following format:</p>
+
+<p><code class="highlighter-rouge">&lt;parameter name&gt;: &lt;argument value&gt;</code></p>
+
+<p>The same method previously can also be invoked with:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="p">=</span> <span class="nf">Add</span><span class="p">(</span><span class="n">first</span><span class="p">:</span> <span class="m">1</span><span class="p">,</span> <span class="n">second</span><span class="p">:</span> <span class="m">2</span><span class="p">,</span> <span class="n">third</span><span class="p">:</span> <span class="m">3</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>or even <strong>out-of-order</strong>:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="p">=</span> <span class="nf">Add</span><span class="p">(</span><span class="n">third</span><span class="p">:</span> <span class="m">3</span><span class="p">,</span> <span class="n">second</span><span class="p">:</span> <span class="m">2</span><span class="p">,</span> <span class="n">first</span><span class="p">:</span> <span class="m">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>However, named arguments must be placed <strong>before</strong> any <strong>fix arguments</strong>. Thus the following code is invalid:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ERROR: CS8323 Named argument is used out-of-position but is followed by an unnamed argument</span>
+<span class="n">result</span> <span class="p">=</span> <span class="nf">Add</span><span class="p">(</span><span class="n">third</span><span class="p">:</span> <span class="m">3</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/v4XUHK" frameborder="0"></iframe>
+</blockquote>
+
+<p>Named arguments are commonly used to convey the <em>intent</em> of the argument. Without looking at the definition of the method, which one is better?</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Init</span><span class="p">(</span><span class="k">true</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+</code></pre></div></div>
+<p>vs.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Init</span><span class="p">(</span><span class="n">isProcessDataRequired</span><span class="p">:</span> <span class="k">true</span><span class="p">,</span>
+     <span class="n">isDiplayDataRequired</span><span class="p">:</span> <span class="k">false</span><span class="p">,</span>
+     <span class="n">isSaveDataRequired</span><span class="p">:</span> <span class="k">true</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="optional">Optional</h2>
+
+<p>Optional arguments allow the caller to omit arguments for some parameters. The omitted parameter will use the default value defined in the method header.</p>
+
+<p>For example:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">Print</span><span class="p">(</span><span class="kt">string</span> <span class="n">required</span><span class="p">,</span> <span class="kt">string</span> <span class="n">optionalString</span> <span class="p">=</span> <span class="s">"Default string"</span><span class="p">,</span> <span class="kt">int</span> <span class="n">optionalNumber</span> <span class="p">=</span> <span class="m">123</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"</span><span class="p">{</span><span class="n">required</span><span class="p">}</span><span class="s">, </span><span class="p">{</span><span class="n">optionalString</span><span class="p">}</span><span class="s">, </span><span class="p">{</span><span class="n">optionalNumber</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Can be called with:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Print</span><span class="p">(</span><span class="s">"One"</span><span class="p">);</span>
+<span class="nf">Print</span><span class="p">(</span><span class="s">"One"</span><span class="p">,</span> <span class="s">"Two"</span><span class="p">);</span>
+<span class="nf">Print</span><span class="p">(</span><span class="s">"One"</span><span class="p">,</span> <span class="s">"Two"</span><span class="p">,</span> <span class="m">3</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>One, Default string, 123
+One, Two, 123
+One, Two, 3
+</code></pre></div></div>
+
+<p>By default, the arguments are <strong>positional</strong>, but <strong>named arguments</strong> can also be used to specify the value of the optional parameter.</p>
+
+<p>For example, to skip the second parameter <code class="highlighter-rouge">optionalString</code>:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Print</span><span class="p">(</span><span class="s">"One"</span><span class="p">,</span> <span class="n">optionalNumber</span><span class="p">:</span> <span class="m">3</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>One, Default string, 3
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/iDiv4v" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="positional-keyword-Docs2015s">Docs, M. (2015, July 20). Named and Optional Arguments (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/named-and-optional-arguments</span></li></ol>
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

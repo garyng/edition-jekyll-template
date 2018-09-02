@@ -165,6 +165,22 @@
 							</ul>
 						</li>
 					
+						<li class="nav-item top-level ">
+							
+							<a href="/06-subprograms/methods-definition/">Subprograms</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/06-subprograms/methods-definition/">Methods definition</a></li>
+								
+									<li class="nav-item "><a href="/06-subprograms/positional-keyword-parameters/">Positional and keyword parameters</a></li>
+								
+									<li class="nav-item "><a href="/06-subprograms/passing-parameters/">Passing parameters</a></li>
+								
+									<li class="nav-item "><a href="/06-subprograms/method-overloading/">Method overloading</a></li>
+								
+							</ul>
+						</li>
+					
 				</ul>
 
 				<ul>
@@ -778,6 +794,74 @@
 						"category": "",
 						"url": " /05-control-structures/while-loop/",
 						"content": "The structure of while loop is as follow: while (condition) { statements } The condition is tested before the statements in the body of the while loop is executed. Hence, while loop executes zero or more times (Docs, 2018). int x = 10; while (x &lt; 20) { Console.WriteLine($\"Value of x: {x}\"); x++; } Output: Value of x: 10 Value of x: 11 Value of x: 12 Value of x: 13 Value of x: 14 Value of x: 15 Value of x: 16 Value of x: 17 Value of x: 18 Value of x: 19 Live-code example References Docs, M. (2018, May 28). while (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords while"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"06-subprograms-method-overloading": {
+						"id": "06-subprograms-method-overloading",
+						"title": "Method overloading",
+						"category": "",
+						"url": " /06-subprograms/method-overloading/",
+						"content": "Overloading is a process where multiple methods with the same name but different signatures are defined. In C#, overloads are resolved at compile-time. Note that the return type of a method is not considered to be a part of a method’s signature (Skeet, n.d.). Example: void Foo(int x) { Console.WriteLine(\"Foo(int x)\"); } void Foo(string x) { Console.WriteLine(\"Foo(string x)\"); } Calling with Foo(1); Foo(\"String\"); will output: Foo(int x) Foo(string x) Live-code example References Skeet, J. Overloading. Retrieved from http: csharpindepth.com Articles General Overloading.aspx"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"06-subprograms-methods-definition": {
+						"id": "06-subprograms-methods-definition",
+						"title": "Methods definition",
+						"category": "",
+						"url": " /06-subprograms/methods-definition/",
+						"content": "Subprograms, or subroutines, are block of code that contains a series of statements and can be invoked from other remote locations in a program (Shute, n.d.). In C#, subprograms are known as “methods” and consists of (Point, 2018): access modifier return type method name parameter list method body There are also other optional modifiers like abstract, virtual, async, override, partial, static, etc. &lt;access modifier&gt; &lt;return type&gt; &lt;method name&gt;(parameter list) { method body } Here is a simple example of a method called Max that receives 2 parameters first and second and returns an int. public int Max(int first, int second) { if (first &gt; second) { return first; } return second; } Access modifier Access modifiers control whether a particular method can be used from other assemblies, from other classes or structs, or inside derived classes. There are 5 types of accessibility levels in C# (Docs, 2015): public private protected internal protected internal private internal Return type A method may return a value to the caller and the return type of the method is the data type of the value being returned. If the method does not return any value, the return type will be void. The return keyword is used to terminate the execution of current method and transfer the control back to the caller, optionally returning a value. However, return is not required for void methods (Docs, 2015). For example, this is a method Max that returns an int: public int Max(int first, int second) { if (first &gt; second) { return first; } return second; } Here is a void method that uses a return statement for early exiting of the function. The pattern is commonly known as “guard clauses” (Cunningham &amp; Cunningham, n.d.). public void Initialize(string name, int age) { if (string.IsNullOrEmpty(name)) return; if (age &lt; 0) return; ... other operations } Parameter list Parameters are used for passing data to the method. A parameter list is a list of parameters along with their: name type that are enclosed within a pair of parenthesis. The order of the parameters in the list is also important to the caller. Note that parameters are optional; that is - a method may not receive any parameters. Parameters vs. Arguments The method definition specifies the parameters that are required; the caller specifies the arguments that contains the concrete values for the parameters. In the following example: a is the argument (from the caller side); while num is a parameter (for the method Square). void Main() { int a = 1; a is the argument Square(a); } num is a parameter int Square(int num) { return num * num; } References Shute, G. Subprograms. Retrieved from https: www.d.umn.edu  gshute asm subprograms.xhtml Point, T. (2018). C# - Methods. Retrieved from https: www.tutorialspoint.com csharp csharp_methods.htm Docs, M. (2015, July 20). Access Modifiers (C# Programming Guide). Retrieved from https: docs.microsoft.com en-us dotnet csharp programming-guide classes-and-structs access-modifiers Docs, M. (2015, July 20). return (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords return Cunningham &amp; Cunningham, I. Guard Clause. Retrieved from http: wiki.c2.com ?GuardClause"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"06-subprograms-passing-parameters": {
+						"id": "06-subprograms-passing-parameters",
+						"title": "Passing parameters",
+						"category": "",
+						"url": " /06-subprograms/passing-parameters/",
+						"content": "In C#, arguments can be passed to the parameters either by value, or by reference (Docs, 2015) Passing arguments by reference allows the changes made by the methods to be persisted at the calling site. Pass by reference can be achieved by using the keyword ref and out, which we have covered in the topic “Functional side effects” Do note that there are slight differences among passing value-type by value passing reference-type by value passing value-type by reference passing reference-type by reference Value-type vs. reference-type A value-type variable directly contains the data as compared to reference-type, which contains a reference (or pointer) to the data. Value-types include: numeric types (int, long, byte, float, double, etc) bool structs enumerations (Docs, 2015) Reference-types include class interface object string ..etc (Docs, 2015) Passing value-type by value When a value-type is passed by value, any changes to the parameter in the method will not be persisted back in the calling environment (Docs, 2015). Passing reference-type by value When a reference-type is passed by value, any changes to the reference pointer memory location of the parameter are local; but content of the parameter can be changed (Docs, 2015). Changing the reference of the array parameter (ie. assigning it to a new array) will not be persisted: void ChangeReference(int[] nums) { nums = new int[]{1, 2, 3, 4, 5}; } void Main() { int[] numbers = new int[] { 10, 20, 30, 40 }; Console.WriteLine($\"Original: {string.Join(\", \", numbers)}\"); ChangeReference(numbers); Console.WriteLine($\"After: {string.Join(\", \", numbers)}\"); } Output: Original: 10, 20, 30, 40 After: 10, 20, 30, 40 But changing the content of the array will be persisted: void Main() { int[] numbers = new int[] { 10, 20, 30, 40 }; Console.WriteLine($\"Original: {string.Join(\", \", numbers)}\"); ChangeContent(numbers); Console.WriteLine($\"After: {string.Join(\", \", numbers)}\"); } void ChangeContent(int[] nums) { nums[0] = 1; nums[1] = 2; } Output: Original: 10, 20, 30, 40 After: 1, 2, 3, 40 Live-code example Passing value-type by reference When a value-type is passed by value, any changes to the parameter in the method will be persisted (Docs, 2015). This can be achieved by using either ref or out keyword: void Main() { int result; Add(1, 2, out result); Console.WriteLine(result); } void Add(int first, int second, out int result) { result = first + second; } Output: 3 Live-code example Passing reference-type by reference When a reference-type is passed by reference, any changes to the content and the reference pointer memory location of the parameter will be persisted (Docs, 2015). In this case, changes to the reference of the array or the content of the array will both be persisted: public static void Main() { int[] numbers = new int[]{10, 20, 30, 40}; int[] oldNumbers = numbers; store a temporary reference to numbers Console.WriteLine(\"--- Change reference pointer memory location\"); Console.WriteLine($\"Original: {string.Join(\", \", numbers)}\"); ChangeReference(ref numbers); Console.WriteLine($\"After: {string.Join(\", \", numbers)}\"); Console.WriteLine($\"Still the same object? {numbers.Equals(oldNumbers)}\"); oldNumbers = numbers; Console.WriteLine(); Console.WriteLine(\"--- Change content\"); Console.WriteLine($\"Original: {string.Join(\", \", numbers)}\"); ChangeContent(ref numbers); Console.WriteLine($\"After: {string.Join(\", \", numbers)}\"); Console.WriteLine($\"Still the same object? {numbers.Equals(oldNumbers)}\"); } static void ChangeReference(ref int[] nums) { nums = new int[]{1, 2, 3, 4, 5}; } static void ChangeContent(ref int[] nums) { nums[0] = 1; nums[1] = 2; } Output: --- Change reference pointer memory location Original: 10, 20, 30, 40 After: 1, 2, 3, 4, 5 Still the same object? False --- Change content Original: 1, 2, 3, 4, 5 After: 1, 2, 3, 4, 5 Still the same object? True Live-code example References Docs, M. (2015, July 20). Passing Parameters (C# Programming Guide). Retrieved from https: docs.microsoft.com en-us dotnet csharp programming-guide classes-and-structs passing-parameters Docs, M. (2015, July 20). Value Types (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords value-types Docs, M. (2015, July 20). Reference types (C# Reference). Retrieved from https: docs.microsoft.com en-us dotnet csharp language-reference keywords reference-types Docs, M. (2015, July 20). Passing Value-Type Parameters (C# Programming Guide). Retrieved from https: docs.microsoft.com en-us dotnet csharp programming-guide classes-and-structs passing-value-type-parameters Docs, M. (2015, July 20). Passing Reference-Type Parameters (C# Programming Guide). Retrieved from https: docs.microsoft.com en-us dotnet csharp programming-guide classes-and-structs passing-reference-type-parameters"
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"06-subprograms-positional-keyword-parameters": {
+						"id": "06-subprograms-positional-keyword-parameters",
+						"title": "Positional and keyword parameters",
+						"category": "",
+						"url": " /06-subprograms/positional-keyword-parameters/",
+						"content": "In C#, arguments are bound to parameters based on their position (or order) by default; but C# also supports keyword parameters through the use of named arguments (Docs, 2015). Take this Add method as an example: int Add(int first, int second, int third) { return first + second + third; } Positional This is the default way of how arguments and parameters are bound to each other: void Main() { int result = 0; result = Add(1, 2, 3); Console.WriteLine(result); } Named The caller can specify the value of a parameter by associating the argument with the parameter’s name in the following format: &lt;parameter name&gt;: &lt;argument value&gt; The same method previously can also be invoked with: result = Add(first: 1, second: 2, third: 3); or even out-of-order: result = Add(third: 3, second: 2, first: 1); However, named arguments must be placed before any fix arguments. Thus the following code is invalid: ERROR: CS8323 Named argument is used out-of-position but is followed by an unnamed argument result = Add(third: 3, 2, 1); Live-code example Named arguments are commonly used to convey the intent of the argument. Without looking at the definition of the method, which one is better? Init(true, false, true); vs. Init(isProcessDataRequired: true, isDiplayDataRequired: false, isSaveDataRequired: true); Optional Optional arguments allow the caller to omit arguments for some parameters. The omitted parameter will use the default value defined in the method header. For example: void Print(string required, string optionalString = \"Default string\", int optionalNumber = 123) { Console.WriteLine($\"{required}, {optionalString}, {optionalNumber}\"); } Can be called with: Print(\"One\"); Print(\"One\", \"Two\"); Print(\"One\", \"Two\", 3); Output: One, Default string, 123 One, Two, 123 One, Two, 3 By default, the arguments are positional, but named arguments can also be used to specify the value of the optional parameter. For example, to skip the second parameter optionalString: Print(\"One\", optionalNumber: 3); Output: One, Default string, 3 Live-code example References Docs, M. (2015, July 20). Named and Optional Arguments (C# Programming Guide). Retrieved from https: docs.microsoft.com en-us dotnet csharp programming-guide classes-and-structs named-and-optional-arguments"
 					}
 
 					

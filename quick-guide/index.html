@@ -165,6 +165,22 @@
 							</ul>
 						</li>
 					
+						<li class="nav-item top-level ">
+							
+							<a href="/06-subprograms/methods-definition/">Subprograms</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/06-subprograms/methods-definition/">Methods definition</a></li>
+								
+									<li class="nav-item "><a href="/06-subprograms/positional-keyword-parameters/">Positional and keyword parameters</a></li>
+								
+									<li class="nav-item "><a href="/06-subprograms/passing-parameters/">Passing parameters</a></li>
+								
+									<li class="nav-item "><a href="/06-subprograms/method-overloading/">Method overloading</a></li>
+								
+							</ul>
+						</li>
+					
 				</ul>
 
 				<ul>
@@ -3183,6 +3199,515 @@ Such code is often known as ‘spaghetti’, given its convoluted and tangled co
 
 <ol class="bibliography"><li><span id="goto-Docs2015p">Docs, M. (2015, July 20). goto (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/goto</span></li>
 <li><span id="goto-Cram2005">Cram, D., &amp; Hedley, P. (2005). Pronouns and procedural meaning: The relevance of spaghetti code and paranoid delusion. <i>Oxford University Working Papers in Linguistics, Philology and Phonetic</i>, <i>10</i>, 187–210.</span></li></ol>
+
+	</article>
+	<hr>
+	
+
+
+	
+	
+	<div class="page-header quick-guide-page">
+		<h2>Subprograms</h2>
+		<h3>Methods definition</h3>
+	</div>
+	<article class="content">
+		<p>Subprograms, or subroutines, are block of code that contains a series of statements and can be invoked from other remote locations in a program <a href="#methods-definition-Shute">(Shute, n.d.)</a>.</p>
+
+<p>In C#, subprograms are known as “<strong>methods</strong>” and consists of <a href="#methods-definition-Point2018">(Point, 2018)</a>:</p>
+
+<ol>
+  <li><a href="#access-modifier">access modifier</a></li>
+  <li><a href="#return-type">return type</a></li>
+  <li>method name</li>
+  <li><a href="#parameter-list">parameter list</a></li>
+  <li>method body</li>
+</ol>
+
+<p>There are also other optional modifiers like <code class="highlighter-rouge">abstract</code>, <code class="highlighter-rouge">virtual</code>, <code class="highlighter-rouge">async</code>, <code class="highlighter-rouge">override</code>, <code class="highlighter-rouge">partial</code>, <code class="highlighter-rouge">static</code>, etc.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="n">access</span> <span class="n">modifier</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="k">return</span> <span class="n">type</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="n">method</span> <span class="n">name</span><span class="p">&gt;(</span><span class="n">parameter</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">method</span> <span class="n">body</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here is a simple example of a method called <code class="highlighter-rouge">Max</code> that receives 2 parameters <code class="highlighter-rouge">first</code> and <code class="highlighter-rouge">second</code> and returns an <code class="highlighter-rouge">int</code>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="kt">int</span> <span class="nf">Max</span><span class="p">(</span><span class="kt">int</span> <span class="n">first</span><span class="p">,</span> <span class="kt">int</span> <span class="n">second</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">first</span> <span class="p">&gt;</span> <span class="n">second</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">first</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">second</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="access-modifier">Access modifier</h4>
+
+<p>Access modifiers control whether a particular method can be used from other assemblies, from other classes or structs, or inside derived classes. There are 5 types of accessibility levels in C# <a href="#methods-definition-Docs2015q">(Docs, 2015)</a>:</p>
+
+<ol>
+  <li><code class="highlighter-rouge">public</code></li>
+  <li><code class="highlighter-rouge">private</code></li>
+  <li><code class="highlighter-rouge">protected</code></li>
+  <li><code class="highlighter-rouge">internal</code></li>
+  <li><code class="highlighter-rouge">protected internal</code></li>
+  <li><code class="highlighter-rouge">private internal</code></li>
+</ol>
+
+<h4 id="return-type">Return type</h4>
+
+<p>A method may return a value to the caller and the return type of the method is the data type of the value being returned. If the method does not return any value, the return type will be <code class="highlighter-rouge">void</code>.</p>
+
+<p>The <code class="highlighter-rouge">return</code> keyword is used to terminate the execution of current method and transfer the control back to the caller, <em>optionally</em> returning a value. However, <code class="highlighter-rouge">return</code> is not required for <code class="highlighter-rouge">void</code> methods <a href="#methods-definition-Docs2015r">(Docs, 2015)</a>.</p>
+
+<p>For example, this is a method <code class="highlighter-rouge">Max</code> that returns an <code class="highlighter-rouge">int</code>:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="kt">int</span> <span class="nf">Max</span><span class="p">(</span><span class="kt">int</span> <span class="n">first</span><span class="p">,</span> <span class="kt">int</span> <span class="n">second</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">first</span> <span class="p">&gt;</span> <span class="n">second</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">first</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">second</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here is a <code class="highlighter-rouge">void</code> method that uses a <code class="highlighter-rouge">return</code> statement for early exiting of the function. The pattern is commonly known as “<em>guard clauses</em>” <a href="#methods-definition-Cunningham&amp;Cunningham">(Cunningham &amp; Cunningham, n.d.)</a>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">Initialize</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="p">&lt;</span> <span class="m">0</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+    <span class="c1">// ... other operations</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="parameter-list">Parameter list</h4>
+
+<p>Parameters are used for passing data to the method. A parameter list is a list of parameters along with their:</p>
+
+<ol>
+  <li>name</li>
+  <li>type</li>
+</ol>
+
+<p>that are enclosed within a pair of parenthesis. The <strong>order</strong> of the parameters in the list is also important to the caller. Note that parameters are <strong>optional</strong>; that is - a method may not receive any parameters.</p>
+
+<h5 id="parameters-vs-arguments">Parameters vs. Arguments</h5>
+
+<p>The method definition specifies the <strong>parameters</strong> that are required; the caller specifies the <strong>arguments</strong> that contains the concrete values for the parameters.</p>
+
+<p>In the following example: <code class="highlighter-rouge">a</code> is the argument (from the caller side); while <code class="highlighter-rouge">num</code> is a parameter (for the method <code class="highlighter-rouge">Square</code>).</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+    <span class="c1">// a is the argument</span>
+    <span class="nf">Square</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// num is a parameter</span>
+<span class="kt">int</span> <span class="nf">Square</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">num</span> <span class="p">*</span> <span class="n">num</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="methods-definition-Shute">Shute, G. Subprograms. Retrieved from https://www.d.umn.edu/ gshute/asm/subprograms.xhtml</span></li>
+<li><span id="methods-definition-Point2018">Point, T. (2018). C# - Methods. Retrieved from https://www.tutorialspoint.com/csharp/csharp_methods.htm</span></li>
+<li><span id="methods-definition-Docs2015q">Docs, M. (2015, July 20). Access Modifiers (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers</span></li>
+<li><span id="methods-definition-Docs2015r">Docs, M. (2015, July 20). return (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/return</span></li>
+<li><span id="methods-definition-Cunningham&amp;Cunningham">Cunningham &amp; Cunningham, I. Guard Clause. Retrieved from http://wiki.c2.com/?GuardClause</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Subprograms</h2>
+		<h3>Positional and keyword parameters</h3>
+	</div>
+	<article class="content">
+		<p>In C#, arguments are bound to parameters based on their <strong>position</strong> (or order) by default; but C# also supports keyword parameters through the use of <strong>named arguments</strong> <a href="#positional-keyword-Docs2015s">(Docs, 2015)</a>.</p>
+
+<p>Take this <code class="highlighter-rouge">Add</code> method as an example:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">first</span><span class="p">,</span> <span class="kt">int</span> <span class="n">second</span><span class="p">,</span> <span class="kt">int</span> <span class="n">third</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">first</span> <span class="p">+</span> <span class="n">second</span> <span class="p">+</span> <span class="n">third</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="positional">Positional</h2>
+
+<p>This is the default way of how arguments and parameters are bound to each other:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">result</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+    <span class="n">result</span> <span class="p">=</span> <span class="nf">Add</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="named">Named</h2>
+
+<p>The caller can specify the value of a parameter by associating the <strong>argument</strong> with the <strong>parameter’s name</strong> in the following format:</p>
+
+<p><code class="highlighter-rouge">&lt;parameter name&gt;: &lt;argument value&gt;</code></p>
+
+<p>The same method previously can also be invoked with:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="p">=</span> <span class="nf">Add</span><span class="p">(</span><span class="n">first</span><span class="p">:</span> <span class="m">1</span><span class="p">,</span> <span class="n">second</span><span class="p">:</span> <span class="m">2</span><span class="p">,</span> <span class="n">third</span><span class="p">:</span> <span class="m">3</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>or even <strong>out-of-order</strong>:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="p">=</span> <span class="nf">Add</span><span class="p">(</span><span class="n">third</span><span class="p">:</span> <span class="m">3</span><span class="p">,</span> <span class="n">second</span><span class="p">:</span> <span class="m">2</span><span class="p">,</span> <span class="n">first</span><span class="p">:</span> <span class="m">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>However, named arguments must be placed <strong>before</strong> any <strong>fix arguments</strong>. Thus the following code is invalid:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ERROR: CS8323 Named argument is used out-of-position but is followed by an unnamed argument</span>
+<span class="n">result</span> <span class="p">=</span> <span class="nf">Add</span><span class="p">(</span><span class="n">third</span><span class="p">:</span> <span class="m">3</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/v4XUHK" frameborder="0"></iframe>
+</blockquote>
+
+<p>Named arguments are commonly used to convey the <em>intent</em> of the argument. Without looking at the definition of the method, which one is better?</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Init</span><span class="p">(</span><span class="k">true</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+</code></pre></div></div>
+<p>vs.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Init</span><span class="p">(</span><span class="n">isProcessDataRequired</span><span class="p">:</span> <span class="k">true</span><span class="p">,</span>
+     <span class="n">isDiplayDataRequired</span><span class="p">:</span> <span class="k">false</span><span class="p">,</span>
+     <span class="n">isSaveDataRequired</span><span class="p">:</span> <span class="k">true</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="optional">Optional</h2>
+
+<p>Optional arguments allow the caller to omit arguments for some parameters. The omitted parameter will use the default value defined in the method header.</p>
+
+<p>For example:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">Print</span><span class="p">(</span><span class="kt">string</span> <span class="n">required</span><span class="p">,</span> <span class="kt">string</span> <span class="n">optionalString</span> <span class="p">=</span> <span class="s">"Default string"</span><span class="p">,</span> <span class="kt">int</span> <span class="n">optionalNumber</span> <span class="p">=</span> <span class="m">123</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"</span><span class="p">{</span><span class="n">required</span><span class="p">}</span><span class="s">, </span><span class="p">{</span><span class="n">optionalString</span><span class="p">}</span><span class="s">, </span><span class="p">{</span><span class="n">optionalNumber</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Can be called with:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Print</span><span class="p">(</span><span class="s">"One"</span><span class="p">);</span>
+<span class="nf">Print</span><span class="p">(</span><span class="s">"One"</span><span class="p">,</span> <span class="s">"Two"</span><span class="p">);</span>
+<span class="nf">Print</span><span class="p">(</span><span class="s">"One"</span><span class="p">,</span> <span class="s">"Two"</span><span class="p">,</span> <span class="m">3</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>One, Default string, 123
+One, Two, 123
+One, Two, 3
+</code></pre></div></div>
+
+<p>By default, the arguments are <strong>positional</strong>, but <strong>named arguments</strong> can also be used to specify the value of the optional parameter.</p>
+
+<p>For example, to skip the second parameter <code class="highlighter-rouge">optionalString</code>:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">Print</span><span class="p">(</span><span class="s">"One"</span><span class="p">,</span> <span class="n">optionalNumber</span><span class="p">:</span> <span class="m">3</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>One, Default string, 3
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/iDiv4v" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="positional-keyword-Docs2015s">Docs, M. (2015, July 20). Named and Optional Arguments (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/named-and-optional-arguments</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Subprograms</h2>
+		<h3>Passing parameters</h3>
+	</div>
+	<article class="content">
+		<p>In C#, arguments can be passed to the parameters either</p>
+
+<ol>
+  <li>by value, or</li>
+  <li>by reference</li>
+</ol>
+
+<p><a href="#passing-parameters-Docs2015t">(Docs, 2015)</a></p>
+
+<p>Passing arguments by reference allows the changes made by the methods to be persisted at the calling site.</p>
+
+<p><img src="https://tpl2141.garyng.xyz/images/posts/passing-parameters/pass-by-reference-vs-pass-by-value-animation.gif" alt="" /></p>
+
+<p>Pass by reference can be achieved by using the keyword <code class="highlighter-rouge">ref</code> and <code class="highlighter-rouge">out</code>, which we have covered in the topic “<a href="/04-expressions-and-assignments/functional-side-effects/">Functional side effects</a>”</p>
+
+<p>Do note that there are slight differences among</p>
+
+<ol>
+  <li><a href="#passing-value-type-by-value">passing <strong>value-type</strong> by value</a></li>
+  <li><a href="#passing-reference-type-by-value">passing <strong>reference-type</strong> by value</a></li>
+  <li><a href="#passing-value-type-by-reference">passing <strong>value-type</strong> by reference</a></li>
+  <li><a href="#passing-reference-type-by-reference">passing <strong>reference-type</strong> by reference</a></li>
+</ol>
+
+<h2 id="value-type-vs-reference-type">Value-type vs. reference-type</h2>
+
+<p>A <strong>value-type</strong> variable directly contains the data as compared to <strong>reference-type</strong>, which contains a reference (or pointer) to the data.</p>
+
+<p>Value-types include:</p>
+
+<ol>
+  <li>numeric types (<code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">long</code>, <code class="highlighter-rouge">byte</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">double</code>, etc)</li>
+  <li><code class="highlighter-rouge">bool</code></li>
+  <li>structs</li>
+  <li>enumerations</li>
+</ol>
+
+<p><a href="#passing-parameters-Docs2015u">(Docs, 2015)</a></p>
+
+<p>Reference-types include</p>
+
+<ol>
+  <li>class</li>
+  <li>interface</li>
+  <li>object</li>
+  <li>string</li>
+  <li>..etc</li>
+</ol>
+
+<p><a href="#passing-parameters-Docs2015v">(Docs, 2015)</a></p>
+
+<h2 id="passing-value-type-by-value">Passing value-type by value</h2>
+
+<p>When a <strong>value-type</strong> is passed by <strong>value</strong>, any changes to the parameter in the method will <strong>not</strong> be persisted back in the calling environment <a href="#passing-parameters-Docs2015w">(Docs, 2015)</a>.</p>
+
+<blockquote>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/8l6hKa" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="passing-reference-type-by-value">Passing reference-type by value</h2>
+
+<p>When a <strong>reference-type</strong> is passed by <strong>value</strong>, any changes to the reference/pointer/memory location of the parameter are local; but <strong>content</strong> of the parameter can be changed <a href="#passing-parameters-Docs2015x">(Docs, 2015)</a>.</p>
+
+<p>Changing the <em>reference</em> of the array parameter (ie. assigning it to a new array) will <strong>not</strong> be persisted:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">ChangeReference</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">nums</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">nums</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]{</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">10</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">40</span> <span class="p">};</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Original: </span><span class="p">{</span><span class="kt">string</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="s">", "</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)}</span><span class="s">"</span><span class="p">);</span>
+
+    <span class="nf">ChangeReference</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"After: </span><span class="p">{</span><span class="kt">string</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="s">", "</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Original: 10, 20, 30, 40
+After: 10, 20, 30, 40
+</code></pre></div></div>
+
+<p>But changing the <em>content</em> of the array will be persisted:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">10</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">40</span> <span class="p">};</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Original: </span><span class="p">{</span><span class="kt">string</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="s">", "</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)}</span><span class="s">"</span><span class="p">);</span>
+
+    <span class="nf">ChangeContent</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"After: </span><span class="p">{</span><span class="kt">string</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="s">", "</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">void</span> <span class="nf">ChangeContent</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">nums</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">nums</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+    <span class="n">nums</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Original: 10, 20, 30, 40
+After: 1, 2, 3, 40
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/RekZlM" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="passing-value-type-by-reference">Passing <strong>value-type</strong> by reference</h2>
+
+<p>When a <strong>value-type</strong> is passed by <strong>value</strong>, any changes to the parameter in the method will be persisted <a href="#passing-parameters-Docs2015w">(Docs, 2015)</a>.</p>
+
+<p>This can be achieved by using either <code class="highlighter-rouge">ref</code> or <code class="highlighter-rouge">out</code> keyword:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">result</span><span class="p">;</span>
+    <span class="nf">Add</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="k">out</span> <span class="n">result</span><span class="p">);</span>
+
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">void</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">first</span><span class="p">,</span> <span class="kt">int</span> <span class="n">second</span><span class="p">,</span> <span class="k">out</span> <span class="kt">int</span> <span class="n">result</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">result</span> <span class="p">=</span> <span class="n">first</span> <span class="p">+</span> <span class="n">second</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/dZBu5k" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="passing-reference-type-by-reference">Passing <strong>reference-type</strong> by reference</h2>
+
+<p>When a <strong>reference-type</strong> is passed by <strong>reference</strong>, any changes to the <em>content</em> and the <em>reference/pointer/memory location</em> of the parameter will be persisted <a href="#passing-parameters-Docs2015x">(Docs, 2015)</a>.</p>
+
+<p>In this case, changes to the reference of the array or the content of the array will both be persisted:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]{</span><span class="m">10</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">40</span><span class="p">};</span>
+    <span class="kt">int</span><span class="p">[]</span> <span class="n">oldNumbers</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">;</span>	<span class="c1">// store a temporary reference to numbers</span>
+
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"--- Change reference/pointer/memory location"</span><span class="p">);</span>
+
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Original: </span><span class="p">{</span><span class="kt">string</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="s">", "</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)}</span><span class="s">"</span><span class="p">);</span>
+
+    <span class="nf">ChangeReference</span><span class="p">(</span><span class="k">ref</span> <span class="n">numbers</span><span class="p">);</span>
+
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"After: </span><span class="p">{</span><span class="kt">string</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="s">", "</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)}</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Still the same object? </span><span class="p">{</span><span class="n">numbers</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="n">oldNumbers</span><span class="p">)}</span><span class="s">"</span><span class="p">);</span>
+
+    <span class="n">oldNumbers</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">;</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"--- Change content"</span><span class="p">);</span>
+
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Original: </span><span class="p">{</span><span class="kt">string</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="s">", "</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)}</span><span class="s">"</span><span class="p">);</span>
+
+    <span class="nf">ChangeContent</span><span class="p">(</span><span class="k">ref</span> <span class="n">numbers</span><span class="p">);</span>
+
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"After: </span><span class="p">{</span><span class="kt">string</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="s">", "</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)}</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Still the same object? </span><span class="p">{</span><span class="n">numbers</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="n">oldNumbers</span><span class="p">)}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="k">void</span> <span class="nf">ChangeReference</span><span class="p">(</span><span class="k">ref</span> <span class="kt">int</span><span class="p">[]</span> <span class="n">nums</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">nums</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]{</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="k">void</span> <span class="nf">ChangeContent</span><span class="p">(</span><span class="k">ref</span> <span class="kt">int</span><span class="p">[]</span> <span class="n">nums</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">nums</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+    <span class="n">nums</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--- Change reference/pointer/memory location
+Original: 10, 20, 30, 40
+After: 1, 2, 3, 4, 5
+Still the same object? False
+
+--- Change content
+Original: 1, 2, 3, 4, 5
+After: 1, 2, 3, 4, 5
+Still the same object? True
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/mld3YE" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="passing-parameters-Docs2015t">Docs, M. (2015, July 20). Passing Parameters (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/passing-parameters</span></li>
+<li><span id="passing-parameters-Docs2015u">Docs, M. (2015, July 20). Value Types (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/value-types</span></li>
+<li><span id="passing-parameters-Docs2015v">Docs, M. (2015, July 20). Reference types (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/reference-types</span></li>
+<li><span id="passing-parameters-Docs2015w">Docs, M. (2015, July 20). Passing Value-Type Parameters (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/passing-value-type-parameters</span></li>
+<li><span id="passing-parameters-Docs2015x">Docs, M. (2015, July 20). Passing Reference-Type Parameters (C# Programming Guide). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/passing-reference-type-parameters</span></li></ol>
+
+	</article>
+	<hr>
+	
+	<div class="page-header quick-guide-page">
+		<h2>Subprograms</h2>
+		<h3>Method overloading</h3>
+	</div>
+	<article class="content">
+		<p>Overloading is a process where multiple methods with the <strong>same name</strong> but <strong>different signatures</strong> are defined. In C#, overloads are resolved at compile-time. Note that the <strong>return type</strong> of a method is <strong>not</strong> considered to be a part of a method’s signature <a href="#method-overloading-Skeet">(Skeet, n.d.)</a>.</p>
+
+<p>Example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void Foo(int x)
+{
+    Console.WriteLine("Foo(int x)");
+}
+
+void Foo(string x)
+{
+    Console.WriteLine("Foo(string x)");
+}
+</code></pre></div></div>
+
+<p>Calling with</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Foo(1);
+Foo("String");
+</code></pre></div></div>
+
+<p>will output:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Foo(int x)
+Foo(string x)
+</code></pre></div></div>
+
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/QJPbGn" frameborder="0"></iframe>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="method-overloading-Skeet">Skeet, J. Overloading. Retrieved from http://csharpindepth.com/Articles/General/Overloading.aspx</span></li></ol>
 
 	</article>
 	<hr>

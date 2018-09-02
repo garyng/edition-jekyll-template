@@ -6,20 +6,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Operator precedence and associativity | C# - TPL2141</title>
+<title>Method overloading | C# - TPL2141</title>
 <meta name="generator" content="Jekyll v3.8.3" />
-<meta property="og:title" content="Operator precedence and associativity" />
+<meta property="og:title" content="Method overloading" />
 <meta name="author" content="GaryNg" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="An expression can contain multiple operators – in that case, when two operators share an operand, the order in which the operators are applied is determined by" />
-<meta property="og:description" content="An expression can contain multiple operators – in that case, when two operators share an operand, the order in which the operators are applied is determined by" />
-<link rel="canonical" href="https://tpl2141.garyng.xyz/04-expressions-and-assignments/operator-precedence-and-associativity/" />
-<meta property="og:url" content="https://tpl2141.garyng.xyz/04-expressions-and-assignments/operator-precedence-and-associativity/" />
+<meta name="description" content="Overloading is a process where multiple methods with the same name but different signatures are defined. In C#, overloads are resolved at compile-time. Note that the return type of a method is not considered to be a part of a method’s signature (Skeet, n.d.)." />
+<meta property="og:description" content="Overloading is a process where multiple methods with the same name but different signatures are defined. In C#, overloads are resolved at compile-time. Note that the return type of a method is not considered to be a part of a method’s signature (Skeet, n.d.)." />
+<link rel="canonical" href="https://tpl2141.garyng.xyz/06-subprograms/method-overloading/" />
+<meta property="og:url" content="https://tpl2141.garyng.xyz/06-subprograms/method-overloading/" />
 <meta property="og:site_name" content="C# - TPL2141" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-09-02T12:43:27+00:00" />
 <script type="application/ld+json">
-{"description":"An expression can contain multiple operators – in that case, when two operators share an operand, the order in which the operators are applied is determined by","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/04-expressions-and-assignments/operator-precedence-and-associativity/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Operator precedence and associativity","dateModified":"2018-09-02T12:43:27+00:00","datePublished":"2018-09-02T12:43:27+00:00","@context":"http://schema.org"}</script>
+{"description":"Overloading is a process where multiple methods with the same name but different signatures are defined. In C#, overloads are resolved at compile-time. Note that the return type of a method is not considered to be a part of a method’s signature (Skeet, n.d.).","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/06-subprograms/method-overloading/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Method overloading","dateModified":"2018-09-02T12:43:27+00:00","datePublished":"2018-09-02T12:43:27+00:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
@@ -111,7 +111,7 @@
 							</ul>
 						</li>
 					
-						<li class="nav-item top-level current">
+						<li class="nav-item top-level ">
 							
 							<a href="/04-expressions-and-assignments/expressions/">Expressions and Assignments</a>
 							<ul>
@@ -122,7 +122,7 @@
 								
 									<li class="nav-item "><a href="/04-expressions-and-assignments/operators/">Operators</a></li>
 								
-									<li class="nav-item current"><a href="/04-expressions-and-assignments/operator-precedence-and-associativity/">Operator precedence and associativity</a></li>
+									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-precedence-and-associativity/">Operator precedence and associativity</a></li>
 								
 									<li class="nav-item "><a href="/04-expressions-and-assignments/operator-overloading/">Operator overloading</a></li>
 								
@@ -167,7 +167,7 @@
 							</ul>
 						</li>
 					
-						<li class="nav-item top-level ">
+						<li class="nav-item top-level current">
 							
 							<a href="/06-subprograms/methods-definition/">Subprograms</a>
 							<ul>
@@ -178,7 +178,7 @@
 								
 									<li class="nav-item "><a href="/06-subprograms/passing-parameters/">Passing parameters</a></li>
 								
-									<li class="nav-item "><a href="/06-subprograms/method-overloading/">Method overloading</a></li>
+									<li class="nav-item current"><a href="/06-subprograms/method-overloading/">Method overloading</a></li>
 								
 							</ul>
 						</li>
@@ -196,134 +196,46 @@
 
 		<section class="main">
 			<div class="page-header">
-				<h2>Expressions and Assignments</h2>
-				<h3>Operator precedence and associativity</h3>
+				<h2>Subprograms</h2>
+				<h3>Method overloading</h3>
 				
 			</div>
 			<article class="content">
-				<p>An expression can contain multiple operators – in that case, when two operators share an operand, the <strong>order</strong> in which the operators are applied is determined by</p>
+				<p>Overloading is a process where multiple methods with the <strong>same name</strong> but <strong>different signatures</strong> are defined. In C#, overloads are resolved at compile-time. Note that the <strong>return type</strong> of a method is <strong>not</strong> considered to be a part of a method’s signature <a href="#method-overloading-Skeet">(Skeet, n.d.)</a>.</p>
 
-<ol>
-  <li>operator precedence</li>
-  <li>associativity, and</li>
-  <li><a href="#parenthesis">parentheses</a></li>
-</ol>
+<p>Example:</p>
 
-<p><a href="#operators-associativity-Docs2015g">(Docs, 2015)</a></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void Foo(int x)
+{
+    Console.WriteLine("Foo(int x)");
+}
 
-<p>For example,</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3 + 4 * 5
+void Foo(string x)
+{
+    Console.WriteLine("Foo(string x)");
+}
 </code></pre></div></div>
 
-<p>is treated as</p>
+<p>Calling with</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3 + (4 * 5)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Foo(1);
+Foo("String");
 </code></pre></div></div>
 
-<p>which evaluates to <code class="highlighter-rouge">23</code> because multiplication <code class="highlighter-rouge">*</code> has <em>higher precedence</em> over addition <code class="highlighter-rouge">+</code>.</p>
+<p>will output:</p>
 
-<p>Here is a list of almost all operators in C#, sorted in their order of precedence.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Category</th>
-      <th>Operator</th>
-      <th>Associativity</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Postfix</td>
-      <td>() [] -&gt; . ++ –</td>
-      <td>Left to right</td>
-    </tr>
-    <tr>
-      <td>Unary</td>
-      <td>+ - ! ~ ++ – (type)* &amp; sizeof</td>
-      <td>Right to left</td>
-    </tr>
-    <tr>
-      <td>Multiplicative</td>
-      <td>* / %</td>
-      <td>Left to right</td>
-    </tr>
-    <tr>
-      <td>Additive</td>
-      <td>+ -</td>
-      <td>Left to right</td>
-    </tr>
-    <tr>
-      <td>Shift</td>
-      <td>« »</td>
-      <td>Left to right</td>
-    </tr>
-    <tr>
-      <td>Relational</td>
-      <td>&lt; &lt;= &gt; &gt;=</td>
-      <td>Left to right</td>
-    </tr>
-    <tr>
-      <td>Equality</td>
-      <td>== !=</td>
-      <td>Left to right</td>
-    </tr>
-    <tr>
-      <td>Bitwise AND</td>
-      <td>&amp;</td>
-      <td>Left to right</td>
-    </tr>
-    <tr>
-      <td>Bitwise XOR</td>
-      <td>^</td>
-      <td>Left to right</td>
-    </tr>
-    <tr>
-      <td>Bitwise OR</td>
-      <td>|</td>
-      <td>Left to right</td>
-    </tr>
-    <tr>
-      <td>Logical AND</td>
-      <td>&amp;&amp;</td>
-      <td>Left to right</td>
-    </tr>
-    <tr>
-      <td>Logical OR</td>
-      <td>||</td>
-      <td>Left to right</td>
-    </tr>
-    <tr>
-      <td>Conditional</td>
-      <td>?:</td>
-      <td>Right to left</td>
-    </tr>
-    <tr>
-      <td>Assignment</td>
-      <td>= += -= *= /= %=»= «= &amp;= ^= |=</td>
-      <td>Right to left</td>
-    </tr>
-    <tr>
-      <td>Comma</td>
-      <td>,</td>
-      <td>Left to right</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="parenthesis">Parenthesis</h2>
-
-<p>The implied evaluation order can be changed by using parenthesis. For example,</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(3 + 4) * 5
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Foo(int x)
+Foo(string x)
 </code></pre></div></div>
 
-<p>results in <code class="highlighter-rouge">35</code> because the <em>addition</em> operator is evaluated first, even though the <em>multiplication</em> operator has higher precedence</p>
+<blockquote>
+  <p>Live-code example</p>
+  <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/QJPbGn" frameborder="0"></iframe>
+</blockquote>
 
 <h2 id="references">References</h2>
 
-<ol class="bibliography"><li><span id="precedence-associativity-Docs2015g">Docs, M. (2015, July 20). ?: Operator (C# Reference). Retrieved from https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator</span></li></ol>
+<ol class="bibliography"><li><span id="method-overloading-Skeet">Skeet, J. Overloading. Retrieved from http://csharpindepth.com/Articles/General/Overloading.aspx</span></li></ol>
 
 			</article>
 		</section>
