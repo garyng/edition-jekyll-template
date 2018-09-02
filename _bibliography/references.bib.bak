@@ -547,4 +547,93 @@
   pages   = {187-210},
 }
 
+@Online{Shute,
+  author = {Gary Shute},
+  title  = {Subprograms},
+  url    = {https://www.d.umn.edu/~gshute/asm/subprograms.xhtml},
+}
+
+@Online{Point2018,
+  author = {Tutorials Point},
+  title  = {C# - Methods},
+  year   = {2018},
+  url    = {https://www.tutorialspoint.com/csharp/csharp_methods.htm},
+}
+
+@Online{Docs2015q,
+  author = {Microsoft Docs},
+  title  = {Access Modifiers (C# Programming Guide)},
+  year   = {2015},
+  date   = {2015-07-20},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers},
+}
+
+@Online{Docs2015r,
+  author = {Microsoft Docs},
+  title  = {return (C# Reference)},
+  year   = {2015},
+  date   = {2015-07-20},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/return},
+}
+
+@Online{Cunningham&Cunningham,
+  author = {Cunningham \& Cunningham, Inc.},
+  title  = {Guard Clause},
+  url    = {http://wiki.c2.com/?GuardClause},
+}
+
+@Online{Docs2015s,
+  author = {Microsoft Docs},
+  title  = {Named and Optional Arguments (C# Programming Guide)},
+  year   = {2015},
+  date   = {2015-07-20},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/named-and-optional-arguments},
+}
+
+@Online{Docs2015t,
+  author = {Microsoft Docs},
+  title  = {Passing Parameters (C# Programming Guide)},
+  year   = {2015},
+  date   = {2015-07-20},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/passing-parameters},
+}
+
+@Online{Docs2015u,
+  author = {Microsoft Docs},
+  title  = {Value Types (C# Reference)},
+  year   = {2015},
+  date   = {2015-07-20},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/value-types},
+}
+
+@Online{Docs2015v,
+  author = {Microsoft Docs},
+  title  = {Reference types (C# Reference)},
+  year   = {2015},
+  date   = {2015-07-20},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/reference-types},
+}
+
+@Online{Docs2015w,
+  author = {Microsoft Docs},
+  title  = {Passing Value-Type Parameters (C# Programming Guide)},
+  year   = {2015},
+  date   = {2015-07-20},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/passing-value-type-parameters},
+}
+
+@Online{Docs2015x,
+  author = {Microsoft Docs},
+  title  = {Passing Reference-Type Parameters (C# Programming Guide)},
+  year   = {2015},
+  date   = {2015-07-20},
+  url    = {https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/passing-reference-type-parameters},
+}
+
+@Online{Skeet,
+  author = {Jon Skeet},
+  title  = {Overloading},
+  url    = {http://csharpindepth.com/Articles/General/Overloading.aspx},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}
