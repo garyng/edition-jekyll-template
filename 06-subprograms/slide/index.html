@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Slide | C# - TPL2141</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Slide" />
+<meta name="author" content="GaryNg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Subprograms" />
+<meta property="og:description" content="Subprograms" />
+<link rel="canonical" href="https://tpl2141.garyng.xyz/06-subprograms/slide/" />
+<meta property="og:url" content="https://tpl2141.garyng.xyz/06-subprograms/slide/" />
+<meta property="og:site_name" content="C# - TPL2141" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-09-03T11:56:33+00:00" />
+<script type="application/ld+json">
+{"description":"Subprograms","author":{"@type":"Person","name":"GaryNg"},"@type":"Article","url":"https://tpl2141.garyng.xyz/06-subprograms/slide/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://tpl2141.garyng.xyz/images/siteicon.png"},"name":"GaryNg"},"headline":"Slide","dateModified":"2018-09-03T11:56:33+00:00","datePublished":"2018-09-03T11:56:33+00:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="https://tpl2141.garyng.xyz/feed.xml" title="C# - TPL2141" />
+
+		<title>Slide </title>
+
+		<link rel="stylesheet" href="/scripts/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="/scripts/reveal.js/css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="/scripts/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '/scripts/reveal.js/css/print/pdf.css' : '/scripts/reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="/scripts/reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				
+				<section data-markdown
+						data-separator="^\n---\n$"
+						data-separator-vertical="^\n--\n$"
+						data-separator-notes="^Note:">
+					<script type="text/template">
+						# Subprograms
+
+"methods" in C#
+
+---
+
+has 5 components:
+
+1. access modifier <!-- .element: class="fragment" -->
+1. return type <!-- .element: class="fragment" -->
+1. method name <!-- .element: class="fragment" -->
+1. parameter list <!-- .element: class="fragment" -->
+1. method body <!-- .element: class="fragment" -->
+
+---
+
+```cs
+<access modifier> <return type> <method name>(parameter list) {
+   method body
+}
+```
+
+---
+
+```cs
+public int Max(int first, int second)
+{
+    if (first > second)
+    {
+        return first;
+    }
+    return second;
+}
+```
+
+---
+
+# Access modifier
+
+Control what code can see the method
+
+_from another assembly, class, derived class or structs_ <!-- .element: class="fragment" -->
+
+---
+
+# Return type
+
+Specifies the type of the data returned by the method <!-- .element: class="fragment" -->
+
+---
+
+if the method does not return any data, the return type will be
+
+## `void` <!-- .element: class="fragment" -->
+
+---
+
+# `return` keyword
+
+terminates the execution of current method <!-- .element: class="fragment" -->
+
+and return the control back to the caller <!-- .element: class="fragment" -->
+
+_optionally returning a value_ <!-- .element: class="fragment" -->
+
+---
+
+# Parameter list
+
+Specifies the data that the method receives, along with their <!-- .element: class="fragment" -->
+
+1. type <!-- .element: class="fragment" -->
+1. name <!-- .element: class="fragment" -->
+
+---
+
+## Parameters vs. Argument
+
+---
+
+## Parameters
+
+those that can found in the method header
+
+---
+
+## Arguments
+
+are the actual values passed to the method at the calling site
+
+---
+
+C# support both
+
+# Positional and keyword parameters <!-- .element: class="fragment" -->
+
+---
+
+C# uses **positional** binding by default
+
+---
+
+```cs
+int Add(int first, int second, int third)
+{
+    return first + second + third;
+}
+```
+
+```cs
+result = Add(1, 2, 3);
+```
+
+---
+
+Supports **keyword** binding with **named arguments** using the following format:
+
+```cs
+<parameter name>: <argument value>
+```
+
+---
+
+The same method
+
+```cs
+int Add(int first, int second, int third)
+{
+    return first + second + third;
+}
+```
+
+can be invoked with
+
+```cs
+result = Add(first: 1, second: 2, third: 3);
+```
+
+---
+
+or even with the parameters specified **out-of-order**
+
+```cs
+result = Add(third: 3, second: 2, first: 1);
+```
+
+---
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/v4XUHK" frameborder="0"></iframe>
+
+---
+
+# Optional arguments
+
+allow the caller to omit some of the arguments <!-- .element: class="fragment" -->
+
+goes really well with named arguments <!-- .element: class="fragment" -->
+
+---
+
+```cs
+void Print(string required, string optionalString = "Default string", int optionalNumber = 123)
+{
+    Console.WriteLine($"{required}, {optionalString}, {optionalNumber}");
+}
+```
+
+To skip the second parameter:
+
+```cs
+Print("One", optionalNumber: 3);
+```
+
+---
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/iDiv4v" frameborder="0"></iframe>
+
+---
+
+# Passing parameters
+
+C# supports both <!-- .element: class="fragment" -->
+
+1. pass by value <!-- .element: class="fragment" -->
+1. pass by reference <!-- .element: class="fragment" -->
+
+---
+
+![](/images/posts/passing-parameters/pass-by-reference-vs-pass-by-value-animation.gif)
+
+---
+
+pass by reference can be achieved by using the
+
+## `ref` or `out`
+
+keywords
+
+---
+
+which we have already covered in the topic
+
+# [Functional side effects](/04-expressions-and-assignments/functional-side-effects/) <!-- .element: class="fragment" -->
+
+---
+
+# But ...
+
+## there are some differences among <!-- .element: class="fragment" -->
+
+1. passing value-type by value <!-- .element: class="fragment" -->
+1. passing reference-type by value <!-- .element: class="fragment" -->
+1. passing value-type by reference <!-- .element: class="fragment" -->
+1. passing reference-type by reference <!-- .element: class="fragment" -->
+
+---
+
+# Value-type
+
+those that directly contains the data
+
+1. numeric types (int, long, float, double, etc) <!-- .element: class="fragment" -->
+1. bool <!-- .element: class="fragment" -->
+1. structs <!-- .element: class="fragment" -->
+1. enumerations <!-- .element: class="fragment" -->
+
+---
+
+# Reference-type
+
+those that contains the reference to/pointer to/memory location of the data
+
+_instead of the data itself_ <!-- .element: class="fragment" -->
+
+1. class <!-- .element: class="fragment" -->
+1. interface <!-- .element: class="fragment" -->
+1. object <!-- .element: class="fragment" -->
+1. string <!-- .element: class="fragment" -->
+1. ... <!-- .element: class="fragment" -->
+
+---
+
+# Passing value-type by value
+
+<!-- .element: class="fragment" --> Changes in the method **will not be persisted** back in the calling environment
+
+---
+
+# Passing reference-type by value
+
+<span>Changes to the **memory location/pointer/reference** of the parameter **will not be persisted**</span> <!-- .element: class="fragment" -->
+
+<span>_eg: assigning it to a new object_</span> <!-- .element: class="fragment" -->
+
+---
+
+## But
+
+<span>Changes to the **content** of the parameter **will be persisted**</span> <!-- .element: class="fragment" -->
+
+---
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/RekZlM" frameborder="0"></iframe>
+
+---
+
+## Passing value-type by reference
+
+Changes to the parameter will be persisted <!-- .element: class="fragment" -->
+
+---
+
+## Passing reference-type by reference
+
+Changes to both <!-- .element: class="fragment" -->
+
+1. reference/pointer/memory location <!-- .element: class="fragment" -->
+1. content of the parameter <!-- .element: class="fragment" -->
+
+will be persisted <!-- .element: class="fragment" -->
+
+---
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/mld3YE" frameborder="0"></iframe>
+
+---
+
+# Overloading
+
+defining multiple methods with the same name but <!-- .element: class="fragment" -->
+
+## different method signature <!-- .element: class="fragment" -->
+
+---
+
+```cs
+void Foo(int x)
+{
+    Console.WriteLine("Foo(int x)");
+}
+
+void Foo(string x)
+{
+    Console.WriteLine("Foo(string x)");
+}
+```
+
+---
+
+note that the
+
+# return type <!-- .element: class="fragment" -->
+
+## is not considered as part of the method signature <!-- .element: class="fragment" -->
+
+---
+
+in other words, this kind of overloading is illegal
+
+```cs
+void Foo(int x)
+{
+    Console.WriteLine("Foo(int x)");
+}
+
+string Foo(int x)
+{
+    return "Foo(string x)";
+}
+```
+
+---
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/BQSRbY" frameborder="0"></iframe>
+
+
+`Compilation error (line 15, col 9): Type 'Program' already defines a member called 'Foo' with the same parameter types`
+
+---
+
+The end.
+
+# Thanks! <!-- .element: class="fragment" -->
+
+					</script>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="/scripts/reveal.js/lib/js/head.min.js"></script>
+		<script src="/scripts/reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '/scripts/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '/scripts/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/scripts/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/scripts/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '/scripts/reveal.js/plugin/search/search.js', async: true },
+					{ src: '/scripts/reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: '/scripts/reveal.js/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

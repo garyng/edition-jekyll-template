@@ -178,6 +178,8 @@
 								
 									<li class="nav-item "><a href="/06-subprograms/method-overloading/">Method overloading</a></li>
 								
+									<li class="nav-item "><a href="/06-subprograms/slide/">Slide</a></li>
+								
 							</ul>
 						</li>
 					
@@ -3634,8 +3636,8 @@ After: 1, 2, 3, 40
 
 <span class="k">static</span> <span class="k">void</span> <span class="nf">ChangeContent</span><span class="p">(</span><span class="k">ref</span> <span class="kt">int</span><span class="p">[]</span> <span class="n">nums</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">nums</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
-    <span class="n">nums</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
+    <span class="n">nums</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="m">100</span><span class="p">;</span>
+    <span class="n">nums</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">=</span> <span class="m">200</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -3677,15 +3679,15 @@ Still the same object? True
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void Foo(int x)
-{
-    Console.WriteLine("Foo(int x)");
-}
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nf">Foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Foo(int x)"</span><span class="p">);</span>
+<span class="p">}</span>
 
-void Foo(string x)
-{
-    Console.WriteLine("Foo(string x)");
-}
+<span class="k">void</span> <span class="nf">Foo</span><span class="p">(</span><span class="kt">string</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Foo(string x)"</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>Calling with</p>
