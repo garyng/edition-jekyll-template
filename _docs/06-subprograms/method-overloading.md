@@ -9,7 +9,7 @@ Overloading is a process where multiple methods with the **same name** but **dif
 
 Example:
 
-```
+```cs
 void Foo(int x)
 {
     Console.WriteLine("Foo(int x)");

@@ -185,8 +185,8 @@ static void ChangeReference(ref int[] nums)
 
 static void ChangeContent(ref int[] nums)
 {
-    nums[0] = 1;
-    nums[1] = 2;
+    nums[0] = 100;
+    nums[1] = 200;
 }
 ```
 
