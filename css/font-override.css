@@ -1,0 +1,8 @@
+.reveal {
+    font-family: "Roboto", monospace;
+}
+
+.reveal section img
+{
+    border: none;
+}
