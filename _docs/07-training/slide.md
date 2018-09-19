@@ -21,7 +21,9 @@ Group `hello`
 
 ---
 
-slide link: 
+slide link
+
+https://tpl2141.garyng.xyz/07-training/slide/
 
 ---
 
@@ -811,3 +813,9 @@ some examples of WPF application...
 # feedback form
 
 http://gg.gg/training_2017-2018
+
+---
+
+## The end.
+
+# Thanks!
