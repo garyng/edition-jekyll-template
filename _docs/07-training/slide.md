@@ -9,15 +9,13 @@ highlightTheme: "vs"
 transition: "slide"    # for vscode-jekyll
 ---
 
-<small>start speaker notes</small>
-
-<small>start `Mono`</small>
-
----
-
 # C# Short Training Session
 
 Group `hello`
+
+<aside class="notes">
+start speaker notes and start `Mono`
+</aside>
 
 ---
 
