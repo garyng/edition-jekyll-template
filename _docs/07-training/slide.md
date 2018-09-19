@@ -797,14 +797,19 @@ in this case, we only want `name`
 1. async/await <!-- .element: class="fragment" -->
 1. lambdas <!-- .element: class="fragment" -->
 1. generics <!-- .element: class="fragment" -->
-1. LINQ <!-- .element: class="fragment" -->
+
+---
+
+# where to go from here?
+
+1. LINQ
 1. file I/O <!-- .element: class="fragment" -->
 1. user interface with WPF and XAML <!-- .element: class="fragment" -->
 1. ... <!-- .element: class="fragment" -->
 
 ---
 
-some examples of WPF application...
+an example of WPF application...
 
 ---
 
