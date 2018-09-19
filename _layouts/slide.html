@@ -11,10 +11,16 @@
 		<title>{{ page.title }} </title>
 
 		<link rel="stylesheet" href="{{ site.reveal_path }}css/reveal.css">
-		<link rel="stylesheet" href="{{ site.reveal_path }}css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="{{ site.reveal_path }}css/theme/{% if page.theme %}{{ page.theme }}{% else %}black{% endif %}.css" id="theme">
+		{% if page.customTheme %}<link rel="stylesheet" href="/css/{{ page.customTheme }}.css" id="theme">{% endif %}
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="{{ site.reveal_path }}lib/css/zenburn.css">
+
+		{% if page.highlightTheme %}
+			<link rel="stylesheet" href="/css/hightlight.js/{{ page.highlightTheme }}.css">
+		{% else %}
+			<link rel="stylesheet" href="{{ site.reveal_path }}lib/css/zenburn.css">
+		{% endif %}
 
 		<!-- Printing and PDF exports -->
 		<script>
