@@ -6,7 +6,10 @@ layout: slide
 theme : "white"
 customTheme: font-override
 highlightTheme: "vs"
-transition: "slide"    # for vscode-jekyll
+# for vscode-jekyll
+transition: "slide"    
+slideNumber: c/t
+defaultTiming: 20
 ---
 
 # C# Short Training Session
@@ -21,7 +24,7 @@ start speaker notes and start `Mono`
 
 slide link
 
-https://tpl2141.garyng.xyz/07-training/slide/
+http://gg.gg/tpl2141-cs-training
 
 ---
 
